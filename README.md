@@ -1,5 +1,5 @@
-# Nuxt 3 Awesome Starter
-a Nuxt 3 starter template or boilerplate with a lot of useful features. and integrated with Windi CSS.
+# Nuxt 3 Project
+With a lot of useful features. and integrated with Windi CSS.
 
 > **WARNING** \
 > Nuxt 3 is still in beta and is not recommended for production use.
@@ -19,7 +19,7 @@ a Nuxt 3 starter template or boilerplate with a lot of useful features. and inte
 - [ ] Http Request (axios ?)
 
 ## Table of Contents
-- [Nuxt 3 Awesome Starter](#nuxt-3-awesome-starter)
+- [Nuxt 3 Project](#Nuxt 3 Project)
   * [Built-in Components](#built-in-components)
   * [Quick Start](#quick-start)
   * [Notes](#notes)
