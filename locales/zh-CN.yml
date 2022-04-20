@@ -1,0 +1,35 @@
+components:
+  language_switcher:
+    change_language: 更改语言
+  theme_switcher:
+    theme: 主题
+    change_theme: 更改主题
+pages:
+  index:
+    title: 土地房产综合管理平台
+  blank:
+    nav: 空页面
+    title: 空页面
+    just_blank_page_with_title: 含标题的空白页面
+  test:
+    nav: 测试
+    title: 测试
+    counter: 计数器
+    increment: 增加
+    decrement: 减少
+    reset: 重置
+    identity: 唯一
+    full_name: 全名
+  about:
+    nav: 关于
+    title: 关于
+  dashboard:
+    nav: 仪表盘
+    title: 仪表盘
+    index:
+      nav: 主页
+      title: 主页
+banners:
+  welcome: 你好, 欢迎来到 %{app_name}!
+others:
+  learn_more: 了解更多
