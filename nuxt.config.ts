@@ -11,6 +11,8 @@ declare module '@nuxt/schema' {
 
 // https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
+  ssr: false,
+
   // meta
   meta: {
     title: '土地房产综合管理平台',
@@ -68,9 +70,9 @@ export default defineNuxtConfig({
   intlify: {
     localeDir: 'locales',
     vueI18n: {
-      locale: 'en',
+      locale: 'zh-CN',
       fallbackLocale: 'en',
-      availableLocales: ['en', 'id', 'ja'],
+      availableLocales: ['zh-CN', 'en'],
     },
   },
 

@@ -29,6 +29,12 @@ pages:
     index:
       nav: home
       title: home
+  tufang:
+    dashboard: dashboard
+    danshensushe: danshensushe
+    fangjianjishu: fangjianjishu
+    xingchegongyu: xingchegongyu
+    zhijiaoxinxi: zhijiaoxinxi
 banners:
   welcome: hello, welcome to %{app_name}!
 others:
