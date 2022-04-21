@@ -3,12 +3,9 @@
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <div class="flex items-center justify-center">
-          <img
-            class="w-6 h-6 rounded-full"
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"
-            alt="Avatar of Jonathan Reinink"
-          />
-          <span class="ml-2 text-sm font-semibold">Alfian</span>
+          <span class="ml-2 text-xl font-semibold text-red-500">
+            <IconSimpleIcons:gitee />
+          </span>
           <IconUil:angle-down />
         </div>
         <div
@@ -21,7 +18,8 @@
             href="https://gitee.com/shentie-fe/tufang-large-screen.git"
             title="Gitee"
           >
-            <IconMdi:github-face />
+            <IconSimpleIcons:gitee />
+<!--            <IconMdi:github-face />-->
           </Anchor>
         </div>
       </div>
@@ -50,7 +48,7 @@
         >
 <!--          <IconMdi:github-face />-->
           <IconSimpleIcons:gitee />
-          <span class="ml-1">Github</span>
+          <span class="ml-1">Gitee</span>
         </Button>
         <Button
           text="Close"
