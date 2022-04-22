@@ -1,7 +1,7 @@
 <template>
   <PageWrapper>
     <PageLsHeader>
-      <PageTitle :text="route.meta.title" class="capitalize" />
+      <PageTitle :text="route.meta.title" />
     </PageLsHeader>
     <PageBody>
       <PageSection>

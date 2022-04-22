@@ -5,8 +5,13 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
+    'IconFluent:arrowRightBoldCircle': typeof import('~icons/fluent/arrow-right-bold-circle')['default']
+    'IconFluent:arrowsBidirectional24Regular': typeof import('~icons/fluent/arrows-bidirectional24-regular')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
+    'IconMdi:arrowLeftBoldCircle': typeof import('~icons/mdi/arrow-left-bold-circle')['default']
+    'IconMdi:arrowRightBoldCircle': typeof import('~icons/mdi/arrow-right-bold-circle')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
+    'IconPh:sunDimBold': typeof import('~icons/ph/sun-dim-bold')['default']
     'IconSimpleIcons:gitee': typeof import('~icons/simple-icons/gitee')['default']
     'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']

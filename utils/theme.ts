@@ -17,8 +17,9 @@ export function ThemeManager() {
   const themeUserSetting = useCookie<IThemeSettingOptions>('theme')
 
   // methods
+  // Always Set Dark
   const getUserSetting = (): IThemeSettingOptions =>
-    themeUserSetting.value || 'system'
+    'dark' || themeUserSetting.value || 'system'
   const getSystemTheme = (): ITheme => {
     try {
       return window

@@ -34,7 +34,7 @@ pages:
     danshensushe: 单身宿舍
     fangjianjishu: 房建技术
     xingchegongyu: 行车公寓
-    zhijiaoxinxi: 支教信息
+    zhijiaoxinxi: 职教信息
 banners:
   welcome: 你好, 欢迎来到 %{app_name}!
 others:

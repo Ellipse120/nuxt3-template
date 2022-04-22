@@ -1,5 +1,41 @@
 <template>
   <BuilderNavbar>
+    <template #custom>
+      <div class="flex justify-between text-center">
+        <div class="header-l w-1/3 px-4 flex items-center justify-between">
+          <IconMdi:arrow-left-bold-circle
+            class="block text-2xl cursor-pointer"
+            @click="prev"
+          />
+          <div class="flex items-center pr-12">
+            <div class="flex items-center px-4 font-bold">
+              <IconPh:sun-dim-bold
+                class="block mr-4 text-2xl text-yellow-500"
+              />
+              <div>晴天</div>
+            </div>
+            <div class="px-4">26 ℃</div>
+          </div>
+        </div>
+
+        <div class="header-m w-1/3 mx-1 text-3xl font-bold text-gray-200 py-2">
+          {{ app.name }}
+        </div>
+
+        <div class="header-r w-1/3 px-4 flex items-center justify-end">
+          <div class="flex items-center font-bold">
+            <div class="px-2">{{ formattedYMD }}</div>
+            <div class="px-2">{{ formattedHms }}</div>
+            <div class="px-2">{{ formattedDay }}</div>
+          </div>
+          <IconMdi:arrow-right-bold-circle
+            class="block text-2xl cursor-pointer"
+            @click="next"
+          />
+        </div>
+      </div>
+    </template>
+
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
         <nav
@@ -28,6 +64,7 @@
         </nav>
       </div>
     </template>
+
     <template #options="{ toggleOptions }">
       <ActionSheet @onClose="toggleOptions(false)">
         <ActionSheetBody>
@@ -93,6 +130,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useDateFormat, useNow } from '@vueuse/core'
 import { IApp } from '~/utils/app'
 
 export interface IMenuItem {
@@ -131,4 +169,97 @@ const menus = computed((): IMenuItem[] => [
     route: { name: 'zhijiaoxinxi' },
   },
 ])
+
+const formattedYMD = useDateFormat(useNow(), 'YYYY-MM-DD')
+const formattedHms = useDateFormat(useNow(), 'HH:mm:ss')
+const formattedDay = new Intl.DateTimeFormat('zh-CN', {
+  weekday: 'long',
+}).format(useNow().value)
+
+const router = useRouter()
+const prev = () => {
+  router.push(menus.value[Math.abs(--i % menus.value.length)].route)
+}
+let i = 0
+const next = () => {
+  router.push(menus.value[Math.abs(++i % menus.value.length)].route)
+}
 </script>
+
+<style scoped>
+.header-l {
+  clip-path: polygon(0 0, 90% 0%, 100% 100%, 0% 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #0a0231,
+    #0a0534,
+    #0a0937,
+    #0a0c3b,
+    #0b0e3e,
+    #0c1141,
+    #0d1344,
+    #0e1547,
+    #0f184a,
+    #101a4e,
+    #101d51,
+    #112055
+  );
+  background-image: url('../../assets/images/header-l.png');
+  background-repeat: round;
+  background-size: cover;
+  width: 36.4%;
+  height: 46px;
+}
+.header-m {
+  --color1: azure;
+  --color2: aqua;
+  --color3: dodgerblue;
+  --color4: blue;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #0a0231,
+    #0a0534,
+    #0a0937,
+    #0a0c3b,
+    #0b0e3e,
+    #0c1141,
+    #0d1344,
+    #0e1547,
+    #0f184a,
+    #101a4e,
+    #101d51,
+    #112055
+  );
+  text-shadow: 0 0 2px var(--color1), 0 0 20px var(--color2),
+    0 0 40px var(--color3), 0 0 80px var(--color4);
+  background-image: url('../../assets/images/appName.png');
+  background-repeat: round;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header-r {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #0a0231,
+    #0a0534,
+    #0a0937,
+    #0a0c3b,
+    #0b0e3e,
+    #0c1141,
+    #0d1344,
+    #0e1547,
+    #0f184a,
+    #101a4e,
+    #101d51,
+    #112055
+  );
+  background-image: url('../../assets/images/header-r.png');
+  background-repeat: round;
+  background-size: cover;
+  width: 36%;
+}
+</style>
