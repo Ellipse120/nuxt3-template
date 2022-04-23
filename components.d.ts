@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    'IconFaSolid:chalkboardTeacher': typeof import('~icons/fa-solid/chalkboard-teacher')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconFluent:arrowRightBoldCircle': typeof import('~icons/fluent/arrow-right-bold-circle')['default']
     'IconFluent:arrowsBidirectional24Regular': typeof import('~icons/fluent/arrows-bidirectional24-regular')['default']

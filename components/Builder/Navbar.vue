@@ -1,7 +1,7 @@
 <template>
   <div
     ref="navbar"
-    class="backdrop-filter backdrop-blur top-0 z-40 w-full flex-none ransition-colors duration-300 lg:z-50 bg-white/[0.7] dark:bg-slate-900/[0.7]"
+    class="backdrop-filter backdrop-blur top-0 z-40 w-full flex-none ransition-colors duration-300 lg:z-50 bg-white/[0.7] dark:bg-ls-blue-900/[0.7]"
   >
     <slot name="custom"></slot>
     <div id="navbar-banner" class="banner">

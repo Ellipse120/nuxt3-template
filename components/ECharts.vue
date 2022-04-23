@@ -8,17 +8,17 @@
 
 <script lang="ts" setup>
 import { nextTick } from 'vue'
+import lsTheme from '@/assets/ls.project.json'
 
 const echartsRef = ref(null)
 const { $echarts } = useNuxtApp()
 
-const lsTheme = import('@/assets/ls.project.json')
 $echarts.registerTheme('ls', lsTheme)
 
 const props = defineProps({
   className: {
     type: String,
-    default: 'chart',
+    default: '',
   },
   height: {
     type: String,
@@ -89,7 +89,6 @@ onMounted(() => {
   nextTick(() => {
     initChart()
   })
-  resize()
   window.addEventListener('resize', resize)
 })
 
@@ -97,4 +96,13 @@ onUnmounted(() => {
   echartsInstance.value?.dispose()
   window.removeEventListener('resize', resize)
 })
+
+watch(
+  () => props.chartData,
+  (newVal) => {
+    console.log(newVal)
+    setOptions(newVal.value)
+  },
+  { deep: true }
+)
 </script>

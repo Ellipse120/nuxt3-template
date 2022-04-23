@@ -9,7 +9,7 @@ import TypographyPlugin from 'windicss/plugin/typography'
 import AspectRatioPlugin from 'windicss/plugin/aspect-ratio'
 import FiltersPlugin from 'windicss/plugin/filters'
 
-const MyTheme = {
+export const MyTheme = {
   colors: {
     green: {
       50: '#f6fbf9',
@@ -22,6 +22,11 @@ const MyTheme = {
       700: '#328a62',
       800: '#286e4f',
       900: '#205a40',
+    },
+    'ls-blue': {
+      800: 'rgb(15,18,59)',
+      900: 'rgb(7,2,44)',
+      300: 'rgb(0,244,255)',
     },
   },
 }
@@ -49,6 +54,7 @@ export default defineConfig({
         primary: MyTheme.colors.green[500],
         green: MyTheme.colors.green,
         slate: colors.slate,
+        'ls-blue': MyTheme.colors['ls-blue'],
       },
     },
   },

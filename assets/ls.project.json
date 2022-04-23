@@ -1,5 +1,10 @@
 {
   "color": [
+    "#00A3FA",
+    "#44D197",
+    "#F49139",
+    "#8F4DFF",
+    "#F4CF39",
     "#fc97af",
     "#87f7cf",
     "#f7f494",
@@ -9,7 +14,7 @@
     "#d2f5a6",
     "#76f2f2"
   ],
-  "backgroundColor": "rgba(41,52,65,1)",
+  "backgroundColor": "rgb(15,18,59)",
   "textStyle": {},
   "title": {
     "textStyle": {
