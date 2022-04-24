@@ -69,20 +69,20 @@ const props = defineProps({
   },
 })
 
-const echartsInstance = ref(null)
+let echartsInstance = null
 
 const initChart = () => {
-  echartsInstance.value = $echarts.init(echartsRef.value, 'ls')
+  echartsInstance = $echarts.init(echartsRef.value, 'ls')
   setOptions(props.chartData)
 }
 
 const setOptions = (options) => {
-  echartsInstance.value?.setOption(options, true)
+  echartsInstance?.setOption(options, true)
 }
 
 const resize = () => {
   // TODO: Debouncing this
-  echartsInstance.value?.resize()
+  echartsInstance?.resize()
 }
 
 onMounted(() => {
@@ -93,14 +93,13 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  echartsInstance.value?.dispose()
+  echartsInstance.dispose()
   window.removeEventListener('resize', resize)
 })
 
 watch(
   () => props.chartData,
   (newVal) => {
-    console.log(newVal)
     setOptions(newVal.value)
   },
   { deep: true }

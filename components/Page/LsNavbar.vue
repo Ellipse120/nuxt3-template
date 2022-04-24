@@ -36,35 +36,36 @@
       </div>
     </template>
 
-    <template #menu>
-      <div class="relative hidden lg:flex items-center ml-auto">
-        <nav
-          class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
-          role="navigation"
-        >
-          <ul class="flex items-center space-x-8">
-            <li v-for="(item, i) in menus" :key="i">
-              <Anchor
-                v-if="item.type === 'link'"
-                :to="item.route ? item.route : undefined"
-                :href="item.href ? item.href : undefined"
-                class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
-                >{{ item.text }}
-              </Anchor>
-              <Button
-                v-else-if="item.type === 'button'"
-                :text="item.text"
-                size="xs"
-                class="font-extrabold capitalize"
-                :to="item.route ? item.route : undefined"
-                :href="item.href ? item.href : undefined"
-              />
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </template>
+    <!--    <template #menu>-->
+    <!--      <div class="relative hidden lg:flex items-center ml-auto">-->
+    <!--        <nav-->
+    <!--          class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"-->
+    <!--          role="navigation"-->
+    <!--        >-->
+    <!--          <ul class="flex items-center space-x-8">-->
+    <!--            <li v-for="(item, i) in menus" :key="i">-->
+    <!--              <Anchor-->
+    <!--                v-if="item.type === 'link'"-->
+    <!--                :to="item.route ? item.route : undefined"-->
+    <!--                :href="item.href ? item.href : undefined"-->
+    <!--                class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"-->
+    <!--                >{{ item.text }}-->
+    <!--              </Anchor>-->
+    <!--              <Button-->
+    <!--                v-else-if="item.type === 'button'"-->
+    <!--                :text="item.text"-->
+    <!--                size="xs"-->
+    <!--                class="font-extrabold capitalize"-->
+    <!--                :to="item.route ? item.route : undefined"-->
+    <!--                :href="item.href ? item.href : undefined"-->
+    <!--              />-->
+    <!--            </li>-->
+    <!--          </ul>-->
+    <!--        </nav>-->
+    <!--      </div>-->
+    <!--    </template>-->
 
+    <template #title><div /></template>
     <template #options="{ toggleOptions }">
       <ActionSheet @onClose="toggleOptions(false)">
         <ActionSheetBody>
@@ -130,7 +131,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useDateFormat, useNow } from '@vueuse/core'
 import { IApp } from '~/utils/app'
 
 export interface IMenuItem {

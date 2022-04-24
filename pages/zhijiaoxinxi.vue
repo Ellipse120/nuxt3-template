@@ -9,28 +9,28 @@
               <template #header>
                 <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
               </template>
-              <ECharts />
+              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
             </PageSectionLayout>
 
             <PageSectionLayout>
               <template #header>
                 <PageSectionLabel title="各车间房建巡检工抽考平均分" />
               </template>
-              <ECharts />
+              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
             </PageSectionLayout>
 
             <PageSectionLayout>
               <template #header>
                 <PageSectionLabel title="集团公司抽考情况" />
               </template>
-              <ECharts />
+              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
             </PageSectionLayout>
 
             <PageSectionLayout>
               <template #header>
                 <PageSectionLabel title="段持证人员情况" />
               </template>
-              <ECharts />
+              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
             </PageSectionLayout>
           </div>
 
@@ -39,9 +39,13 @@
               <template #header>
                 <PageSectionLabel title="职工年度培训情况" />
               </template>
-              <div>
-                <div class="flex">
-                  <ECharts :chart-data="pieData" height="27vh" width="50%" />
+              <div class="flex flex-col">
+                <div class="flex flex-1">
+                  <ECharts
+                    :chart-data="pieData"
+                    :height="isSmallerScreen ? '40vh' : '27vh'"
+                    width="50%"
+                  />
                   <div
                     class="grid grid-cols-2 grid-rows-2 bg-ls-blue-800 p-16 w-1/2"
                   >
@@ -50,7 +54,7 @@
                         class="block rounded-md text-4xl p-2 bg-blue-400"
                       />
                     </div>
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col items-center justify-center w-20">
                       <div class="text-ls-blue-300 text-xl">12</div>
                       <div class="text-xs">本月培训班</div>
                     </div>
@@ -59,19 +63,35 @@
                         class="block rounded-md text-4xl p-2 bg-green-400"
                       />
                     </div>
-                    <div class="flex flex-col items-center justify-center">
+                    <div class="flex flex-col items-center justify-center w-20">
                       <div class="text-ls-blue-300 text-xl">3</div>
                       <div class="text-xs">未开班</div>
                     </div>
                   </div>
                 </div>
-                <div class="flex">
-                  <ECharts :chart-data="pieData2" height="25vh" width="50%" />
-                  <ECharts :chart-data="pieData2" height="25vh" width="50%" />
+                <div class="flex flex-1">
+                  <ECharts
+                    :chart-data="pieData2"
+                    :height="isSmallerScreen ? '30vh' : '29vh'"
+                    width="50%"
+                  />
+                  <ECharts
+                    :chart-data="pieData2"
+                    :height="isSmallerScreen ? '30vh' : '29vh'"
+                    width="50%"
+                  />
                 </div>
-                <div class="flex">
-                  <ECharts :chart-data="pieData2" height="25vh" width="50%" />
-                  <ECharts :chart-data="pieData2" height="25vh" width="50%" />
+                <div class="flex flex-1">
+                  <ECharts
+                    :chart-data="pieData2"
+                    :height="isSmallerScreen ? '30vh' : '29vh'"
+                    width="50%"
+                  />
+                  <ECharts
+                    :chart-data="pieData2"
+                    :height="isSmallerScreen ? '30vh' : '29vh'"
+                    width="50%"
+                  />
                 </div>
               </div>
             </PageSectionLayout>
@@ -89,6 +109,9 @@ definePageMeta({
 })
 
 const { $colorLsBlue300, $colorBlue600 } = useNuxtApp()
+const isSmallerScreen = useMediaQuery(
+  '(min-width: 1024px) and (max-width: 1600px)'
+)
 
 const pieData = ref({
   tooltip: {
@@ -97,6 +120,7 @@ const pieData = ref({
   title: {
     top: 'center',
     right: 0,
+    left: isSmallerScreen.value ? '82%' : '80%',
     text: '30/36',
     textAlign: 'center',
     textStyle: {
@@ -111,7 +135,7 @@ const pieData = ref({
   series: [
     {
       type: 'pie',
-      radius: ['40%', '65%'],
+      radius: ['30%', '61%'],
       center: ['32%', '50%'],
       avoidLabelOverlap: false,
       label: {
@@ -120,10 +144,10 @@ const pieData = ref({
         formatter: '{num|73%}' + '\n\n' + '{name|完成率}',
         rich: {
           num: {
-            fontSize: '20',
+            fontSize: 18,
           },
           name: {
-            fontSize: '12',
+            fontSize: 12,
             color: $colorLsBlue300,
           },
         },
@@ -139,10 +163,10 @@ const pieData = ref({
   ],
 })
 
-const pieData2 = ref({
+const pieData2 = computed(() => ({
   title: {
     text: '房建技术科',
-    left: '32%',
+    left: isSmallerScreen.value ? '32%' : '32%',
     top: '90%',
     textAlign: 'center',
     textStyle: {
@@ -154,14 +178,15 @@ const pieData2 = ref({
     trigger: 'item',
   },
   legend: {
-    orient: 'vertical',
-    top: 'center',
-    right: 10,
+    type: 'scroll',
+    orient: isSmallerScreen.value ? 'horizontal' : 'vertical',
+    top: isSmallerScreen.value ? 0 : 'center',
+    right: 0,
   },
   series: [
     {
       type: 'pie',
-      radius: '65%',
+      radius: '60%',
       center: ['32%', '50%'],
       avoidLabelOverlap: false,
       label: {
@@ -177,5 +202,5 @@ const pieData2 = ref({
       ],
     },
   ],
-})
+}))
 </script>
