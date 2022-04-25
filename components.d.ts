@@ -10,7 +10,9 @@ declare module 'vue' {
     'IconFluent:arrowsBidirectional24Regular': typeof import('~icons/fluent/arrows-bidirectional24-regular')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
     'IconMdi:arrowLeftBoldCircle': typeof import('~icons/mdi/arrow-left-bold-circle')['default']
+    'IconMdi:arrowLeftDropCircleOutline': typeof import('~icons/mdi/arrow-left-drop-circle-outline')['default']
     'IconMdi:arrowRightBoldCircle': typeof import('~icons/mdi/arrow-right-bold-circle')['default']
+    'IconMdi:arrowRightDropCircleOutline': typeof import('~icons/mdi/arrow-right-drop-circle-outline')['default']
     'IconMdi:githubFace': typeof import('~icons/mdi/github-face')['default']
     'IconMdi:signalCellular3': typeof import('~icons/mdi/signal-cellular3')['default']
     'IconMdi:signalCullular3': typeof import('~icons/mdi/signal-cullular3')['default']
@@ -28,4 +30,4 @@ declare module 'vue' {
   }
 }
 
-export { }
+export {}

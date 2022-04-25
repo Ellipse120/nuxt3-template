@@ -19,7 +19,6 @@
             title="Gitee"
           >
             <IconSimpleIcons:gitee />
-<!--            <IconMdi:github-face />-->
           </Anchor>
         </div>
       </div>
@@ -46,7 +45,6 @@
           title="Gitee"
           href="https://gitee.com/shentie-fe/tufang-large-screen.git"
         >
-<!--          <IconMdi:github-face />-->
           <IconSimpleIcons:gitee />
           <span class="ml-1">Gitee</span>
         </Button>

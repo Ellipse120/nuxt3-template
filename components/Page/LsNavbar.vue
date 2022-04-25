@@ -3,7 +3,7 @@
     <template #custom>
       <div class="flex justify-between text-center">
         <div class="header-l w-1/3 px-4 flex items-center justify-between">
-          <IconMdi:arrow-left-bold-circle
+          <IconMdi:arrow-left-drop-circle-outline
             class="block text-2xl cursor-pointer"
             @click="prev"
           />
@@ -28,7 +28,7 @@
             <div class="px-2">{{ formattedHms }}</div>
             <div class="px-2">{{ formattedDay }}</div>
           </div>
-          <IconMdi:arrow-right-bold-circle
+          <IconMdi:arrow-right-drop-circle-outline
             class="block text-2xl cursor-pointer"
             @click="next"
           />
@@ -66,6 +66,7 @@
     <!--    </template>-->
 
     <template #title><div /></template>
+
     <template #options="{ toggleOptions }">
       <ActionSheet @onClose="toggleOptions(false)">
         <ActionSheetBody>
@@ -73,8 +74,8 @@
           <nav class="leading-6 font-semibold text-gray-600 dark:text-gray-300">
             <ul class="flex flex-col">
               <li
-                v-for="(item, i) in menus"
-                :key="i"
+                v-for="(item, idx) in menus"
+                :key="idx"
                 class="flex w-full"
                 :class="{
                   'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':

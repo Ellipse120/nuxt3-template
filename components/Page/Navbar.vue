@@ -116,6 +116,7 @@ export interface IMenuItem {
 }
 
 const { t } = useLang()
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const app = useState<IApp>('app')
 const menus = computed((): IMenuItem[] => [
   { type: 'link', text: t('pages.blank.nav'), route: { name: 'blank' } },
