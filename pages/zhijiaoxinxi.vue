@@ -103,15 +103,15 @@
 </template>
 
 <script lang="ts" setup>
+import { useMediaQuerySmallScreen } from '~/composables/useMediaQuerySmallScreen'
+
 definePageMeta({
   layout: 'tufang',
   title: '职教信息',
 })
 
 const { $colorLsBlue300, $colorBlue600 } = useNuxtApp()
-const isSmallerScreen = useMediaQuery(
-  '(min-width: 1024px) and (max-width: 1600px)'
-)
+const { isSmallerScreen } = useMediaQuerySmallScreen()
 
 const pieData = ref({
   tooltip: {

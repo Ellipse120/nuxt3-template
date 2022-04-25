@@ -2,7 +2,7 @@
 $fontFamily: 微软雅黑, "Nunito", sans-serif;
 body,
 * {
-  font-family: $fontFamily !important;
+  font-family: $fontFamily;
 }
 
 // scrollbar
@@ -59,4 +59,9 @@ html.dark {
 .layout-leave-to {
   transform: translateY(-20px);
   opacity: 0;
+}
+
+@font-face {
+  font-family: 'PangMenZhengDaoBiao';
+  src: url('../PangMenZhengDaoBiao.ttf');
 }

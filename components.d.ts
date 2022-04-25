@@ -4,10 +4,13 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    'IconAkarIcons:triangleRight': typeof import('~icons/akar-icons/triangle-right')['default']
     'IconFaSolid:chalkboardTeacher': typeof import('~icons/fa-solid/chalkboard-teacher')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconFluent:arrowRightBoldCircle': typeof import('~icons/fluent/arrow-right-bold-circle')['default']
     'IconFluent:arrowsBidirectional24Regular': typeof import('~icons/fluent/arrows-bidirectional24-regular')['default']
+    'IconFluent:dataTrending16Filled': typeof import('~icons/fluent/data-trending16-filled')['default']
+    'IconIon:bed': typeof import('~icons/ion/bed')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
     'IconMdi:arrowLeftBoldCircle': typeof import('~icons/mdi/arrow-left-bold-circle')['default']
     'IconMdi:arrowLeftDropCircleOutline': typeof import('~icons/mdi/arrow-left-drop-circle-outline')['default']
@@ -17,8 +20,10 @@ declare module 'vue' {
     'IconMdi:signalCellular3': typeof import('~icons/mdi/signal-cellular3')['default']
     'IconMdi:signalCullular3': typeof import('~icons/mdi/signal-cullular3')['default']
     'IconPh:sunDimBold': typeof import('~icons/ph/sun-dim-bold')['default']
+    'IconRi:alarmWarningFill': typeof import('~icons/ri/alarm-warning-fill')['default']
     'IconSimpleIcons:gitee': typeof import('~icons/simple-icons/gitee')['default']
     'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
+    'IconTeenyicons:bedSingleSolid': typeof import('~icons/teenyicons/bed-single-solid')['default']
     'IconUil:angleDown': typeof import('~icons/uil/angle-down')['default']
     'IconUil:apps': typeof import('~icons/uil/apps')['default']
     'IconUil:bars': typeof import('~icons/uil/bars')['default']
@@ -30,4 +35,4 @@ declare module 'vue' {
   }
 }
 
-export {}
+export { }

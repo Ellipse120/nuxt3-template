@@ -2,7 +2,7 @@
   <div class="text-blue-600 pl-2 py-2 bg-ls-blue-800 flex items-center">
     <slot name="icon"><IconMdi:signal-cellular-3 class="text-xs" /></slot>
     <slot name="title">
-      <div class="text-xs">{{ title }}</div>
+      <div class="ml-1 text-xs">{{ title }}</div>
     </slot>
   </div>
 </template>

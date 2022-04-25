@@ -28,6 +28,9 @@ export const MyTheme = {
       900: 'rgb(7,2,44)',
       300: 'rgb(0,244,255)',
     },
+    'ls-green': {
+      500: 'rgb(19,215,102)',
+    },
   },
 }
 
@@ -65,6 +68,10 @@ export default defineConfig({
         green: MyTheme.colors.green,
         slate: colors.slate,
         'ls-blue': MyTheme.colors['ls-blue'],
+        'ls-green': MyTheme.colors['ls-green'],
+      },
+      fontFamily: {
+        pangmenzhengdao: ['PangMenZhengDaoBiao'],
       },
     },
   },

@@ -12,21 +12,23 @@
               <IconPh:sun-dim-bold
                 class="block mr-4 text-2xl text-yellow-500"
               />
-              <div>晴天</div>
+              <div class="font-pangmenzhengdao">晴天</div>
             </div>
-            <div class="px-4">26 ℃</div>
+            <div class="px-4 font-pangmenzhengdao">26 ℃</div>
           </div>
         </div>
 
-        <div class="header-m w-1/3 mx-1 text-3xl font-bold text-gray-200 py-2">
+        <div
+          class="header-m w-1/3 mx-1 text-4xl tracking-wider font-bold font-pangmenzhengdao text-gray-200 py-2"
+        >
           {{ app.name }}
         </div>
 
         <div class="header-r w-1/3 px-4 flex items-center justify-end">
           <div class="flex items-center font-bold">
-            <div class="px-2">{{ formattedYMD }}</div>
-            <div class="px-2">{{ formattedHms }}</div>
-            <div class="px-2">{{ formattedDay }}</div>
+            <div class="px-2 font-pangmenzhengdao">{{ formattedYMD }}</div>
+            <div class="px-2 font-pangmenzhengdao w-18">{{ formattedHms }}</div>
+            <div class="px-2 font-pangmenzhengdao w-18">{{ formattedDay }}</div>
           </div>
           <IconMdi:arrow-right-drop-circle-outline
             class="block text-2xl cursor-pointer"
@@ -232,7 +234,7 @@ const next = () => {
     #101d51,
     #112055
   );
-  text-shadow: 0 0 2px var(--color1), 0 0 20px var(--color2),
+  text-shadow: 0 0 2px var(--color1), 0 0 6px var(--color2),
     0 0 40px var(--color3), 0 0 80px var(--color4);
   background-image: url('../../assets/images/appName.png');
   background-repeat: round;
