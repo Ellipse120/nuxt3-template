@@ -85,15 +85,17 @@ const resize = () => {
   echartsInstance?.resize()
 }
 
-onMounted(() => {
-  nextTick(() => {
-    initChart()
-  })
+onMounted(async () => {
+  initChart()
+
+  await nextTick()
+  echartsInstance?.resize()
+
   window.addEventListener('resize', resize)
 })
 
 onUnmounted(() => {
-  echartsInstance.dispose()
+  echartsInstance?.dispose()
   window.removeEventListener('resize', resize)
 })
 

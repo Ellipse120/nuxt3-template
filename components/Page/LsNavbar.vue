@@ -21,7 +21,9 @@
         <div
           class="header-m w-1/3 mx-1 text-4xl tracking-wider font-bold font-pangmenzhengdao text-gray-200 py-2"
         >
-          {{ app.name }}
+          <NuxtLink tag="a" :to="{ name: 'tf-dashboard' }">
+            {{ app.name }}
+          </NuxtLink>
         </div>
 
         <div class="header-r w-1/3 px-4 flex items-center justify-end">
@@ -179,13 +181,15 @@ const formattedDay = new Intl.DateTimeFormat('zh-CN', {
   weekday: 'long',
 }).format(useNow().value)
 
-const router = useRouter()
-const prev = () => {
-  router.push(menus.value[Math.abs(--i % menus.value.length)].route)
+// const router = useRouter()
+const prev = async () => {
+  // router.push(menus.value[Math.abs(--i % menus.value.length)].route)
+  await navigateTo(menus.value[Math.abs(--i % menus.value.length)].route)
 }
 let i = 0
-const next = () => {
-  router.push(menus.value[Math.abs(++i % menus.value.length)].route)
+const next = async () => {
+  // router.push(menus.value[Math.abs(++i % menus.value.length)].route)
+  await navigateTo(menus.value[Math.abs(++i % menus.value.length)].route)
 }
 </script>
 

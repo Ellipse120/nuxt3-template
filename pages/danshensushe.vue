@@ -8,7 +8,7 @@
             <PageSectionLayout>
               <div class="flex items-center justify-center">
                 <div
-                  class="text-md w-32 font-bold font-pangmenzhengdao text-center"
+                  class="text-md w-32 font-bold tracking-wide font-pangmenzhengdao text-center"
                 >
                   上海房建公寓段单身宿舍管理
                 </div>
@@ -169,7 +169,7 @@
               <PageSectionLabel title="现场预警" />
 
               <PageListWrapper>
-                <PageListItem v-for="t in list" :key="t.id" :item="t" />
+                <PageListItem v-for="t in list2" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
 
@@ -185,8 +185,6 @@
 </template>
 
 <script lang="ts" setup>
-import ListWrapper from '~/components/Page/ListWrapper.vue'
-
 definePageMeta({
   layout: 'tufang',
   title: '单身宿舍',
@@ -201,6 +199,18 @@ const list = ref(
       label: '【上海机辆段】',
       time: useDateFormat(new Date(), 'MM-DD HH:mm'),
       content: '【张三】 已入住',
+    }
+  })
+)
+
+const list2 = ref(
+  Array.from({ length: 10 }, (_, index) => {
+    return {
+      id: index + 1,
+      label: '宿舍预警',
+      time: useDateFormat(new Date(), 'MM-DD HH:mm'),
+      content: '西藏北路宿舍床位不足',
+      class: 'font-bold text-red-400',
     }
   })
 )
