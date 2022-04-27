@@ -1,108 +1,323 @@
 <template>
-  <div
-    ref="echartsRef"
-    :class="className"
-    :style="{ height: height, width: width }"
-  />
+  <highchart :options="chartOptions" />
+
+  <!--  <div-->
+  <!--    ref="echartsRef"-->
+  <!--    :class="className"-->
+  <!--    :style="{ height: height, width: width }"-->
+  <!--  />-->
 </template>
 
 <script lang="ts" setup>
-import lsTheme from '@/assets/ls.project.json'
-
-const echartsRef = ref(null)
-const { $echarts } = useNuxtApp()
-
-$echarts.registerTheme('ls', lsTheme)
-
-const props = defineProps({
-  className: {
-    type: String,
-    default: '',
+const chartOptions = ref({
+  colors: [
+    '#DDDF0D',
+    '#55BF3B',
+    '#DF5353',
+    '#7798BF',
+    '#aaeeee',
+    '#ff0066',
+    '#eeaaee',
+    '#55BF3B',
+    '#DF5353',
+    '#7798BF',
+    '#aaeeee',
+  ],
+  chart: {
+    backgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+      stops: [
+        [0, 'rgb(48, 48, 96)'],
+        [1, 'rgb(0, 0, 0)'],
+      ],
+    },
+    borderColor: '#000000',
+    borderWidth: 2,
+    className: 'dark-container',
+    plotBackgroundColor: 'rgba(255, 255, 255, .1)',
+    plotBorderColor: '#CCCCCC',
+    plotBorderWidth: 1,
   },
-  height: {
-    type: String,
-    default: '350px',
-  },
-  width: {
-    type: String,
-    default: '100%',
-  },
-  chartData: {
-    type: Object,
-    default() {
-      return {
-        xAxis: {
-          data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-          boundaryGap: false,
-        },
-        grid: {
-          left: 10,
-          right: 10,
-          bottom: 20,
-          top: 30,
-          containLabel: true,
-        },
-        tooltip: {
-          trigger: 'axis',
-        },
-        yAxis: {
-          type: 'value',
-        },
-        legend: {
-          data: ['expected', 'actual'],
-        },
-        series: [
-          {
-            name: 'expected',
-            type: 'line',
-            data: [1, 22, 3, 4, 1, 0, 88],
-          },
-          {
-            name: 'actual',
-            type: 'line',
-            data: [121, 21, 5, 1, 1, 1, 85],
-          },
-        ],
-      }
+
+  title: {
+    text: '',
+    style: {
+      color: '#C0C0C0',
+      font: 'bold 16px "Trebuchet MS", Verdana, sans-serif',
     },
   },
-})
 
-let echartsInstance = null
-
-const initChart = () => {
-  echartsInstance = $echarts.init(echartsRef.value, 'ls')
-  setOptions(props.chartData)
-}
-
-const setOptions = (options) => {
-  echartsInstance?.setOption(options, true)
-}
-
-const resize = () => {
-  // TODO: Debouncing this
-  echartsInstance?.resize()
-}
-
-onMounted(async () => {
-  initChart()
-
-  await nextTick()
-  echartsInstance?.resize()
-
-  window.addEventListener('resize', resize)
-})
-
-onUnmounted(() => {
-  echartsInstance?.dispose()
-  window.removeEventListener('resize', resize)
-})
-
-watch(
-  () => props.chartData,
-  (newVal) => {
-    setOptions(newVal.value)
+  subtitle: {
+    text: '',
+    style: {
+      color: '#666666',
+      font: 'bold 12px "Trebuchet MS", Verdana, sans-serif',
+    },
   },
-  { deep: true }
-)
+
+  yAxis: {
+    gridLineColor: '#333333',
+    labels: {
+      style: {
+        color: '#A0A0A0',
+      },
+    },
+    lineColor: '#A0A0A0',
+    minorTickInterval: null,
+    tickColor: '#A0A0A0',
+    tickWidth: 1,
+    title: {
+      text: 'Number of Employees',
+      style: {
+        color: '#CCC',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        fontFamily: 'Trebuchet MS, Verdana, sans-serif',
+      },
+    },
+  },
+
+  xAxis: {
+    accessibility: {
+      rangeDescription: 'Range: 2010 to 2017',
+    },
+    gridLineColor: '#333333',
+    gridLineWidth: 1,
+    labels: {
+      style: {
+        color: '#A0A0A0',
+      },
+    },
+    lineColor: '#A0A0A0',
+    tickColor: '#A0A0A0',
+    title: {
+      style: {
+        color: '#CCC',
+        fontWeight: 'bold',
+        fontSize: '12px',
+        fontFamily: 'Trebuchet MS, Verdana, sans-serif',
+      },
+    },
+  },
+
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'middle',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    itemStyle: {
+      font: '9pt Trebuchet MS, Verdana, sans-serif',
+      color: '#A0A0A0',
+    },
+    itemHoverStyle: {
+      color: '#FFF',
+    },
+    itemHiddenStyle: {
+      color: '#444',
+    },
+    title: {
+      style: {
+        color: '#C0C0C0',
+      },
+    },
+  },
+
+  tooltip: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    style: {
+      color: '#F0F0F0',
+    },
+  },
+
+  plotOptions: {
+    series: {
+      label: {
+        connectorAllowed: false,
+      },
+      pointStart: 2010,
+    },
+    line: {
+      dataLabels: {
+        color: '#CCC',
+      },
+      marker: {
+        lineColor: '#333',
+      },
+    },
+    spline: {
+      marker: {
+        lineColor: '#333',
+      },
+    },
+    scatter: {
+      marker: {
+        lineColor: '#333',
+      },
+    },
+    candlestick: {
+      lineColor: 'white',
+    },
+  },
+
+  credits: {
+    style: {
+      color: '#666',
+    },
+  },
+  labels: {
+    style: {
+      color: '#CCC',
+    },
+  },
+
+  navigation: {
+    buttonOptions: {
+      symbolStroke: '#DDDDDD',
+      theme: {
+        fill: {
+          linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+          stops: [
+            [0.4, '#606060'],
+            [0.6, '#333333'],
+          ],
+        },
+        stroke: '#000000',
+      },
+    },
+  },
+
+  rangeSelector: {
+    buttonTheme: {
+      fill: {
+        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+        stops: [
+          [0.4, '#888'],
+          [0.6, '#555'],
+        ],
+      },
+      stroke: '#000000',
+      style: {
+        color: '#CCC',
+        fontWeight: 'bold',
+      },
+      states: {
+        hover: {
+          fill: {
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            stops: [
+              [0.4, '#BBB'],
+              [0.6, '#888'],
+            ],
+          },
+          stroke: '#000000',
+          style: {
+            color: 'white',
+          },
+        },
+        select: {
+          fill: {
+            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+            stops: [
+              [0.1, '#000'],
+              [0.3, '#333'],
+            ],
+          },
+          stroke: '#000000',
+          style: {
+            color: 'yellow',
+          },
+        },
+      },
+    },
+    inputStyle: {
+      backgroundColor: '#333',
+      color: 'silver',
+    },
+    labelStyle: {
+      color: 'silver',
+    },
+  },
+
+  navigator: {
+    handles: {
+      backgroundColor: '#666',
+      borderColor: '#AAA',
+    },
+    outlineColor: '#CCC',
+    maskFill: 'rgba(16, 16, 16, 0.5)',
+    series: {
+      color: '#7798BF',
+      lineColor: '#A6C7ED',
+    },
+  },
+
+  scrollbar: {
+    barBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0.4, '#888'],
+        [0.6, '#555'],
+      ],
+    },
+    barBorderColor: '#CCC',
+    buttonArrowColor: '#CCC',
+    buttonBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0.4, '#888'],
+        [0.6, '#555'],
+      ],
+    },
+    buttonBorderColor: '#CCC',
+    rifleColor: '#FFF',
+    trackBackgroundColor: {
+      linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+      stops: [
+        [0, '#000'],
+        [1, '#333'],
+      ],
+    },
+    trackBorderColor: '#666',
+  },
+
+  series: [
+    {
+      name: 'Installation',
+      data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+    },
+    {
+      name: 'Manufacturing',
+      data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+    },
+    {
+      name: 'Sales & Distribution',
+      data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+    },
+    {
+      name: 'Project Development',
+      data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+    },
+    {
+      name: 'Other',
+      data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+    },
+  ],
+
+  responsive: {
+    rules: [
+      {
+        condition: {
+          maxWidth: 500,
+        },
+        chartOptions: {
+          legend: {
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+          },
+        },
+      },
+    ],
+  },
+})
 </script>
