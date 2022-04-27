@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from 'nuxt'
 import { IntlifyModuleOptions } from '@intlify/nuxt3'
 import UnpluginComponentsVite from 'unplugin-vue-components/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -52,6 +52,11 @@ export default defineNuxtConfig({
   // auto import components
   components: true,
 
+  typescript: {
+    strict: false,
+  },
+
+  // @ts-ignore
   // vite plugins
   vite: {
     plugins: [
