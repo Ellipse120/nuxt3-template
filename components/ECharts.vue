@@ -7,7 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick } from 'vue'
 import lsTheme from '@/assets/ls.project.json'
 
 const echartsRef = ref(null)
