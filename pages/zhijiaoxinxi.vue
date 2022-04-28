@@ -1,101 +1,73 @@
 <template>
   <PageWrapper>
-    <PageLsHeader />
-    <PageBody>
-      <PageSection>
-        <div class="flex">
-          <div class="w-2/3 grid grid-cols-2">
-            <PageSectionLayout>
-              <template #header>
-                <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
-              </template>
-              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
-            </PageSectionLayout>
+    <PageBody class="h-full">
+      <PageSection class="h-full">
+        <div class="h-full grid grid-cols-3 grid-rows-2 gap-2 mx-2">
+          <PageSectionLayout>
+            <template #header>
+              <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
+            </template>
 
-            <PageSectionLayout>
-              <template #header>
-                <PageSectionLabel title="各车间房建巡检工抽考平均分" />
-              </template>
-              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
-            </PageSectionLayout>
+            <div class="h-80">
+              <ECharts />
+            </div>
+          </PageSectionLayout>
 
-            <PageSectionLayout>
-              <template #header>
-                <PageSectionLabel title="集团公司抽考情况" />
-              </template>
-              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
-            </PageSectionLayout>
+          <PageSectionLayout>
+            <template #header>
+              <PageSectionLabel title="各车间房建巡检工抽考平均分" />
+            </template>
+            <ECharts />
+          </PageSectionLayout>
 
-            <PageSectionLayout>
-              <template #header>
-                <PageSectionLabel title="段持证人员情况" />
-              </template>
-              <ECharts :height="isSmallerScreen ? '350px' : '40vh'" />
-            </PageSectionLayout>
-          </div>
+          <PageSectionLayout>
+            <template #header>
+              <PageSectionLabel title="集团公司抽考情况" />
+            </template>
+            <ECharts />
+          </PageSectionLayout>
 
-          <div class="w-1/3">
-            <PageSectionLayout>
-              <template #header>
-                <PageSectionLabel title="职工年度培训情况" />
-              </template>
-              <div class="flex flex-col">
-                <div class="flex flex-1">
-                  <ECharts
-                    :chart-data="pieData"
-                    :height="isSmallerScreen ? '40vh' : '27vh'"
-                    width="50%"
-                  />
-                  <div
-                    class="grid grid-cols-2 grid-rows-2 bg-ls-blue-800 p-16 w-1/2"
-                  >
-                    <div class="flex items-center justify-center">
-                      <IconFaSolid:chalkboardTeacher
-                        class="block rounded-md text-4xl p-2 bg-blue-400"
-                      />
-                    </div>
-                    <div class="flex flex-col items-center justify-center w-20">
-                      <div class="text-ls-blue-300 text-xl">12</div>
-                      <div class="text-xs">本月培训班</div>
-                    </div>
-                    <div class="flex items-center justify-center">
-                      <IconFaSolid:chalkboardTeacher
-                        class="block rounded-md text-4xl p-2 bg-green-400"
-                      />
-                    </div>
-                    <div class="flex flex-col items-center justify-center w-20">
-                      <div class="text-ls-blue-300 text-xl">3</div>
-                      <div class="text-xs">未开班</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-1">
-                  <ECharts
-                    :chart-data="pieData2"
-                    :height="isSmallerScreen ? '30vh' : '29vh'"
-                    width="50%"
-                  />
-                  <ECharts
-                    :chart-data="pieData2"
-                    :height="isSmallerScreen ? '30vh' : '29vh'"
-                    width="50%"
+          <PageSectionLayout>
+            <template #header>
+              <PageSectionLabel title="段持证人员情况" />
+            </template>
+            <ECharts />
+          </PageSectionLayout>
+
+          <PageSectionLayout
+            class="flex flex-col h-full col-start-3 row-span-full"
+          >
+            <template #header>
+              <PageSectionLabel title="职工年度培训情况" />
+            </template>
+            <div class="flex-1 grid grid-cols-2 grid-rows-3">
+              <ECharts />
+              <div class="grid grid-cols-2 grid-rows-2 bg-ls-blue-800 p-16">
+                <div class="flex items-center justify-center w-full">
+                  <IconFaSolid:chalkboardTeacher
+                    class="block rounded-md text-4xl p-2 bg-blue-400"
                   />
                 </div>
-                <div class="flex flex-1">
-                  <ECharts
-                    :chart-data="pieData2"
-                    :height="isSmallerScreen ? '30vh' : '29vh'"
-                    width="50%"
+                <div class="flex flex-col items-center justify-center w-20">
+                  <div class="text-ls-blue-300 text-xl">12</div>
+                  <div class="text-xs">本月培训班</div>
+                </div>
+                <div class="flex items-center justify-center">
+                  <IconFaSolid:chalkboardTeacher
+                    class="block rounded-md text-4xl p-2 bg-green-400"
                   />
-                  <ECharts
-                    :chart-data="pieData2"
-                    :height="isSmallerScreen ? '30vh' : '29vh'"
-                    width="50%"
-                  />
+                </div>
+                <div class="flex flex-col items-center justify-center w-20">
+                  <div class="text-ls-blue-300 text-xl">3</div>
+                  <div class="text-xs">未开班</div>
                 </div>
               </div>
-            </PageSectionLayout>
-          </div>
+              <ECharts />
+              <ECharts />
+              <ECharts />
+              <ECharts />
+            </div>
+          </PageSectionLayout>
         </div>
       </PageSection>
     </PageBody>
@@ -113,6 +85,7 @@ definePageMeta({
 const { $colorLsBlue300, $colorBlue600 } = useNuxtApp()
 const { isSmallerScreen } = useMediaQuerySmallScreen()
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const pieData = ref({
   tooltip: {
     trigger: 'item',
@@ -163,6 +136,7 @@ const pieData = ref({
   ],
 })
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const pieData2 = computed(() => ({
   title: {
     text: '房建技术科',
@@ -203,4 +177,6 @@ const pieData2 = computed(() => ({
     },
   ],
 }))
+
+const height = computed(() => (isSmallerScreen.value ? 220 : 235))
 </script>

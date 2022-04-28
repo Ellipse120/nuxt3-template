@@ -1,16 +1,34 @@
 <template>
   <highchart :options="chartOptions" />
-
-  <!--  <div-->
-  <!--    ref="echartsRef"-->
-  <!--    :class="className"-->
-  <!--    :style="{ height: height, width: width }"-->
-  <!--  />-->
 </template>
 
 <script lang="ts" setup>
-const chartOptions = ref({
+const props = defineProps({
+  className: {
+    type: String,
+    default: '',
+  },
+  height: {
+    type: Number,
+    default: 240,
+  },
+})
+
+const chartOptions = computed(() => ({
   colors: [
+    '#00A3FA',
+    '#44D197',
+    '#F49139',
+    '#8F4DFF',
+    '#F4CF39',
+    '#fc97af',
+    '#87f7cf',
+    '#f7f494',
+    '#72ccff',
+    '#f7c5a0',
+    '#d4a4eb',
+    '#d2f5a6',
+    '#76f2f2',
     '#DDDF0D',
     '#55BF3B',
     '#DF5353',
@@ -23,20 +41,22 @@ const chartOptions = ref({
     '#7798BF',
     '#aaeeee',
   ],
+
   chart: {
-    backgroundColor: {
-      linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
-      stops: [
-        [0, 'rgb(48, 48, 96)'],
-        [1, 'rgb(0, 0, 0)'],
-      ],
-    },
-    borderColor: '#000000',
-    borderWidth: 2,
-    className: 'dark-container',
-    plotBackgroundColor: 'rgba(255, 255, 255, .1)',
-    plotBorderColor: '#CCCCCC',
-    plotBorderWidth: 1,
+    backgroundColor: 'rgb(15,18,59)',
+    // backgroundColor: {
+    // linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+    // stops: [
+    //   [0, 'rgb(48, 48, 96)'],
+    //   [1, 'rgb(0, 0, 0)'],
+    // ],
+    // },
+    // borderColor: '#000000',
+    // borderWidth: 2,
+    className: props.className,
+    // plotBackgroundColor: 'rgba(255, 255, 255, .1)',
+    // plotBorderColor: '#CCCCCC',
+    // plotBorderWidth: 1,
   },
 
   title: {
@@ -67,12 +87,12 @@ const chartOptions = ref({
     tickColor: '#A0A0A0',
     tickWidth: 1,
     title: {
-      text: 'Number of Employees',
+      text: '',
       style: {
         color: '#CCC',
         fontWeight: 'bold',
         fontSize: '12px',
-        fontFamily: 'Trebuchet MS, Verdana, sans-serif',
+        fontFamily: '微软雅黑, Trebuchet MS, Verdana, sans-serif',
       },
     },
   },
@@ -95,18 +115,19 @@ const chartOptions = ref({
         color: '#CCC',
         fontWeight: 'bold',
         fontSize: '12px',
-        fontFamily: 'Trebuchet MS, Verdana, sans-serif',
+        fontFamily: '微软雅黑, Trebuchet MS, Verdana, sans-serif',
       },
     },
   },
 
   legend: {
+    enabled: false,
     layout: 'vertical',
     align: 'right',
     verticalAlign: 'middle',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgb(15,18,59)',
     itemStyle: {
-      font: '9pt Trebuchet MS, Verdana, sans-serif',
+      font: '9pt 微软雅黑, Trebuchet MS, Verdana, sans-serif',
       color: '#A0A0A0',
     },
     itemHoverStyle: {
@@ -160,10 +181,9 @@ const chartOptions = ref({
   },
 
   credits: {
-    style: {
-      color: '#666',
-    },
+    enabled: false,
   },
+
   labels: {
     style: {
       color: '#CCC',
@@ -319,5 +339,5 @@ const chartOptions = ref({
       },
     ],
   },
-})
+}))
 </script>

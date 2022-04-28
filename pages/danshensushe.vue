@@ -1,8 +1,7 @@
 <template>
-  <PageWrapper>
-    <PageLsHeader />
-    <PageBody>
-      <PageSection>
+  <PageWrapper class="flex-1">
+    <PageBody class="flex-1">
+      <PageSection class="flex-1">
         <div class="flex w-full px-2">
           <div class="w-3/4 mx-1">
             <PageSectionLayout>
@@ -95,63 +94,63 @@
                 <template #header>
                   <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022单宿月度接待人次对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022单宿累计接待人次对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022水量累计消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022电量累计消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022天然气累计消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022水量月度消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022电量月度消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022天然气月度消耗对比" />
                 </template>
-                <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+                <ECharts :height="height" />
               </PageSectionLayout>
             </div>
           </div>
@@ -165,7 +164,7 @@
               </PageListWrapper>
             </PageSectionLayout>
 
-            <PageSectionLayout>
+            <PageSectionLayout class="my-2">
               <PageSectionLabel title="现场预警" />
 
               <PageListWrapper>
@@ -175,7 +174,7 @@
 
             <PageSectionLayout>
               <PageSectionLabel title="宿舍月度情况" />
-              <ECharts :height="isSmallerScreen ? '250px' : '18vh'" />
+              <ECharts :height="height" />
             </PageSectionLayout>
           </div>
         </div>
@@ -189,8 +188,6 @@ definePageMeta({
   layout: 'tufang',
   title: '单身宿舍',
 })
-
-const { isSmallerScreen } = useMediaQuerySmallScreen()
 
 const list = ref(
   Array.from({ length: 10 }, (_, index) => {
@@ -214,4 +211,7 @@ const list2 = ref(
     }
   })
 )
+
+const { isSmallerScreen } = useMediaQuerySmallScreen()
+const height = computed(() => (isSmallerScreen.value ? 220 : 175))
 </script>

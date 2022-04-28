@@ -34,7 +34,7 @@
                     <div
                       class="text-blue-600 text-sm underline decoration-2 underline-offset-2 mx-4"
                     >
-                      公寓详情查看
+                      公寓详情
                     </div>
                     <div class="flex items-center">
                       <div
@@ -88,114 +88,114 @@
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率占比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="最近一周入住情况" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂数量" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
         </div>
 
-        <div class="grid grid-cols-4 grid-rows-1 gap-2 mt-2">
+        <div class="grid grid-cols-4 grid-rows-1 gap-2 m-2">
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2012-2022年累计销售收入" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度就餐人次" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度销售收入" />
             </template>
-            <ECharts :height="isSmallerScreen ? '250px' : '20vh'" />
+            <ECharts :height="height" />
           </PageSectionLayout>
         </div>
       </PageSection>
@@ -210,4 +210,5 @@ definePageMeta({
 })
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
+const height = computed(() => (isSmallerScreen.value ? 220 : 235))
 </script>
