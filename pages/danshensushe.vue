@@ -174,7 +174,7 @@
 
             <PageSectionLayout>
               <PageSectionLabel title="宿舍月度情况" />
-              <ECharts :height="height" />
+              <ECharts :height="206" />
             </PageSectionLayout>
           </div>
         </div>
@@ -213,5 +213,5 @@ const list2 = ref(
 )
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 175))
+const height = computed(() => (isSmallerScreen.value ? 220 : 185))
 </script>

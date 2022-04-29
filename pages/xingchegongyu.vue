@@ -1,6 +1,5 @@
 <template>
   <PageWrapper>
-    <PageLsHeader />
     <PageBody>
       <PageSection>
         <div class="flex w-full px-2">
@@ -210,5 +209,5 @@ definePageMeta({
 })
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 235))
+const height = computed(() => (isSmallerScreen.value ? 220 : 210))
 </script>

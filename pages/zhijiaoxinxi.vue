@@ -1,37 +1,34 @@
 <template>
   <PageWrapper>
-    <PageBody class="h-full">
-      <PageSection class="h-full">
-        <div class="h-full grid grid-cols-3 grid-rows-2 gap-2 mx-2">
+    <PageBody>
+      <PageSection>
+        <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-2">
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
             </template>
-
-            <div class="h-80">
-              <ECharts />
-            </div>
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考平均分" />
             </template>
-            <ECharts />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="集团公司抽考情况" />
             </template>
-            <ECharts />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="段持证人员情况" />
             </template>
-            <ECharts />
+            <ECharts :height="height" />
           </PageSectionLayout>
 
           <PageSectionLayout
@@ -40,10 +37,10 @@
             <template #header>
               <PageSectionLabel title="职工年度培训情况" />
             </template>
-            <div class="flex-1 grid grid-cols-2 grid-rows-3">
-              <ECharts />
-              <div class="grid grid-cols-2 grid-rows-2 bg-ls-blue-800 p-16">
-                <div class="flex items-center justify-center w-full">
+            <div class="flex-1 grid grid-cols-2 grid-rows-3 bg-ls-blue-800">
+              <ECharts :height="280" />
+              <div class="grid grid-cols-2 grid-rows-2 p-16">
+                <div class="flex items-center justify-center">
                   <IconFaSolid:chalkboardTeacher
                     class="block rounded-md text-4xl p-2 bg-blue-400"
                   />
@@ -62,10 +59,10 @@
                   <div class="text-xs">未开班</div>
                 </div>
               </div>
-              <ECharts />
-              <ECharts />
-              <ECharts />
-              <ECharts />
+              <ECharts :height="280" />
+              <ECharts :height="280" />
+              <ECharts :height="280" />
+              <ECharts :height="280" />
             </div>
           </PageSectionLayout>
         </div>
@@ -178,5 +175,5 @@ const pieData2 = computed(() => ({
   ],
 }))
 
-const height = computed(() => (isSmallerScreen.value ? 220 : 235))
+const height = computed(() => (isSmallerScreen.value ? 220 : 390))
 </script>

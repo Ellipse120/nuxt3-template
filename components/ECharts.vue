@@ -57,6 +57,7 @@ const chartOptions = computed(() => ({
     // plotBackgroundColor: 'rgba(255, 255, 255, .1)',
     // plotBorderColor: '#CCCCCC',
     // plotBorderWidth: 1,
+    height: props.height,
   },
 
   title: {
