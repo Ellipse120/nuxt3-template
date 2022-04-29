@@ -1,5 +1,5 @@
 <template>
-  <highchart :options="chartOptions" />
+  <highchart :options="chartOptions" :style="{ height: height }" />
 </template>
 
 <script lang="ts" setup>

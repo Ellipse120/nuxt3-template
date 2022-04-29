@@ -1,6 +1,6 @@
 <template>
   <Teleport to="body">
-    <TransitionRoot :show="show" appear>
+    <TransitionRoot :show="false" appear>
       <div>
         <ActionSheetOverlay @click="close" />
         <TransitionChild
@@ -50,15 +50,15 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.slide-fade-from-bottom-enter-active {
-  transition: all 0.3s ease-out;
-}
-.slide-fade-from-bottom-leave-active {
-  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
-}
-.slide-fade-from-bottom-enter-from,
-.slide-fade-from-bottom-leave-to {
-  transform: translateY(20px);
-  opacity: 0;
-}
+//.slide-fade-from-bottom-enter-active {
+//  transition: all 0.3s ease-out;
+//}
+//.slide-fade-from-bottom-leave-active {
+//  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+//}
+//.slide-fade-from-bottom-enter-from,
+//.slide-fade-from-bottom-leave-to {
+//  transform: translateY(20px);
+//  opacity: 0;
+//}
 </style>
