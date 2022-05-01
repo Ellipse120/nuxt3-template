@@ -1,11 +1,9 @@
 <template>
   <div class="flex items-center justify-center">
-    <div
-      class="rounded-full icon-bg flex items-center justify-center h-10 w-10"
-    >
+    <div class="rounded-full icon-bg flex items-center justify-center h-8 w-8">
       <slot name="icon" class="block" />
     </div>
-    <div class="text-center p-4 w-32">
+    <div class="text-center w-32">
       <div class="text-xl font-bold text-ls-green-500">{{ value }}</div>
       <div class="text-xs">{{ label }}</div>
     </div>

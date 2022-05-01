@@ -1,5 +1,10 @@
 <template>
-  <highchart :options="chartOptions" :style="{ height: height }" />
+  <highchart
+    :set-options="chartOptions"
+    :options="options"
+    :style="{ height: height }"
+    v-bind="$attrs"
+  />
 </template>
 
 <script lang="ts" setup>
@@ -11,6 +16,10 @@ const props = defineProps({
   height: {
     type: Number,
     default: 240,
+  },
+  options: {
+    type: Object,
+    default: () => ({}),
   },
 })
 
@@ -122,7 +131,7 @@ const chartOptions = computed(() => ({
   },
 
   legend: {
-    enabled: false,
+    enabled: true,
     layout: 'vertical',
     align: 'right',
     verticalAlign: 'middle',

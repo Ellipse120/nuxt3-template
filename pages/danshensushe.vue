@@ -94,14 +94,14 @@
                 <template #header>
                   <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
                 </template>
-                <ECharts :height="height" />
+                <ECharts :height="height" :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022单宿月度接待人次对比" />
                 </template>
-                <ECharts :height="height" />
+                <ECharts :height="height" :options="options2" />
               </PageSectionLayout>
 
               <PageSectionLayout>
@@ -213,5 +213,43 @@ const list2 = ref(
 )
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 185))
+const height = computed(() => (isSmallerScreen.value ? 220 : 125))
+
+const options1 = computed(() => ({
+  series: [
+    {
+      name: '1月',
+      data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175],
+    },
+    {
+      name: '2月',
+      data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434],
+    },
+    {
+      name: '3月',
+      data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387],
+    },
+    {
+      name: '4月',
+      data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227],
+    },
+    {
+      name: '5月',
+      data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
+    },
+  ],
+}))
+
+const options2 = computed(() => ({
+  series: [
+    {
+      name: '2021年累计消耗',
+      data: [11, 22, 12, 41, 32, 49, 120, 31],
+    },
+    {
+      name: '2022年累计消耗',
+      data: [249, 64, 22, 29, 32, 302, 381, 404],
+    },
+  ],
+}))
 </script>
