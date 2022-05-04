@@ -7,28 +7,28 @@
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考平均分" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="集团公司抽考情况" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="段持证人员情况" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout
@@ -38,7 +38,8 @@
               <PageSectionLabel title="职工年度培训情况" />
             </template>
             <div class="flex-1 grid grid-cols-2 grid-rows-3 bg-ls-blue-800">
-              <ECharts :height="280" />
+              <highchart :options="options2" />
+
               <div class="grid grid-cols-2 grid-rows-2 p-16">
                 <div class="flex items-center justify-center">
                   <IconFaSolid:chalkboardTeacher
@@ -59,10 +60,10 @@
                   <div class="text-xs">未开班</div>
                 </div>
               </div>
-              <ECharts :height="280" />
-              <ECharts :height="280" />
-              <ECharts :height="280" />
-              <ECharts :height="280" />
+              <highchart :options="options2" />
+              <highchart :options="options2" />
+              <highchart :options="options2" />
+              <highchart :options="options2" />
             </div>
           </PageSectionLayout>
         </div>
@@ -72,16 +73,14 @@
 </template>
 
 <script lang="ts" setup>
-import { useMediaQuerySmallScreen } from '~/composables/useMediaQuerySmallScreen'
-
 definePageMeta({
   layout: 'tufang',
   title: '职教信息',
 })
 
-const { $colorLsBlue300, $colorBlue600 } = useNuxtApp()
+const { $colorLsBlue300, $colorBlue600, $setSiteTitle } = useNuxtApp()
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-
+$setSiteTitle()
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const pieData = ref({
   tooltip: {
@@ -175,5 +174,15 @@ const pieData2 = computed(() => ({
   ],
 }))
 
-const height = computed(() => (isSmallerScreen.value ? 220 : 390))
+const options = ref({
+  chart: {
+    height: 395,
+  },
+})
+
+const options2 = ref({
+  chart: {
+    height: 282,
+  },
+})
 </script>

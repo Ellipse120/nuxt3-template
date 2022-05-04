@@ -21,14 +21,3 @@
     <div id="app-after"></div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import { AppSetup } from '~/utils/app'
-
-const { app } = AppSetup()
-const route = useRoute()
-
-definePageMeta({
-  title: `${route.meta.title} - ${app.name}`,
-})
-</script>

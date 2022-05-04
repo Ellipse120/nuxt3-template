@@ -5,7 +5,7 @@
         <div class="flex w-full px-2">
           <div class="flex-1">
             <PageSectionLayout>
-              <div class="flex items-center justify-center">
+              <div class="flex items-center justify-center h-12 p-2">
                 <div class="text-md w-44 font-bold tracking-wide text-center">
                   <div class="font-pangmenzhengdao">上海集团公司</div>
                   <div class="font-pangmenzhengdao">行车公寓接待情况</div>
@@ -52,9 +52,9 @@
             </PageSectionLayout>
           </div>
 
-          <div class="ml-2 flex-1">
+          <div class="flex-1 ml-2">
             <PageSectionLayout>
-              <div class="flex items-center justify-center">
+              <div class="flex items-center justify-center h-12 p-2">
                 <div class="text-md w-44 font-bold tracking-wide text-center">
                   <div class="font-pangmenzhengdao">食堂总览</div>
                 </div>
@@ -87,84 +87,84 @@
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率占比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="最近一周入住情况" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂数量" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
         </div>
 
@@ -173,28 +173,28 @@
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2012-2022年累计销售收入" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度就餐人次" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度销售收入" />
             </template>
-            <ECharts :height="height" />
+            <highchart :options="options" />
           </PageSectionLayout>
         </div>
       </PageSection>
@@ -208,6 +208,15 @@ definePageMeta({
   title: '行车公寓',
 })
 
+const { $setSiteTitle } = useNuxtApp()
+$setSiteTitle()
+
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 210))
+const height = computed(() => (isSmallerScreen.value ? 220 : 220))
+
+const options = ref({
+  chart: {
+    height: height.value,
+  },
+})
 </script>

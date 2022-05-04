@@ -1,3 +1,4 @@
+import { useTitle } from '@vueuse/core'
 import { ThemeManager } from './theme'
 import { LanguageManager } from './lang'
 
@@ -31,4 +32,10 @@ export function AppSetup() {
     themeManager,
     languageManager,
   }
+}
+
+export function setSiteTitle() {
+  const { app } = AppSetup()
+  const route = useRoute()
+  useTitle(`${route.meta.title} - ${app.name}`)
 }

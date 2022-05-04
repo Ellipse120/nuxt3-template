@@ -1,8 +1,5 @@
 <template>
   <PageWrapper>
-    <PageLsHeader>
-      <PageTitle :text="route.meta.title" class="capitalize" />
-    </PageLsHeader>
     <PageBody>
       <PageSection> todo </PageSection>
     </PageBody>
@@ -15,5 +12,6 @@ definePageMeta({
   title: '房建技术',
 })
 
-const route = useRoute()
+const { $setSiteTitle } = useNuxtApp()
+$setSiteTitle()
 </script>

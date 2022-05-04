@@ -94,63 +94,63 @@
                 <template #header>
                   <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
                 </template>
-                <ECharts :height="height" :options="options1" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022单宿月度接待人次对比" />
                 </template>
-                <ECharts :height="height" :options="options2" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022单宿累计接待人次对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022水量累计消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022电量累计消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022天然气累计消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022水量月度消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022电量月度消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
 
               <PageSectionLayout>
                 <template #header>
                   <PageSectionLabel title="2021-2022天然气月度消耗对比" />
                 </template>
-                <ECharts :height="height" />
+                <highchart :options="options1" />
               </PageSectionLayout>
             </div>
           </div>
@@ -174,7 +174,7 @@
 
             <PageSectionLayout>
               <PageSectionLabel title="宿舍月度情况" />
-              <ECharts :height="206" />
+              <highchart :options="options2" />
             </PageSectionLayout>
           </div>
         </div>
@@ -188,6 +188,9 @@ definePageMeta({
   layout: 'tufang',
   title: '单身宿舍',
 })
+
+const { $setSiteTitle } = useNuxtApp()
+$setSiteTitle()
 
 const list = ref(
   Array.from({ length: 10 }, (_, index) => {
@@ -213,9 +216,12 @@ const list2 = ref(
 )
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 125))
+const height = computed(() => (isSmallerScreen.value ? 220 : 206))
 
-const options1 = computed(() => ({
+const options1 = ref({
+  chart: {
+    height: height.value,
+  },
   series: [
     {
       name: '1月',
@@ -238,9 +244,12 @@ const options1 = computed(() => ({
       data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111],
     },
   ],
-}))
+})
 
-const options2 = computed(() => ({
+const options2 = ref({
+  chart: {
+    height: 206,
+  },
   series: [
     {
       name: '2021年累计消耗',
@@ -251,5 +260,5 @@ const options2 = computed(() => ({
       data: [249, 64, 22, 29, 32, 302, 381, 404],
     },
   ],
-}))
+})
 </script>
