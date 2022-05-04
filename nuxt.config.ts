@@ -107,7 +107,7 @@ export default defineNuxtConfig({
         text: '',
         style: {
           color: '#C0C0C0',
-          font: 'bold 16px "Trebuchet MS", Verdana, sans-serif',
+          font: 'bold "微软雅黑, Trebuchet MS", Verdana, sans-serif',
         },
       },
 
@@ -115,7 +115,7 @@ export default defineNuxtConfig({
         text: '',
         style: {
           color: '#666666',
-          font: 'bold 12px "Trebuchet MS", Verdana, sans-serif',
+          font: 'bold "微软雅黑, Trebuchet MS", Verdana, sans-serif',
         },
       },
 
