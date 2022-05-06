@@ -200,7 +200,6 @@ export default defineNuxtConfig({
           label: {
             connectorAllowed: false,
           },
-          pointStart: 2010,
         },
         line: {
           dataLabels: {
@@ -372,7 +371,7 @@ export default defineNuxtConfig({
         rules: [
           {
             condition: {
-              maxWidth: 500,
+              maxWidth: 300,
             },
             chartOptions: {
               legend: {
