@@ -7,28 +7,28 @@
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
             </template>
-            <highchart :options="options1" />
+            <chart :options="options1" :loading="pending1" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考平均分" />
             </template>
-            <highchart :options="options2" />
+            <chart :options="options2" :loading="pending2" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="集团公司抽考情况" />
             </template>
-            <highchart :options="options3" />
+            <chart :options="options3" :loading="pending3" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="段持证人员情况" />
             </template>
-            <highchart :options="options4" />
+            <chart :options="options4" :loading="pending4" />
           </PageSectionLayout>
 
           <PageSectionLayout
@@ -38,7 +38,7 @@
               <PageSectionLabel title="职工年度培训情况" />
             </template>
             <div class="flex-1 grid grid-cols-2 grid-rows-3 bg-ls-blue-800">
-              <highchart :options="options5" />
+              <chart :options="options5" :loading="pending5" />
 
               <div class="flex items-center justify-around">
                 <div
@@ -71,10 +71,10 @@
                   </div>
                 </div>
               </div>
-              <highchart :options="options6" />
-              <highchart :options="options7" />
-              <highchart :options="options8" />
-              <highchart :options="options9" />
+              <chart :options="options6" :loading="pending5" />
+              <chart :options="options7" :loading="pending5" />
+              <chart :options="options8" :loading="pending5" />
+              <chart :options="options9" :loading="pending5" />
             </div>
           </PageSectionLayout>
         </div>
@@ -94,21 +94,27 @@ $setSiteTitle()
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
 
-const [
-  { data: option1 },
-  { data: option2 },
-  { data: option3 },
-  { data: option4 },
-  { data: option5 },
-] = await Promise.all([
-  $api('zhijiaoxinxi/1'),
-  $api('zhijiaoxinxi/2'),
-  $api('zhijiaoxinxi/3'),
-  $api('zhijiaoxinxi/4'),
-  $api('zhijiaoxinxi/5'),
-])
+// const [
+//   { data: option1, pending: pending1 },
+//   { data: option2, pending: pending2 },
+//   { data: option3, pending: pending3 },
+//   { data: option4, pending: pending4 },
+//   { data: option5, pending: pending5 },
+// ] = await Promise.all([
+//   $api('zhijiaoxinxi/1'),
+//   $api('zhijiaoxinxi/2'),
+//   $api('zhijiaoxinxi/3'),
+//   $api('zhijiaoxinxi/4'),
+//   $api('zhijiaoxinxi/5'),
+// ])
 
-const quartarMapper = {
+const { data: option1, pending: pending1 } = $api('zhijiaoxinxi/1')
+const { data: option2, pending: pending2 } = $api('zhijiaoxinxi/2')
+const { data: option3, pending: pending3 } = $api('zhijiaoxinxi/3')
+const { data: option4, pending: pending4 } = $api('zhijiaoxinxi/4')
+const { data: option5, pending: pending5 } = $api('zhijiaoxinxi/5')
+
+const quarterMapper = {
   '1': '一季度',
   '2': '二季度',
   '3': '三季度',
@@ -132,7 +138,7 @@ const options1 = computed(() => ({
     return {
       name: o.title,
       data: o.scores.map((d) => ({
-        name: quartarMapper[d.quarter],
+        name: quarterMapper[d.quarter],
         y: d.score,
       })),
     }
@@ -150,7 +156,7 @@ const options2 = computed(() => ({
     return {
       name: o.title,
       data: o.scores.map((d) => ({
-        name: quartarMapper[d.quarter],
+        name: quarterMapper[d.quarter],
         y: d.score,
       })),
     }
@@ -169,7 +175,7 @@ const options3 = computed(() => ({
       name: o.title,
       borderColor: 'transparent',
       data: o.scores.map((d) => ({
-        name: quartarMapper[d.quarter],
+        name: quarterMapper[d.quarter],
         y: d.score,
       })),
     }

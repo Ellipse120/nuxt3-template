@@ -482,11 +482,6 @@
   resolved "https://registry.npmmirror.com/@headlessui/vue/-/vue-1.5.0.tgz#8cd4877d3d344e482073a04ae8e3b7f987bb267c"
   integrity sha512-jAp6XYpqdEv32xhszaj5ejvjaX5qhu20sCbxu7lplePEfZL+4ffabivJBBTZAiPWczqAXmnZWNWG5DOyqjRa4w==
 
-"@highcharts/map-collection@^1.1.3":
-  version "1.1.4"
-  resolved "https://registry.npmmirror.com/@highcharts/map-collection/-/map-collection-1.1.4.tgz#8958e89979175e414c8d60b93de8054703e1b191"
-  integrity sha512-JzoBLWFJSjzjUV/m+eU2FbJBeQCfheyFJBUyQ9xyUhSs8yqUbE/JN0x9VZe7lDr71MfTO+bO50YpCrk5BTRCzA==
-
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.npmmirror.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"
@@ -3995,10 +3990,15 @@ he@^1.1.1:
   resolved "https://registry.npmmirror.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
-highcharts@^9.3.0:
-  version "9.3.3"
-  resolved "https://registry.npmmirror.com/highcharts/-/highcharts-9.3.3.tgz#ae62178de788fd7934431aa26b8e250b8073c541"
-  integrity sha512-QeOvm6cifeZYYdTLm4IxZsXcOE9c4xqfs0z0OJJ0z7hhA9WG0rmcVAyuIp5HBl/znjA/ayYHmpYjBYD/9PG4Fg==
+highcharts-vue@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.npmmirror.com/highcharts-vue/-/highcharts-vue-1.4.0.tgz#4bdaaddc6b9a3eea0df70d29a22ae713d28e4a0c"
+  integrity sha512-fTPqJmU/wR/nUEtofbC/iJqcgULGcP3C0Hd4YYCKH2FiiteNs7UidjSM4eYj5Y4ldpOVhwPtNj/m6XwC3ajp6g==
+
+highcharts@^10.1.0:
+  version "10.1.0"
+  resolved "https://registry.npmmirror.com/highcharts/-/highcharts-10.1.0.tgz#561872ae8ea819131d78949136d05bcaaa99108b"
+  integrity sha512-gW/pzy/Qy/hiYeCflYHpwgsP2nqQavwuRUswRf+papmbutZ3I7K7AIZJ/yZ9NL5yzpF7X7r2dX7/nzZGN4A1rg==
 
 hookable@^5.0.0, hookable@^5.1.1:
   version "5.1.1"
@@ -5540,15 +5540,6 @@ number-is-nan@^1.0.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-nuxt-highcharts@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmmirror.com/nuxt-highcharts/-/nuxt-highcharts-3.0.2.tgz#3738dfb56b70169b1ec2dce630bdddecd59a8045"
-  integrity sha512-nmiJeHzv227K1Oklo2I32r2iEz5QG6EKKCkT9xHsZkkF/lyWdG+KgtqBiHG10BeijC5LrSJIZIrUtBuv09MsPQ==
-  dependencies:
-    highcharts "^9.3.0"
-  optionalDependencies:
-    "@highcharts/map-collection" "^1.1.3"
-
 nuxt-windicss@2.2.8:
   version "2.2.8"
   resolved "https://registry.npmmirror.com/nuxt-windicss/-/nuxt-windicss-2.2.8.tgz#4f3d85757daf00b54262db4334889cd74f52ce19"
@@ -6053,15 +6044,6 @@ postcss-import@^14.1.0:
     postcss-value-parser "^4.0.0"
     read-cache "^1.0.0"
     resolve "^1.1.7"
-
-postcss-loader@^6.2.1:
-  version "6.2.1"
-  resolved "https://registry.npmmirror.com/postcss-loader/-/postcss-loader-6.2.1.tgz#0895f7346b1702103d30fdc66e4d494a93c008ef"
-  integrity sha512-WbbYpmAaKcux/P66bZ40bpWsBucjx/TTgVVzRZ9yUO8yQfVBlameJ0ZGVaPfH64hNSBh63a+ICP5nqOpBA0w+Q==
-  dependencies:
-    cosmiconfig "^7.0.0"
-    klona "^2.0.5"
-    semver "^7.3.5"
 
 postcss-merge-longhand@^5.1.4:
   version "5.1.4"

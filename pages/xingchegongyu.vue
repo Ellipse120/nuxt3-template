@@ -87,84 +87,84 @@
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段入住率占比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="最近一周入住情况" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂数量" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2021-2022水量累计消耗对比" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
         </div>
 
@@ -173,28 +173,28 @@
             <template #header>
               <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2012-2022年累计销售收入" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度就餐人次" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="2022年月度销售收入" />
             </template>
-            <highchart :options="options" />
+            <chart :options="options" />
           </PageSectionLayout>
         </div>
       </PageSection>
@@ -212,11 +212,11 @@ const { $setSiteTitle } = useNuxtApp()
 $setSiteTitle()
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 220))
+const height = computed(() => (isSmallerScreen.value ? 220 : 215))
 
-const options = ref({
+const options = computed(() => ({
   chart: {
     height: height.value,
   },
-})
+}))
 </script>
