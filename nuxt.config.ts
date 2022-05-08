@@ -41,10 +41,22 @@ export default defineNuxtConfig({
   modules: ['nuxt-highcharts'],
 
   highcharts: {
+    // @type {import('highcharts').ChartOptions}
     setOptions: {
       lang: {
         decimalPoint: '.',
         thousandsSep: ',',
+        loading: '加载中',
+        noData: '暂无数据',
+      },
+
+      loading: {
+        labelStyle: {
+          fontStyle: 'italic 32pt',
+        },
+        style: {
+          backgroundColor: '#ccc',
+        },
       },
 
       boost: {
