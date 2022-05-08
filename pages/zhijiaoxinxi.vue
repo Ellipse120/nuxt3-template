@@ -2,38 +2,33 @@
   <PageWrapper>
     <PageBody>
       <PageSection>
-        {{ pending1 }}
-        {{ pending2 }}
-        {{ pending3 }}
-        {{ pending4 }}
-        {{ pending5 }}
         <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-2">
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考情况分析" />
             </template>
-            <highchart :modules="['no-data-to-display']" :options="options1" @chartLoaded="chart1Loaded" />
+            <highchart :options="options1" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考平均分" />
             </template>
-            <highchart :modules="['no-data-to-display']" :options="options2" />
+            <highchart :options="options2" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="集团公司抽考情况" />
             </template>
-            <highchart :modules="['no-data-to-display']" :options="options3" />
+            <highchart :options="options3" />
           </PageSectionLayout>
 
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="段持证人员情况" />
             </template>
-            <highchart :modules="['no-data-to-display']" :options="options4" />
+            <highchart :options="options4" />
           </PageSectionLayout>
 
           <PageSectionLayout
@@ -52,7 +47,7 @@
                   <div class="text-ls-blue-300 text-xl">
                     {{ completed }}/{{ yearTotal }}
                   </div>
-                  <div class="text-xs">已完成/年计划</div>
+                  <div class="text-xs">已完成/年总计</div>
                 </div>
 
                 <div class="inline-grid grid-cols-2 grid-rows-2 gap-y-8">
@@ -94,17 +89,17 @@ definePageMeta({
   title: '职教信息',
 })
 
-const { $colorLsBlue300, $setSiteTitle, $api, $highcharts } = useNuxtApp()
+const { $colorLsBlue300, $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
 
 const { isSmallerScreen } = useMediaQuerySmallScreen()
 
 const [
-  { data: option1, pending: pending1 },
-  { data: option2, pending: pending2 },
-  { data: option3, pending: pending3 },
-  { data: option4, pending: pending4 },
-  { data: option5, pending: pending5 },
+  { data: option1 },
+  { data: option2 },
+  { data: option3 },
+  { data: option4 },
+  { data: option5 },
 ] = await Promise.all([
   $api('zhijiaoxinxi/1'),
   $api('zhijiaoxinxi/2'),
@@ -126,13 +121,6 @@ const lMapper = {
   '2': '本月复训人数',
 }
 
-type Response = {
-  code: string,
-  msg: string,
-  data: any,
-}
-
-// @type {import('highcharts').ChartOptions}
 const options1 = computed(() => ({
   chart: {
     height: 395,
@@ -151,7 +139,6 @@ const options1 = computed(() => ({
   }),
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options2 = computed(() => ({
   chart: {
     height: 395,
@@ -170,7 +157,6 @@ const options2 = computed(() => ({
   }),
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options3 = computed(() => ({
   chart: {
     height: 395,
@@ -190,7 +176,6 @@ const options3 = computed(() => ({
   }),
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options4 = computed(() => ({
   chart: {
     height: 395,
@@ -220,7 +205,6 @@ const notStarted = computed(() => option5?.value?.data?.notStarted)
 const yearTotal = computed(() => option5?.value?.data?.yearTotal)
 const mouthTotal = computed(() => option5?.value?.data?.mouthTotal)
 
-// @type {import('highcharts').ChartOptions}
 const options5 = computed(() => ({
   chart: {
     height: 285,
@@ -274,7 +258,6 @@ const options5 = computed(() => ({
   ],
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options6 = computed(() => ({
   chart: {
     height: 282,
@@ -327,7 +310,6 @@ const options6 = computed(() => ({
   ],
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options7 = computed(() => ({
   chart: {
     height: 282,
@@ -380,7 +362,6 @@ const options7 = computed(() => ({
   ],
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options8 = computed(() => ({
   chart: {
     height: 282,
@@ -433,7 +414,6 @@ const options8 = computed(() => ({
   ],
 }))
 
-// @type {import('highcharts').ChartOptions}
 const options9 = computed(() => ({
   chart: {
     height: 282,
@@ -485,9 +465,4 @@ const options9 = computed(() => ({
     },
   ],
 }))
-
-const chart1Loaded = (chart) => {
-  console.log(chart)
-  chart.showLoading()
-}
 </script>
