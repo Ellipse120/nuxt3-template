@@ -13,6 +13,9 @@ const api = (url) => {
     // onRequest({ request, options }) {
     //   console.log('[fetch request]', request, options)
     // },
+    headers: {
+      Authorization: `Bearer ${useRuntimeConfig().apiSecret || 'token'}`,
+    },
     // @ts-ignore
     onRequestError({ request, error }) {
       // eslint-disable-next-line no-console
