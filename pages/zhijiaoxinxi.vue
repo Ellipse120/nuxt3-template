@@ -281,11 +281,6 @@ const options6 = computed(() => ({
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
   },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
-  },
   plotOptions: {
     pie: {
       showInLegend: true,
@@ -332,11 +327,6 @@ const options7 = computed(() => ({
   tooltip: {
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
   },
   plotOptions: {
     pie: {
@@ -385,11 +375,6 @@ const options8 = computed(() => ({
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
   },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
-  },
   plotOptions: {
     pie: {
       showInLegend: true,
@@ -436,11 +421,6 @@ const options9 = computed(() => ({
   tooltip: {
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle',
   },
   plotOptions: {
     pie: {
