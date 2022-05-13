@@ -28,7 +28,13 @@ export default defineNuxtConfig({
   },
 
   // css
-  css: ['~/assets/sass/vendor.scss', '~/assets/sass/app.scss'],
+  css: [
+    '~/assets/sass/vendor.scss',
+    '~/assets/sass/app.scss',
+    'primevue/resources/themes/saga-blue/theme.css',
+    'primevue/resources/primevue.css',
+    'primeicons/primeicons.css',
+  ],
 
   // plugins
   plugins: ['~/plugins/navbar.ts'],
