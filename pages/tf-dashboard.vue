@@ -51,20 +51,18 @@
               </PageSectionLayout>
             </div>
 
-            <div class="w-1/3 mx-1">
+            <div class="w-1/2 mx-2">
               <PageSectionLayout>
                 <chart :options="options2" />
               </PageSectionLayout>
 
               <PageSectionLayout class="mt-1">
                 <template #header>
-                  <PageSectionLabel
-                    title="安全生产事故隐患登记表（上海房建公寓段）"
-                  />
+                  <PageSectionLabel title="安全生产事故隐患登记表（上海房建公寓段）" />
                 </template>
 
-                <DataTable :value="table2" class="p-datatable-sm" autoLayout showGridlines>
-                  <Column field="序号" header="序号" />
+                <DataTable :value="table2" class="p-datatable-sm" responsiveLayout="scroll" columnResizeMode="expand" :autoLayout="true" showGridlines>
+                  <Column field="序号" header="序号" header-class="text-xs" />
                   <Column field="隐患编号" header="隐患编号" />
                   <Column field="隐患描述导致结果" header="隐患描述导致结果" />
                   <Column field="类别" header="类别" />
@@ -83,7 +81,7 @@
                   <PageSectionLabel title="行车公寓" />
                 </template>
 
-                <div class="flex flex-col h-full items-center justify-center">
+                <div class="flex flex-col h-full">
                   <div class="h-1/3 flex">
                     <PageSectionIconInfo label="年计划接待人次" value="436">
                       <template #icon>
@@ -109,7 +107,7 @@
                 </div>
               </PageSectionLayout>
 
-              <PageSectionLayout>
+              <PageSectionLayout class="h-full">
                 <div>
                   <PageSectionIconInfo label="2021-05-16" value="上海房建公寓段">
                     <template #icon>
@@ -118,7 +116,7 @@
                   </PageSectionIconInfo>
                 </div>
 
-                <div class="flex">
+                <div class="inline-flex">
                   <PageSectionIconInfo label="安全天数" value="3769天">
                     <template #icon>
                       <IconIon:bed />
