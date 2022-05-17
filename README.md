@@ -16,7 +16,7 @@ With a lot of useful features. and integrated with Windi CSS.
 - [x] 🪝 Built-in Component & Layout
 - [x] Eslint & Prettier
 - [x] Husky & Commitlint
-- [ ] Http Request (axios ?)
+- [x] Http Request (axios x) using onmyfetch
 
 ## Table of Contents
 - [Nuxt 3 Project](#Nuxt 3 Project)
