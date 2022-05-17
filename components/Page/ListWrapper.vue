@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-y-auto h-27vh">
+  <div class="overflow-y-auto">
     <slot />
   </div>
 </template>

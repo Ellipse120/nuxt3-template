@@ -356,18 +356,18 @@ setOptions({
 
   responsive: {
     rules: [
-      // {
-      //   condition: {
-      //     maxWidth: 300,
-      //   },
-      //   chartOptions: {
-      //     legend: {
-      //       layout: 'horizontal',
-      //       align: 'center',
-      //       verticalAlign: 'bottom',
-      //     },
-      //   },
-      // },
+      {
+        condition: {
+          maxWidth: 300,
+        },
+        chartOptions: {
+          legend: {
+            // align: 'right',
+            // verticalAlign: 'middle',
+            // layout: 'vertical',
+          },
+        },
+      },
     ],
   },
 })

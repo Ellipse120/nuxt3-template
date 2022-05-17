@@ -7,6 +7,7 @@ declare module 'vue' {
     'IconAkarIcons:triangleRight': typeof import('~icons/akar-icons/triangle-right')['default']
     'IconBx:bxsDish': typeof import('~icons/bx/bxs-dish')['default']
     'IconBxs:dish': typeof import('~icons/bx/s-dish')['default']
+    'IconCib:adguard': typeof import('~icons/cib/adguard')['default']
     'IconFaSolid:chalkboardTeacher': typeof import('~icons/fa-solid/chalkboard-teacher')['default']
     'IconFaSolid:ellipsisV': typeof import('~icons/fa-solid/ellipsis-v')['default']
     'IconFluent:arrowRightBoldCircle': typeof import('~icons/fluent/arrow-right-bold-circle')['default']
@@ -37,6 +38,7 @@ declare module 'vue' {
     'IconUil:moon': typeof import('~icons/uil/moon')['default']
     'IconUil:sun': typeof import('~icons/uil/sun')['default']
     'IconUil:times': typeof import('~icons/uil/times')['default']
+    'IconUiw:date': typeof import('~icons/uiw/date')['default']
   }
 }
 

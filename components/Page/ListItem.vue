@@ -1,10 +1,10 @@
 <template>
-  <div class="flex items-center border-b border-dashed border-white py-1">
-    <IconAkarIcons:triangle-right class="text-blue-600" />
+  <div class="flex items-center border-b border-dashed border-white p-2 text-xs">
+    <IconAkarIcons:triangle-right class="text-blue-600 text-base" />
     <div class="w-full">
       <div class="flex items-center justify-between text-sm">
         <div :class="item.class">{{ item.label }}</div>
-        <div>{{ item.time }}</div>
+        <div class="mt-2">{{ item.time }}</div>
       </div>
       <div>{{ item.content }}</div>
     </div>
