@@ -36,9 +36,7 @@
               </div>
 
               <PageSectionLayout class="mt-2">
-                <PageSectionLabel
-                  title="2022年房建设备总量总体概况（445万平方米）"
-                />
+                <PageSectionLabel title="2022年房建设备总量总体概况（445万平方米）" />
 
                 <DataTable
                   :value="table1"
@@ -66,9 +64,7 @@
 
               <PageSectionLayout class="mt-2">
                 <template #header>
-                  <PageSectionLabel
-                    title="安全生产事故隐患登记表（上海房建公寓段）"
-                  />
+                  <PageSectionLabel title="安全生产事故隐患登记表（上海房建公寓段）" />
                 </template>
 
                 <DataTable
@@ -83,11 +79,7 @@
                 >
                   <Column field="序号" header="序号" />
                   <Column field="隐患编号" header="隐患编号" width="20rem" />
-                  <Column
-                    field="隐患描述导致结果"
-                    header="隐患描述导致结果"
-                    headerStyle="width: 28em"
-                  />
+                  <Column field="隐患描述导致结果" header="隐患描述导致结果" headerStyle="width: 28em" />
                   <Column field="类别" header="类别" />
                   <Column field="形成时间" header="形成时间" />
                   <Column field="发现时间" header="发现时间" />
@@ -105,9 +97,7 @@
                     <PageSectionLabel title="行车公寓" />
                   </template>
 
-                  <div
-                    class="bg-ls-blue-800 inline-grid grid-cols-3 grid-rows-3 gap-2 p-2"
-                  >
+                  <div class="bg-ls-blue-800 inline-grid grid-cols-3 grid-rows-3 gap-2 p-2">
                     <div class="col-span-3 flex">
                       <PageSectionIconInfo label="年计划接待人次" value="436">
                         <template #icon>
@@ -122,41 +112,17 @@
                       </PageSectionIconInfo>
                     </div>
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="月接待人次"
-                      value="30"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="月接待人次" value="30" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="已叫班次数"
-                      value="680"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="已叫班次数" value="680" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="临客次数"
-                      value="2400"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="临客次数" value="2400" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="日接待人次"
-                      value="30"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="日接待人次" value="30" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="未叫班次数"
-                      value="2785"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="未叫班次数" value="2785" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-18"
-                      label="临客人数"
-                      value="5800"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="临客人数" value="5800" />
                   </div>
                 </PageSectionLayout>
 
@@ -165,9 +131,7 @@
                     <PageSectionLabel title="单身宿舍" />
                   </template>
 
-                  <div
-                    class="bg-ls-blue-800 grid grid-cols-2 grid-rows-3 gap-2 p-2"
-                  >
+                  <div class="bg-ls-blue-800 grid grid-cols-2 grid-rows-3 gap-2 p-2">
                     <PageSectionIconInfo label="入住率" value="436">
                       <template #icon>
                         <IconFluent:data-trending-16-filled />
@@ -180,37 +144,19 @@
                       </template>
                     </PageSectionIconInfo>
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-20"
-                      label="年计划接待人次"
-                      value="30"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年计划接待人次" value="30" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-20"
-                      label="月接待人次"
-                      value="680"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="月接待人次" value="680" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-20"
-                      label="年累计接待人次"
-                      value="30"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年累计接待人次" value="30" />
 
-                    <PageSectionIconInfo
-                      class="border border-blue-800 rounded h-20"
-                      label="日接待人次"
-                      value="2785"
-                    />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="日接待人次" value="2785" />
                   </div>
                 </PageSectionLayout>
               </div>
 
               <div class="w-4/7 ml-2">
-                <div
-                  class="flex items-center justify-around bg-blue-600 p-2 h-30"
-                >
+                <div class="flex items-center justify-around bg-blue-600 p-2 h-30">
                   <div>
                     <img class="w-20 h-20 filter drop-shadow-2xl" :src="logo" />
                   </div>
@@ -220,9 +166,7 @@
                   </div>
                 </div>
 
-                <PageSectionLayout
-                  class="flex items-center justify-around my-2 h-20"
-                >
+                <PageSectionLayout class="flex items-center justify-around my-2 h-20">
                   <PageSectionIconInfo label="安全天数" value="3769天">
                     <template #icon>
                       <IconCib:adguard />
@@ -238,11 +182,7 @@
 
                 <PageSectionLayout>
                   <div class="flex items-center h-20">
-                    <div
-                      class="<lg:w-30 w-22 text-yellow-500 font-pangmenzhengdao"
-                    >
-                      经营指标
-                    </div>
+                    <div class="<lg:w-30 w-22 text-yellow-500 font-pangmenzhengdao">经营指标</div>
                     <div class="ml-2 text-xs">
                       本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。
                     </div>
@@ -266,14 +206,7 @@
                 <PageSectionLabel title="两库" />
               </template>
               <chart :options="options6" />
-              <DataTable
-                :value="table5"
-                class="p-datatable-sm"
-                tableClass="text-xs"
-                autoLayout
-                stripedRows
-                showGridlines
-              >
+              <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
                 <Column field="两库" header="两库" />
                 <Column field="新增" header="新增" />
                 <Column field="处置" header="处置" />
@@ -294,28 +227,19 @@
               </template>
 
               <div class="my-4 flex flex-wrap justify-between">
-                <NuxtLink
-                  to="http://10.128.20.156:8080/tcx_ui/views/login.html"
-                  target="_blank"
-                >
+                <NuxtLink to="http://10.128.20.156:8080/tcx_ui/views/login.html" target="_blank">
                   <span
                     class="bg-ls-blue-600 hover:(bg-blue-600 text-white) transition-all duration-200 rounded-2xl text-xs font-bold lg:px-1"
                     >天窗修计划系统</span
                   >
                 </NuxtLink>
-                <NuxtLink
-                  to="http://10.128.239.203:8080/ljyyx_ui/views/login.html"
-                  target="_blank"
-                >
+                <NuxtLink to="http://10.128.239.203:8080/ljyyx_ui/views/login.html" target="_blank">
                   <span
                     class="bg-ls-blue-600 hover:(bg-blue-600 text-white) transition-all duration-200 rounded-2xl text-xs font-bold lg:px-1"
                     >邻近营业线施工系统</span
                   >
                 </NuxtLink>
-                <NuxtLink
-                  to="http://10.128.2.225:7001/ljdd/sgd/"
-                  target="_blank"
-                >
+                <NuxtLink to="http://10.128.2.225:7001/ljdd/sgd/" target="_blank">
                   <span
                     class="bg-ls-blue-600 hover:(bg-blue-600 text-white) transition-all duration-200 rounded-2xl text-xs font-bold lg:px-1"
                     >TDMS计划调度系统</span
@@ -324,22 +248,10 @@
               </div>
 
               <div class="flex flex-col items-center justify-between">
-                <PageSectionLayout
-                  class="my-2 p-0 flex items-center justify-between"
-                >
-                  <div
-                    class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao"
-                  >
-                    当日计划
-                  </div>
+                <PageSectionLayout class="my-2 p-0 flex items-center justify-between">
+                  <div class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">当日计划</div>
 
-                  <DataTable
-                    :value="table3"
-                    class="p-datatable-sm"
-                    tableClass="text-xs"
-                    stripedRows
-                    showGridlines
-                  >
+                  <DataTable :value="table3" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
                     <Column field="当日施工" header="当日施工" />
                     <Column field="当日维修" header="当日维修" />
                     <Column field="高速铁路" header="高速铁路" />
@@ -348,22 +260,10 @@
                   </DataTable>
                 </PageSectionLayout>
 
-                <PageSectionLayout
-                  class="p-0 mt-2 flex items-center justify-between"
-                >
-                  <div
-                    class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao"
-                  >
-                    本月施工
-                  </div>
+                <PageSectionLayout class="p-0 mt-2 flex items-center justify-between">
+                  <div class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">本月施工</div>
 
-                  <DataTable
-                    :value="table4"
-                    class="p-datatable-sm"
-                    tableClass="text-xs"
-                    stripedRows
-                    showGridlines
-                  >
+                  <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
                     <Column field="本月施工" header="当日施工" />
                     <Column field="本月维修" header="当日维修" />
                     <Column field="高速铁路" header="高速铁路" />
@@ -380,29 +280,11 @@
                   <PageSectionLabel title="食堂管理" />
                 </template>
 
-                <div
-                  class="flex items-center justify-between bg-ls-blue-800 p-2 h-20"
-                >
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="年计划收入"
-                    value="30"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="日收入"
-                    value="680"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="累计收入"
-                    value="30"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="日就餐人次"
-                    value="2785"
-                  />
+                <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" value="30" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日收入" value="680" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" value="30" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日就餐人次" value="2785" />
                 </div>
               </PageSectionLayout>
 
@@ -411,29 +293,11 @@
                   <PageSectionLabel title="卸污管理" />
                 </template>
 
-                <div
-                  class="flex items-center justify-between bg-ls-blue-800 p-2 h-20"
-                >
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="年计划收入"
-                    value="30"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="日既有卸污列次"
-                    value="680"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="累计收入"
-                    value="30"
-                  />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded p-1"
-                    label="日高动卸污箱数"
-                    value="2785"
-                  />
+                <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" value="30" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日既有卸污列次" value="680" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" value="30" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日高动卸污箱数" value="2785" />
                 </div>
               </PageSectionLayout>
             </div>
@@ -614,8 +478,7 @@ const table2 = computed(() => [
   {
     序号: '1',
     隐患编号: 'III-1',
-    隐患描述导致结果:
-      '山南3-4#站台上方雨棚吊顶板松动，有脱落风险，给行车安全造成隐患。',
+    隐患描述导致结果: '山南3-4#站台上方雨棚吊顶板松动，有脱落风险，给行车安全造成隐患。',
     类别: 'III',
     形成时间: '2022-1-4',
     发现时间: '2022-1-4',
@@ -626,8 +489,7 @@ const table2 = computed(() => [
   {
     序号: '2',
     隐患编号: 'III-1',
-    隐患描述导致结果:
-      '山南3-4#站台上方雨棚吊顶板松动，有脱落风险，给行车安全造成隐患。',
+    隐患描述导致结果: '山南3-4#站台上方雨棚吊顶板松动，有脱落风险，给行车安全造成隐患。',
     类别: 'III',
     形成时间: '2022-1-4',
     发现时间: '2022-1-4',
