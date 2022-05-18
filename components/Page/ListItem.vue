@@ -3,10 +3,18 @@
     <IconAkarIcons:triangle-right class="text-blue-600 text-base" />
     <div class="w-full">
       <div class="flex items-center justify-between text-sm">
-        <div :class="item.class">{{ item.label }}</div>
-        <div class="mt-2">{{ item.time }}</div>
+        <slot name="label">
+          <div :class="item.class">{{ item.label }}</div>
+        </slot>
+
+        <slot name="time">
+          <div class="mt-2">{{ item.time }}</div>
+        </slot>
       </div>
-      <div>{{ item.content }}</div>
+
+      <slot name="content">
+        <div>{{ item.content }}</div>
+      </slot>
     </div>
   </div>
 </template>

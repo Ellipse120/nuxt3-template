@@ -159,7 +159,7 @@
             <PageSectionLayout>
               <PageSectionLabel title="最近床位动态" />
 
-              <PageListWrapper>
+              <PageListWrapper class="max-h-70">
                 <PageListItem v-for="t in list" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -167,7 +167,7 @@
             <PageSectionLayout class="my-2">
               <PageSectionLabel title="现场预警" />
 
-              <PageListWrapper>
+              <PageListWrapper class="max-h-70">
                 <PageListItem v-for="t in list2" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>

@@ -153,6 +153,8 @@ setOptions({
     verticalAlign: 'bottom',
     alignColumns: false,
     backgroundColor: 'rgb(15,18,59)',
+    itemDistance: 1,
+    margin: 0,
     itemStyle: {
       font: '9pt 微软雅黑, Trebuchet MS, Verdana, sans-serif',
       color: '#A0A0A0',
