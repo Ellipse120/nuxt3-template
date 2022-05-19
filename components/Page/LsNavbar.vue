@@ -173,6 +173,11 @@ const menus = computed((): IMenuItem[] => [
     text: t('pages.tufang.zhijiaoxinxi'),
     route: { name: 'zhijiaoxinxi' },
   },
+  {
+    type: 'link',
+    text: t('pages.tufang.xiewuyunenghao'),
+    route: { name: 'xiewuyunenghao' },
+  },
 ])
 
 const formattedYMD = useDateFormat(useNow(), 'YYYY-MM-DD')

@@ -32,9 +32,10 @@ pages:
   tufang:
     dashboard: 首页
     danshensushe: 单身宿舍
-    fangjianjishu: 房建技术
+    fangjianjishu: 房建科
     xingchegongyu: 行车公寓
     zhijiaoxinxi: 职教信息
+    xiewuyunenghao: 卸污与能耗管理
 banners:
   welcome: 你好, 欢迎来到 %{app_name}!
 others:

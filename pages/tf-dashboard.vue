@@ -8,35 +8,45 @@
               <div class="grid grid-cols-2 grid-rows-2 gap-2">
                 <PageSectionLayout>
                   <template #header>
-                    <PageSectionLabel title="总量情况" />
+                    <NuxtLink to="fangjianjishu">
+                      <PageSectionLabel title="总量情况" />
+                    </NuxtLink>
                   </template>
                   <chart :options="options1" />
                 </PageSectionLayout>
 
                 <PageSectionLayout>
                   <template #header>
-                    <PageSectionLabel title="房建设备一级率变化情况" />
+                    <NuxtLink to="fangjianjishu">
+                      <PageSectionLabel title="房建设备一级率变化情况" />
+                    </NuxtLink>
                   </template>
                   <chart :options="options3" />
                 </PageSectionLayout>
 
                 <PageSectionLayout>
                   <template #header>
-                    <PageSectionLabel title="高铁房建设备占比" />
+                    <NuxtLink to="fangjianjishu">
+                      <PageSectionLabel title="高铁房建设备占比" />
+                    </NuxtLink>
                   </template>
                   <chart :options="options4" />
                 </PageSectionLayout>
 
                 <PageSectionLayout>
                   <template #header>
-                    <PageSectionLabel title="房建设备三级率变化情况" />
+                    <NuxtLink to="fangjianjishu">
+                      <PageSectionLabel title="房建设备三级率变化情况" />
+                    </NuxtLink>
                   </template>
                   <chart :options="options5" />
                 </PageSectionLayout>
               </div>
 
               <PageSectionLayout class="mt-2">
-                <PageSectionLabel title="2022年房建设备总量总体概况（445万平方米）" />
+                <NuxtLink to="fangjianjishu">
+                  <PageSectionLabel title="2022年房建设备总量总体概况（445万平方米）" />
+                </NuxtLink>
 
                 <DataTable
                   :value="table1"
@@ -64,7 +74,9 @@
 
               <PageSectionLayout class="mt-2">
                 <template #header>
-                  <PageSectionLabel title="安全生产事故隐患登记表（上海房建公寓段）" />
+                  <NuxtLink to="fangjianjishu">
+                    <PageSectionLabel title="安全生产事故隐患登记表（上海房建公寓段）" />
+                  </NuxtLink>
                 </template>
 
                 <DataTable
@@ -94,7 +106,9 @@
               <div class="w-3/7">
                 <PageSectionLayout>
                   <template #header>
-                    <PageSectionLabel title="行车公寓" />
+                    <NuxtLink to="xingchegongyu">
+                      <PageSectionLabel title="行车公寓" />
+                    </NuxtLink>
                   </template>
 
                   <div class="bg-ls-blue-800 inline-grid grid-cols-3 grid-rows-3 gap-2 p-2">
@@ -128,7 +142,9 @@
 
                 <PageSectionLayout class="mt-2">
                   <template #header>
-                    <PageSectionLabel title="单身宿舍" />
+                    <NuxtLink to="danshensushe">
+                      <PageSectionLabel title="单身宿舍" />
+                    </NuxtLink>
                   </template>
 
                   <div class="bg-ls-blue-800 grid grid-cols-2 grid-rows-3 gap-2 p-2">
@@ -190,7 +206,9 @@
                 </PageSectionLayout>
 
                 <PageSectionLayout class="mt-2">
-                  <PageSectionLabel title="督办事项" />
+                  <NuxtLink to="督办事项管理界面系统平台待开发" target="_blank">
+                    <PageSectionLabel title="督办事项" />
+                  </NuxtLink>
 
                   <PageListWrapper class="max-h-64">
                     <PageListItem v-for="t in list1" :key="t.id" :item="t" />
@@ -203,7 +221,9 @@
           <div class="grid grid-cols-5 grid-rows-2 gap-2">
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="两库" />
+                <NuxtLink to="fangjianjishu">
+                  <PageSectionLabel title="两库" />
+                </NuxtLink>
               </template>
               <chart :options="options6" />
               <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
@@ -216,7 +236,9 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="2022年巡检工作量完成情况" />
+                <NuxtLink to="fangjianjishu">
+                  <PageSectionLabel title="2022年巡检工作量完成情况" />
+                </NuxtLink>
               </template>
               <chart :options="options7" />
             </PageSectionLayout>
@@ -277,7 +299,9 @@
             <div class="flex flex-col items-center justify-between">
               <PageSectionLayout class="w-full">
                 <template #header>
-                  <PageSectionLabel title="食堂管理" />
+                  <NuxtLink to="danshensushe">
+                    <PageSectionLabel title="食堂管理" />
+                  </NuxtLink>
                 </template>
 
                 <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
@@ -290,7 +314,9 @@
 
               <PageSectionLayout class="w-full">
                 <template #header>
-                  <PageSectionLabel title="卸污管理" />
+                  <NuxtLink to="xiewuyunenghao">
+                    <PageSectionLabel title="卸污管理" />
+                  </NuxtLink>
                 </template>
 
                 <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
@@ -304,7 +330,9 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="预警通知" />
+                <NuxtLink to="预警通知管理界面系统平台待开发" target="_blank">
+                  <PageSectionLabel title="预警通知" />
+                </NuxtLink>
               </template>
 
               <PageListWrapper class="max-h-64">
@@ -322,7 +350,9 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="2022年综合维修完成情况" />
+                <NuxtLink to="fangjianjishu">
+                  <PageSectionLabel title="2022年综合维修完成情况" />
+                </NuxtLink>
               </template>
 
               <chart :options="options9" />
@@ -361,7 +391,9 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="站区网格化系统报修信息" />
+                <NuxtLink to="客运设备网格化管理系统" target="_blank">
+                  <PageSectionLabel title="站区网格化系统报修信息" />
+                </NuxtLink>
               </template>
 
               <PageListWrapper class="max-h-64">
@@ -371,7 +403,9 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="消息通知" />
+                <NuxtLink to="消息通知管理界面系统平台待开发" target="_blank">
+                  <PageSectionLabel title="消息通知" />
+                </NuxtLink>
               </template>
 
               <PageListWrapper class="min-h-64 max-h-64">

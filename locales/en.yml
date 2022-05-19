@@ -35,6 +35,7 @@ pages:
     fangjianjishu: fangjianjishu
     xingchegongyu: xingchegongyu
     zhijiaoxinxi: zhijiaoxinxi
+    xiewuyunenghao: xiewuyunenghao
 banners:
   welcome: hello, welcome to %{app_name}!
 others:
