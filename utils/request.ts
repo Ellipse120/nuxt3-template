@@ -4,7 +4,7 @@ interface ApiResponse {
   data: any
 }
 
-const baseURL = 'http://localhost:3001/'
+const baseURL = 'http://localhost:3001/tufang/'
 const isDebug = localStorage.getItem('debug') === 'debug'
 
 const api = (url) => {
@@ -30,13 +30,7 @@ const api = (url) => {
     onResponseError({ request, response }) {
       // Log error
       // eslint-disable-next-line no-console
-      isDebug &&
-        console.log(
-          '[fetch response error]',
-          request,
-          response.status,
-          response.body
-        )
+      isDebug && console.log('[fetch response error]', request, response.status, response.body)
     },
   })
 }

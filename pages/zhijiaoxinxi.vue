@@ -108,11 +108,11 @@ const { isSmallerScreen } = useMediaQuerySmallScreen()
 //   $api('zhijiaoxinxi/5'),
 // ])
 
-const { data: option1, pending: pending1 } = $api('zhijiaoxinxi/1')
-const { data: option2, pending: pending2 } = $api('zhijiaoxinxi/2')
-const { data: option3, pending: pending3 } = $api('zhijiaoxinxi/3')
-const { data: option4, pending: pending4 } = $api('zhijiaoxinxi/4')
-const { data: option5, pending: pending5 } = $api('zhijiaoxinxi/5')
+const { data: option1, pending: pending1 } = $api('voca-score-statistics/min-max-lines')
+const { data: option2, pending: pending2 } = $api('voca-score-statistics/avg-lines')
+const { data: option3, pending: pending3 } = $api('voca-score-statistics/group-lines')
+const { data: option4, pending: pending4 } = $api('voca-score-statistics/count')
+const { data: option5, pending: pending5 } = $api('voca-score-statistics/statistics')
 
 const quarterMapper = {
   '1': '一季度',
