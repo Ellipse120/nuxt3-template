@@ -9,6 +9,7 @@ import ColumnGroup from 'primevue/columngroup' //optional for column grouping
 import Row from 'primevue/row' //optional for row
 import Tooltip from 'primevue/tooltip'
 import Divider from 'primevue/divider'
+import ProgressSpinner from 'primevue/progressspinner'
 
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(PrimeVue, { ripple: true })
@@ -18,6 +19,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.component('ColumnGroup', ColumnGroup)
   nuxtApp.vueApp.component('Row', Row)
   nuxtApp.vueApp.component('Divider', Divider)
+  nuxtApp.vueApp.component('ProgressSpinner', ProgressSpinner)
   nuxtApp.vueApp.directive('tooltip', Tooltip)
   //other components that you need
 })

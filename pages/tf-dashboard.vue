@@ -113,7 +113,7 @@
 
                   <div class="bg-ls-blue-800 inline-grid grid-cols-3 grid-rows-3 gap-2 p-2">
                     <div class="col-span-3 flex">
-                      <PageSectionIconInfo label="年计划接待人次" value="436">
+                      <PageSectionIconInfo label="年计划接待人次" :value="option3?.data?.find(t => t.type === 1)?.amount">
                         <template #icon>
                           <IconFluent:people-team-16-filled />
                         </template>
@@ -126,7 +126,7 @@
                       </PageSectionIconInfo>
                     </div>
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="月接待人次" value="30" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="月接待人次" :value="option3?.data?.find(t => t.type === 5)?.amount" />
 
                     <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="已叫班次数" value="680" />
 
@@ -160,9 +160,9 @@
                       </template>
                     </PageSectionIconInfo>
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年计划接待人次" value="30" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年计划接待人次" :value="option3?.data?.find(t => t.type === 2)?.amount" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="月接待人次" value="680" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="月接待人次" :value="option3?.data?.find(t => t.type === 6)?.amount" />
 
                     <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年累计接待人次" value="30" />
 
@@ -199,8 +199,9 @@
                 <PageSectionLayout>
                   <div class="flex items-center h-20">
                     <div class="<lg:w-30 w-22 text-yellow-500 font-pangmenzhengdao">经营指标</div>
-                    <div class="ml-2 text-xs">
-                      本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。
+                    <ProgressSpinner v-if="pending2" class="!h-8 !w-8" />
+                    <div class="ml-2 text-xs" v-if="!pending2">
+                      {{ option2?.data?.content }}
                     </div>
                   </div>
                 </PageSectionLayout>
@@ -305,7 +306,7 @@
                 </template>
 
                 <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" value="30" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" :value="option3?.data?.find(t => t.type === 3)?.amount" />
                   <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日收入" value="680" />
                   <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" value="30" />
                   <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日就餐人次" value="2785" />
@@ -315,15 +316,15 @@
               <PageSectionLayout class="w-full">
                 <template #header>
                   <NuxtLink to="xiewuyunenghao">
-                    <PageSectionLabel title="卸污管理" />
+                    <PageSectionLabel title="卸污管理" :loading="pending1" />
                   </NuxtLink>
                 </template>
 
                 <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" value="30" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日既有卸污列次" value="680" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" value="30" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日高动卸污箱数" value="2785" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" :value="option3?.data?.find(t => t.type === 4)?.amount" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日既有卸污列次" :value="option1?.data?.gdBoxCount" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" :value="option1?.data?.totalIncome" />
+                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日高动卸污箱数" :value="option1?.data?.jyBoxCount" />
                 </div>
               </PageSectionLayout>
             </div>
@@ -428,8 +429,12 @@ definePageMeta({
   title: '首页',
 })
 
-const { $setSiteTitle } = useNuxtApp()
+const { $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
+
+const { data: option1, pending: pending1 } = $api('xiewu-daily-record/index')
+const { data: option2, pending: pending2 } = $api('goal-config')
+const { data: option3, pending: pending3 } = $api('year-income-config/type')
 
 const list1 = computed(() =>
   Array.from({ length: 9 }, (_, index) => {
