@@ -306,7 +306,7 @@ const options2 = computed(() => ({
 
 const options31 = computed(() => ({
   chart: {
-    height: 100,
+    height: 140,
     type: 'column',
   },
   xAxis: {
@@ -331,7 +331,7 @@ const options31 = computed(() => ({
 
 const options32 = computed(() => ({
   chart: {
-    height: 150,
+    height: 153,
     type: 'column',
   },
   xAxis: {
@@ -426,7 +426,7 @@ const options42 = computed(() => ({
 
 const options51 = computed(() => ({
   chart: {
-    height: 150,
+    height: 160,
     type: 'column',
   },
   xAxis: {
@@ -690,7 +690,7 @@ const options10 = computed(() => ({
     },
   },
   legend: {
-    itemDistance: 5,
+    itemDistance: 0,
   },
   series: [
     {
@@ -737,16 +737,16 @@ const options11 = computed(() => ({
 
 const table5 = computed(() => [
   {
-    类别: '计划',
-    沪杭车间: 29,
-    上海车间: 26,
-    苏锡车间: 24,
+    '类别': '计划',
+    '沪杭车间': 29,
+    '上海车间': 26,
+    '苏锡车间': 24,
   },
   {
-    类别: '完成',
-    沪杭车间: 21,
-    上海车间: 25,
-    苏锡车间: 23,
+    '类别': '完成',
+    '沪杭车间': 21,
+    '上海车间': 25,
+    '苏锡车间': 23,
   },
 ])
 
@@ -851,13 +851,13 @@ const options14 = computed(() => ({
 
 const table7 = computed(() => [
   {
-    类别: '2022',
+    '类别': '2022',
     '1月份': 29,
     '2月份': 26,
     '3月份': 24,
   },
   {
-    类别: '2021',
+    '类别': '2021',
     '1月份': 21,
     '2月份': 25,
     '3月份': 23,
@@ -880,7 +880,7 @@ const options15 = computed(() => ({
     },
   },
   legend: {
-    itemDistance: 5,
+    itemDistance: 0,
   },
   series: [
     {
