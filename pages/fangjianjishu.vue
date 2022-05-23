@@ -356,7 +356,7 @@ const options32 = computed(() => ({
 
 const table2 = computed(() => [
   {
-    '车间': '沪杭车间',
+    车间: '沪杭车间',
     '检修（未销号）': 75,
     '检修（销号）': 30,
     '综合（未销号）': 15,
@@ -596,7 +596,7 @@ const options8 = computed(() => ({
 
 const table4 = computed(() => [
   {
-    '车间': '上海车间',
+    车间: '上海车间',
     '检修（未销号）': 75,
     '检修（销号）': 30,
     '综合（未销号）': 15,
@@ -683,27 +683,48 @@ const options10 = computed(() => ({
     type: 'category',
     categories: ['上海房建车间', '沪杭房建车间', '苏锡房建车间', '大修车间', '给水车间'],
   },
+  tooltip: {
+    shared: true
+  },
   plotOptions: {
     column: {
       pointPadding: 0.2,
+      shadow: false,
       borderWidth: 0,
     },
-  },
-  legend: {
-    itemDistance: 0,
+    series: {
+      grouping: false,
+      borderWidth: 0,
+      dataLabels: {
+        enabled: true,
+        format: '{point.per:.2f}%',
+      },
+    },
   },
   series: [
     {
-      name: '天窗利用率 计划',
-      data: [17, 13, 9, 4, 15],
+      name: '计划',
+      pointPadding: 0.3,
+      pointPlacement: -0.2,
+      data: [
+        { y: 17, per: (16 / 17) * 100 },
+        { y: 13, per: (13 / 13) * 100 },
+        { y: 9, per: (9 / 9) * 100 },
+        { y: 4, per: (4 / 4) * 100 },
+        { y: 15, per: (14 / 15) * 100 },
+      ],
     },
     {
-      name: '天窗利用率 实际',
-      data: [16, 13, 9, 4, 14],
-    },
-    {
-      name: '天窗利用率 利用率',
-      data: [42, 41, 41, 40, 42],
+      name: '实际',
+      pointPadding: 0.4,
+      pointPlacement: -0.2,
+      data: [
+        { y: 16, per: (16 / 17) * 100 },
+        { y: 13, per: (13 / 13) * 100 },
+        { y: 9, per: (9 / 9) * 100 },
+        { y: 4, per: (4 / 4) * 100 },
+        { y: 14, per: (14 / 15) * 100 },
+      ],
     },
   ],
 }))
@@ -876,24 +897,45 @@ const options15 = computed(() => ({
   plotOptions: {
     column: {
       pointPadding: 0.2,
+      shadow: false,
       borderWidth: 0,
     },
+    series: {
+      grouping: false,
+      borderWidth: 0,
+      dataLabels: {
+        enabled: true,
+        format: '{point.per:.2f}%',
+      },
+    },
   },
-  legend: {
-    itemDistance: 0,
+  tooltip: {
+    shared: true
   },
   series: [
     {
-      name: '天窗时长利用率 计划时间',
-      data: [47, 43, 41, 40, 46],
+      name: '计划时间',
+      pointPadding: 0.3,
+      pointPlacement: -0.2,
+      data: [
+        { y: 47, per: (35 / 47) * 100 },
+        { y: 43, per: (25 / 43) * 100 },
+        { y: 44, per: (41 / 44) * 100 },
+        { y: 45, per: (40 / 45) * 100 },
+        { y: 46, per: (46 / 46) * 100 },
+      ],
     },
     {
-      name: '天窗时长利用率 实际时间',
-      data: [35, 41, 44, 45, 46],
-    },
-    {
-      name: '天窗时长利用率 利用率',
-      data: [42, 41, 41, 40, 46],
+      name: '实际时间',
+      pointPadding: 0.4,
+      pointPlacement: -0.2,
+      data: [
+        { y: 35, per: (35 / 47) * 100 },
+        { y: 41, per: (41 / 43) * 100 },
+        { y: 41, per: (41 / 44) * 100 },
+        { y: 40, per: (40 / 45) * 100 },
+        { y: 46, per: (46 / 46) * 100 },
+      ],
     },
   ],
 }))
