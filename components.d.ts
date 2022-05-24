@@ -5,6 +5,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'IconAkarIcons:triangleRight': typeof import('~icons/akar-icons/triangle-right')['default']
+    'IconAntDesign:thunderboltFilled': typeof import('~icons/ant-design/thunderbolt-filled')['default']
     'IconBx:bxsDish': typeof import('~icons/bx/bxs-dish')['default']
     'IconBxs:dish': typeof import('~icons/bx/s-dish')['default']
     'IconCib:adguard': typeof import('~icons/cib/adguard')['default']
@@ -14,7 +15,9 @@ declare module 'vue' {
     'IconFluent:arrowsBidirectional24Regular': typeof import('~icons/fluent/arrows-bidirectional24-regular')['default']
     'IconFluent:dataTrending16Filled': typeof import('~icons/fluent/data-trending16-filled')['default']
     'IconFluent:peopleTeam16Filled': typeof import('~icons/fluent/people-team16-filled')['default']
+    'IconIc:baselineWaterDrop': typeof import('~icons/ic/baseline-water-drop')['default']
     'IconIon:bed': typeof import('~icons/ion/bed')['default']
+    'IconIon:waterdrop': typeof import('~icons/ion/waterdrop')['default']
     'IconLa:language': typeof import('~icons/la/language')['default']
     'IconMdi:arrowLeftBoldCircle': typeof import('~icons/mdi/arrow-left-bold-circle')['default']
     'IconMdi:arrowLeftDropCircleOutline': typeof import('~icons/mdi/arrow-left-drop-circle-outline')['default']
@@ -26,6 +29,7 @@ declare module 'vue' {
     'IconPh:sunDimBold': typeof import('~icons/ph/sun-dim-bold')['default']
     'IconRi:alarmWarningFill': typeof import('~icons/ri/alarm-warning-fill')['default']
     'IconRi:database2Fill': typeof import('~icons/ri/database2-fill')['default']
+    'IconRi:moneyCnyCircleFill': typeof import('~icons/ri/money-cny-circle-fill')['default']
     'IconSimpleIcons:gitee': typeof import('~icons/simple-icons/gitee')['default']
     'IconSimpleIcons:nuxtdotjs': typeof import('~icons/simple-icons/nuxtdotjs')['default']
     'IconTeenyicons:bedSingleSolid': typeof import('~icons/teenyicons/bed-single-solid')['default']
