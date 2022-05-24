@@ -2,7 +2,7 @@
   <PageWrapper>
     <PageBody>
       <PageSection>
-        <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-2">
+        <div class="grid grid-cols-3 grid-rows-2 gap-2 mx-2 mb-2">
           <PageSectionLayout>
             <template #header>
               <PageSectionLabel title="各车间房建巡检工抽考情况分析" />

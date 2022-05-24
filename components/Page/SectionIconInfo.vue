@@ -9,11 +9,11 @@
 
     <div class="text-center">
       <slot name="title">
-        <div class="text-base font-bold text-ls-green-500">{{ value }}</div>
+        <div class="text-xl font-extrabold text-ls-green-500">{{ value }}</div>
       </slot>
 
       <slot name="subTitle">
-        <div class="text-xs">{{ label }}</div>
+        <div class="text-xs font-bold">{{ label }}</div>
       </slot>
     </div>
   </div>

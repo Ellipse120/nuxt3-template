@@ -1,201 +1,158 @@
 <template>
   <PageWrapper>
     <PageBody>
-      <PageSection>
-        <div class="flex w-full px-2">
-          <div class="flex-1">
+      <PageSection class="mx-2 mb-2">
+        <PageSectionLayout class="mb-2">
+          <div class="flex items-center justify-center h-12 p-2">
+            <div class="text-md w-44 font-bold tracking-wide text-center">
+              <div class="font-pangmenzhengdao">上海房间公寓段</div>
+              <div class="font-pangmenzhengdao">行车公寓管理</div>
+            </div>
+
+            <div class="flex-grow grid grid-cols-6 w-full">
+              <PageSectionIconInfo label="总公寓数" value="30">
+                <template #icon>
+                  <IconIc:baseline-apartment />
+                </template>
+              </PageSectionIconInfo>
+
+              <PageSectionIconInfo label="总房间数" value="75">
+                <template #icon>
+                  <IconFluent:conference-room-28-filled />
+                </template>
+              </PageSectionIconInfo>
+
+              <PageSectionIconInfo label="总床位" value="75">
+                <template #icon>
+                  <IconIon:bed />
+                </template>
+              </PageSectionIconInfo>
+
+              <PageSectionIconInfo label="月计划接待人次" value="75">
+                <template #icon>
+                  <IconFluent:people-team-16-filled />
+                </template>
+              </PageSectionIconInfo>
+
+              <PageSectionIconInfo label="月实际接待人次" value="75">
+                <template #icon>
+                  <IconFluent:people-team-16-filled />
+                </template>
+              </PageSectionIconInfo>
+
+              <PageSectionIconInfo label="入住率" value="3.2%">
+                <template #icon>
+                  <IconFluent:data-trending-16-filled />
+                </template>
+              </PageSectionIconInfo>
+            </div>
+          </div>
+        </PageSectionLayout>
+
+        <div class="flex">
+          <div class="flex-1 grid grid-cols-2 grid-rows-3 gap-2">
             <PageSectionLayout>
-              <div class="flex items-center justify-center h-12 p-2">
-                <div class="text-md w-44 font-bold tracking-wide text-center">
-                  <div class="font-pangmenzhengdao">上海集团公司</div>
-                  <div class="font-pangmenzhengdao">行车公寓接待情况</div>
-                </div>
-                <div class="flex-grow grid grid-cols-5 grid-rows-1 w-full">
-                  <PageSectionIconInfo label="目前接待人数" value="30">
-                    <template #icon>
-                      <IconFluent:people-team-16-filled />
-                    </template>
-                  </PageSectionIconInfo>
+              <template #header>
+                <PageSectionLabel title="各公寓预警信息" />
+              </template>
 
-                  <PageSectionIconInfo label="叫班次数" value="75">
-                    <template #icon>
-                      <IconTeenyicons:text-document-alt-solid />
-                    </template>
-                  </PageSectionIconInfo>
+              <PageListWrapper class="max-h-47">
+                <PageListItem v-for="t in list1" :key="t.id" :item="t">
+                  <template #icon>
+                    <IconFluent:alert-on-20-filled class="w-8 h-8 mr-2 text-red-500" />
+                  </template>
+                </PageListItem>
+              </PageListWrapper>
+            </PageSectionLayout>
 
-                  <PageSectionIconInfo label="入住率" value="3.2%">
-                    <template #icon>
-                      <IconFluent:data-trending-16-filled />
-                    </template>
-                  </PageSectionIconInfo>
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="各公寓房间数" />
+              </template>
+              <chart :options="options2" />
+            </PageSectionLayout>
 
-                  <div class="flex items-center col-span-2 justify-around">
-                    <div
-                      class="text-blue-600 text-sm underline decoration-2 underline-offset-2 mx-4"
-                    >
-                      公寓详情
-                    </div>
-                    <div class="flex items-center">
-                      <div
-                        class="w-10 text-yellow-500 font-bold font-pangmenzhengdao"
-                      >
-                        系统公告
-                      </div>
-                      <div class="text-xs">
-                        <div>1、测试公示信息</div>
-                        <div>2、测试公示信息</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="行车公寓叫班次数月度对比图" />
+              </template>
+              <chart :options="options3" />
+            </PageSectionLayout>
+
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="行车公寓接待人次对比图" />
+              </template>
+              <chart :options="options4" />
+            </PageSectionLayout>
+
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="行车公寓叫班次数季度数据" />
+              </template>
+              <chart :options="options5" />
+            </PageSectionLayout>
+
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="行车公寓接待人次季度数据" />
+              </template>
+              <chart :options="options6" />
             </PageSectionLayout>
           </div>
 
-          <div class="flex-1 ml-2">
+          <div class="flex-1 ml-2 grid grid-cols-2 grid-rows-3 gap-2">
+            <div class="col-span-2 flex">
+              <PageSectionLayout class="w-1/3">
+                <template #header>
+                  <PageSectionLabel title="各公寓每日叫班次数" />
+                </template>
+                <chart :options="options7" />
+              </PageSectionLayout>
+
+              <PageSectionLayout class="w-1/3 mx-2">
+                <template #header>
+                  <PageSectionLabel title="各公寓每日接待次数" />
+                </template>
+                <chart :options="options8" />
+              </PageSectionLayout>
+
+              <PageSectionLayout class="w-1/3">
+                <template #header>
+                  <PageSectionLabel title="各公寓入住率" />
+                </template>
+                <chart :options="options9" />
+              </PageSectionLayout>
+            </div>
+
             <PageSectionLayout>
-              <div class="flex items-center justify-center h-12 p-2">
-                <div class="text-md w-44 font-bold tracking-wide text-center">
-                  <div class="font-pangmenzhengdao">食堂总览</div>
-                </div>
-                <div class="flex-grow grid grid-cols-3 grid-rows-1 w-full">
-                  <PageSectionIconInfo label="食堂总数" value="30">
-                    <template #icon>
-                      <IconBx:bxs-dish />
-                    </template>
-                  </PageSectionIconInfo>
+              <template #header>
+                <PageSectionLabel title="各公寓月度叫班次数" />
+              </template>
+              <chart :options="options10" />
+            </PageSectionLayout>
 
-                  <PageSectionIconInfo label="用餐人数" value="75">
-                    <template #icon>
-                      <IconFluent:people-team-16-filled />
-                    </template>
-                  </PageSectionIconInfo>
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="各公寓月度接待人次" />
+              </template>
+              <chart :options="options11" />
+            </PageSectionLayout>
 
-                  <PageSectionIconInfo label="销售金额" value="20000">
-                    <template #icon>
-                      <IconRi:database-2-fill />
-                    </template>
-                  </PageSectionIconInfo>
-                </div>
-              </div>
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="各公寓季度叫班次数" />
+              </template>
+              <chart :options="options12" />
+            </PageSectionLayout>
+
+            <PageSectionLayout>
+              <template #header>
+                <PageSectionLabel title="各公寓季度接待人次" />
+              </template>
+              <chart :options="options13" />
             </PageSectionLayout>
           </div>
-        </div>
-
-        <div class="grid grid-cols-6 grid-rows-2 gap-2 m-2">
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="各房建公寓段入住率" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="各房建公寓段入住率占比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="最近一周入住情况" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="各房建公寓段食堂数量" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="各房建公寓段食堂日均用餐人数" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021-2022水量累计消耗对比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021-2022水量累计消耗对比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021-2022水量累计消耗对比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021-2022水量累计消耗对比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021-2022水量累计消耗对比" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-        </div>
-
-        <div class="grid grid-cols-4 grid-rows-1 gap-2 m-2">
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2021年月度及累计单宿舍接待人次" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2012-2022年累计销售收入" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2022年月度就餐人次" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
-
-          <PageSectionLayout>
-            <template #header>
-              <PageSectionLabel title="2022年月度销售收入" />
-            </template>
-            <chart :options="options" />
-          </PageSectionLayout>
         </div>
       </PageSection>
     </PageBody>
@@ -214,9 +171,431 @@ $setSiteTitle()
 const { isSmallerScreen } = useMediaQuerySmallScreen()
 const height = computed(() => (isSmallerScreen.value ? 220 : 215))
 
+const xData = ['上海行车公寓', '上南行车公寓', '虹桥行车公寓', '虹桥动车公寓', '南翔动车公寓', '苏州行车公寓']
+
 const options = computed(() => ({
   chart: {
     height: height.value,
   },
+}))
+
+const list1 = computed(() =>
+  Array.from({ length: 9 }, (_, index) => {
+    return {
+      id: index + 1,
+      label: '公寓预警',
+      class: 'text-red-500',
+      time: useDateFormat(new Date(), 'MM-DD HH:mm'),
+      content: '上海行车公寓房间数量不足',
+    }
+  })
+)
+
+const options2 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options3 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'column',
+  },
+  xAxis: {
+    type: 'category',
+    categories: ['一月', '二月', '三月', '四月', '五月'],
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+  },
+  series: [
+    {
+      name: '2021叫班次数',
+      data: [23, 20, 26, 19, 20],
+    },
+    {
+      name: '2022叫班次数',
+      data: [15, 20, 25, 20, 19],
+    },
+  ],
+}))
+
+const options4 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'column',
+  },
+  xAxis: {
+    type: 'category',
+    categories: ['一月', '二月', '三月', '四月', '五月'],
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+  },
+  series: [
+    {
+      name: '2021接待次数',
+      data: [23, 20, 26, 19, 20],
+    },
+    {
+      name: '2022接待次数',
+      data: [15, 20, 25, 20, 19],
+    },
+  ],
+}))
+
+const options5 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'column',
+  },
+  xAxis: {
+    type: 'category',
+    categories: ['第一季度', '第二季度', '第三季度', '第四季度'],
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+  },
+  series: [
+    {
+      name: '2021叫班次数',
+      data: [23, 20, 26, 19],
+    },
+    {
+      name: '2022叫班次数',
+      data: [15, 20, 25, 20],
+    },
+  ],
+}))
+
+const options6 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'column',
+  },
+  xAxis: {
+    type: 'category',
+    categories: ['第一季度', '第二季度', '第三季度', '第四季度'],
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+  },
+  series: [
+    {
+      name: '2021接待次数',
+      data: [23, 20, 26, 19],
+    },
+    {
+      name: '2022接待次数',
+      data: [15, 20, 25, 20],
+    },
+  ],
+}))
+
+const options7 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options8 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options9 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  yAxis: {
+    max: 100,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+        format: '{point.y}%',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [75.5, 67.6, 49.3, 42.2, 32.9, 23.8],
+    },
+  ],
+}))
+
+const options10 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options11 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options12 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
+}))
+
+const options13 = computed(() => ({
+  chart: {
+    height: 190,
+    type: 'bar',
+  },
+  xAxis: {
+    type: 'category',
+    lineWidth: 0,
+    tickWidth: 0,
+    categories: xData,
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0,
+    },
+    series: {
+      dataLabels: {
+        enabled: true,
+        // inside: true,
+        align: 'right',
+      },
+    },
+  },
+  legend: {
+    enabled: false,
+  },
+  series: [
+    {
+      name: '房间数',
+      type: 'bar',
+      borderColor: 'transparent',
+      data: [88, 85, 78, 75, 73, 65],
+    },
+  ],
 }))
 </script>

@@ -1,6 +1,8 @@
 <template>
   <div class="flex items-center border-b border-dashed border-white p-2 text-xs">
-    <IconAkarIcons:triangle-right class="text-blue-600 text-base" />
+    <slot name="icon">
+      <IconAkarIcons:triangle-right class="text-blue-600 text-base" />
+    </slot>
     <div class="w-full">
       <div class="flex items-center justify-between text-sm">
         <slot name="label">
