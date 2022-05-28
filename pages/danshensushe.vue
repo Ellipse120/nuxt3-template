@@ -90,7 +90,7 @@
                 <PageSectionLabel title="本月新增入住及退宿" />
               </template>
 
-              <div class="flex items-center justify-around h-full">
+              <div class="flex items-center justify-around h-250px bg-ls-blue-800">
                 <div class="flex items-center">
                   <img class="h-36 w-36 lg:(h-30 w-30)" :src="ruzhu" />
 
@@ -124,7 +124,7 @@
                 <PageSectionLabel title="最近床位动态" />
               </template>
 
-              <PageListWrapper class="min-h-50">
+              <PageListWrapper class="min-h-51 max-h-51">
                 <PageListItem v-for="t in list1" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -134,7 +134,7 @@
                 <PageSectionLabel title="现场预警" />
               </template>
 
-              <PageListWrapper class="min-h-50">
+              <PageListWrapper class="min-h-51 max-h-51">
                 <PageListItem v-for="t in list2" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -490,6 +490,12 @@ const list1 = computed(() => [
     time: useDateFormat(new Date(), 'MM-DD HH:mm'),
     content: '【姜伟】已入住',
   },
+  {
+    id: 4,
+    label: '【上海机辆段】',
+    time: useDateFormat(new Date(), 'MM-DD HH:mm'),
+    content: '【姜伟】已入住',
+  },
 ])
 
 const list2 = computed(() => [
@@ -509,6 +515,13 @@ const list2 = computed(() => [
   },
   {
     id: 3,
+    label: '宿舍预警',
+    class: 'text-red-500',
+    time: useDateFormat(new Date(), 'MM-DD HH:mm'),
+    content: '突发事件，需要汇报及协调其他事项',
+  },
+  {
+    id: 4,
     label: '宿舍预警',
     class: 'text-red-500',
     time: useDateFormat(new Date(), 'MM-DD HH:mm'),

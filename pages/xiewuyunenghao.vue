@@ -4,7 +4,7 @@
       <PageSection class="mx-2 mb-2">
         <div class="mb-2 flex">
           <PageSectionLayout class="w-1/2 flex items-center justify-center">
-            <div class="text-md w-12 font-bold tracking-wide font-pangmenzhengdao text-center">卸污统计</div>
+            <div class="text-md w-10 font-bold tracking-wide font-pangmenzhengdao text-center">卸污统计</div>
 
             <div class="shrink flex-grow grid grid-cols-4 w-full">
               <PageSectionIconInfo label="高动卸污总箱数" value="30">
@@ -189,7 +189,7 @@ $setSiteTitle()
 
 const options1 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -216,7 +216,7 @@ const options1 = computed(() => ({
 
 const options2 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -243,7 +243,7 @@ const options2 = computed(() => ({
 
 const options3 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -270,7 +270,7 @@ const options3 = computed(() => ({
 
 const options4 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -297,7 +297,7 @@ const options4 = computed(() => ({
 
 const options5 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -324,7 +324,7 @@ const options5 = computed(() => ({
 
 const options6 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -351,7 +351,7 @@ const options6 = computed(() => ({
 
 const options7 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -378,7 +378,7 @@ const options7 = computed(() => ({
 
 const options8 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -405,7 +405,7 @@ const options8 = computed(() => ({
 
 const options9 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -434,7 +434,7 @@ const options9 = computed(() => ({
 
 const options10 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -463,7 +463,7 @@ const options10 = computed(() => ({
 
 const options11 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -492,7 +492,7 @@ const options11 = computed(() => ({
 
 const options12 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -519,7 +519,7 @@ const options12 = computed(() => ({
 
 const options13 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {
@@ -546,7 +546,7 @@ const options13 = computed(() => ({
 
 const options14 = computed(() => ({
   chart: {
-    height: 190,
+    height: 218,
     type: 'column',
   },
   xAxis: {

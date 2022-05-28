@@ -67,7 +67,7 @@
             </PageSectionLayout>
           </div>
 
-          <div class="flex-1" style="flex: 12%;">
+          <div class="flex-1" style="flex: 13%;">
             <div>
               <PageSectionLayout>
                 <template #header>
@@ -85,16 +85,15 @@
                 <chart :options="options32" />
                 <DataTable :value="table2" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
                   <Column field="车间" header="车间" />
-                  <Column field="检修（未销号）" header="检修（未销号）" />
-                  <Column field="检修（销号）" header="检修（销号）" />
-                  <Column field="综合（未销号）" header="综合（未销号）" />
-                  <Column field="综合（销号）" header="综合（销号）" />
-                  <Column field="大修（未销号）" header="大修（未销号）" />
-                  <Column field="大修（销号）" header="大修（销号）" />
+                  <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
+                  <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
+                  <Column field="综合（未销号）" header="综合（未销号）" class="!p-0" />
+                  <Column field="综合（销号）" header="综合（销号）" class="!p-0" />
+                  <Column field="大修（未销号）" header="大修（未销号）" class="!p-0" />
+                  <Column field="大修（销号）" header="大修（销号）" class="!p-0" />
                 </DataTable>
               </PageSectionLayout>
             </div>
-
 
             <PageSectionLayout class="my-2">
               <template #header>
@@ -104,12 +103,12 @@
               <chart :options="options8" />
               <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
                 <Column field="车间" header="车间" />
-                <Column field="检修（未销号）" header="检修（未销号）" />
-                <Column field="检修（销号）" header="检修（销号）" />
-                <Column field="综合（未销号）" header="综合（未销号）" />
-                <Column field="综合（销号）" header="综合（销号）" />
-                <Column field="大修（未销号）" header="大修（未销号）" />
-                <Column field="大修（销号）" header="大修（销号）" />
+                <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
+                <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
+                <Column field="综合（未销号）" header="综合（未销号）" class="!p-0" />
+                <Column field="综合（销号）" header="综合（销号）" class="!p-0" />
+                <Column field="大修（未销号）" header="大修（未销号）" class="!p-0" />
+                <Column field="大修（销号）" header="大修（销号）" class="!p-0" />
               </DataTable>
             </PageSectionLayout>
 
@@ -121,12 +120,12 @@
               <chart :options="options13" />
               <DataTable :value="table6" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
                 <Column field="车间" header="车间" />
-                <Column field="检修（未销号）" header="检修（未销号）" />
-                <Column field="检修（销号）" header="检修（销号）" />
-                <Column field="综合（未销号）" header="综合（未销号）" />
-                <Column field="综合（销号）" header="综合（销号）" />
-                <Column field="大修（未销号）" header="大修（未销号）" />
-                <Column field="大修（销号）" header="大修（销号）" />
+                <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
+                <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
+                <Column field="综合（未销号）" header="综合（未销号）" class="!p-0" />
+                <Column field="综合（销号）" header="综合（销号）" class="!p-0" />
+                <Column field="大修（未销号）" header="大修（未销号）" class="!p-0" />
+                <Column field="大修（销号）" header="大修（销号）" class="!p-0" />
               </DataTable>
             </PageSectionLayout>
           </div>
@@ -242,7 +241,7 @@ $setSiteTitle()
 
 const options1 = computed(() => ({
   chart: {
-    height: 190,
+    height: 160,
     type: 'column',
   },
   xAxis: {
@@ -284,13 +283,13 @@ const table1 = computed(() => [
 
 const options2 = computed(() => ({
   chart: {
-    height: 290,
+    height: 260,
   },
-  // legend: {
-  //   align: 'right',
-  //   verticalAlign: 'middle',
-  //   layout: 'vertical',
-  // },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
+  },
   tooltip: {
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
@@ -418,7 +417,7 @@ const options41 = computed(() => ({
 
 const options42 = computed(() => ({
   chart: {
-    height: 140,
+    height: 100,
   },
   tooltip: {
     headerFormat: '{series.name}<br>',
@@ -455,7 +454,7 @@ const options42 = computed(() => ({
 
 const options51 = computed(() => ({
   chart: {
-    height: 160,
+    height: 120,
     type: 'column',
   },
   xAxis: {
@@ -502,7 +501,7 @@ const table3 = computed(() => [
 
 const options53 = computed(() => ({
   chart: {
-    height: 180,
+    height: 140,
     type: 'column',
   },
   xAxis: {
@@ -536,13 +535,13 @@ const options53 = computed(() => ({
 
 const options6 = computed(() => ({
   chart: {
-    height: 290,
+    height: 220,
   },
-  // legend: {
-  //   align: 'right',
-  //   verticalAlign: 'middle',
-  //   layout: 'vertical',
-  // },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
+  },
   tooltip: {
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
@@ -574,13 +573,13 @@ const options6 = computed(() => ({
 
 const options7 = computed(() => ({
   chart: {
-    height: 290,
+    height: 220,
   },
-  // legend: {
-  //   align: 'right',
-  //   verticalAlign: 'middle',
-  //   layout: 'vertical',
-  // },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
+  },
   tooltip: {
     headerFormat: '{series.name}<br>',
     pointFormat: '{point.name}: {point.y} (<b>{point.percentage:.2f}%</b>)',
@@ -654,7 +653,7 @@ const table4 = computed(() => [
 
 const options91 = computed(() => ({
   chart: {
-    height: 113,
+    height: 106,
     type: 'column',
   },
   xAxis: {
@@ -692,7 +691,7 @@ const options91 = computed(() => ({
 
 const options92 = computed(() => ({
   chart: {
-    height: 140,
+    height: 110,
   },
   legend: {
     align: 'right',
@@ -731,7 +730,7 @@ const options92 = computed(() => ({
 
 const options10 = computed(() => ({
   chart: {
-    height: 165,
+    height: 155,
     type: 'column',
   },
   xAxis: {
@@ -866,7 +865,7 @@ const options12 = computed(() => ({
 
 const options13 = computed(() => ({
   chart: {
-    height: 120,
+    height: 117,
     type: 'column',
   },
   xAxis: {
@@ -908,7 +907,7 @@ const table6 = computed(() => [
 
 const options14 = computed(() => ({
   chart: {
-    height: 120,
+    height: 100,
     type: 'column',
   },
   xAxis: {
@@ -950,7 +949,7 @@ const table7 = computed(() => [
 
 const options15 = computed(() => ({
   chart: {
-    height: 165,
+    height: 160,
     type: 'column',
   },
   xAxis: {

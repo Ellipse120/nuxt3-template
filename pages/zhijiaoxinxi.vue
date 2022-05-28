@@ -129,7 +129,7 @@ const lMapper = {
 
 const options1 = computed(() => ({
   chart: {
-    height: 395,
+    height: 398,
   },
   xAxis: {
     type: 'category',
@@ -147,7 +147,7 @@ const options1 = computed(() => ({
 
 const options2 = computed(() => ({
   chart: {
-    height: 395,
+    height: 398,
   },
   xAxis: {
     type: 'category',
@@ -165,7 +165,7 @@ const options2 = computed(() => ({
 
 const options3 = computed(() => ({
   chart: {
-    height: 395,
+    height: 398,
   },
   xAxis: {
     type: 'category',
@@ -184,7 +184,7 @@ const options3 = computed(() => ({
 
 const options4 = computed(() => ({
   chart: {
-    height: 395,
+    height: 398,
     type: 'column',
   },
   xAxis: {

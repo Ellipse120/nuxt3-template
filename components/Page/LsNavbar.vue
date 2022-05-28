@@ -186,14 +186,13 @@ const formattedDay = new Intl.DateTimeFormat('zh-CN', {
   weekday: 'long',
 }).format(useNow().value)
 
-// const router = useRouter()
+let i = 0
+
 const prev = async () => {
-  // router.push(menus.value[Math.abs(--i % menus.value.length)].route)
   await navigateTo(menus.value[Math.abs(--i % menus.value.length)].route)
 }
-let i = 0
+
 const next = async () => {
-  // router.push(menus.value[Math.abs(++i % menus.value.length)].route)
   await navigateTo(menus.value[Math.abs(++i % menus.value.length)].route)
 }
 </script>
@@ -222,6 +221,7 @@ const next = async () => {
   width: 36.4%;
   height: 46px;
 }
+
 .header-m {
   --color1: azure;
   --color2: aqua;
@@ -252,6 +252,7 @@ const next = async () => {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .header-r {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
   background-image: linear-gradient(

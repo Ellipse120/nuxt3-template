@@ -56,7 +56,7 @@
                 <PageSectionLabel title="各公寓预警信息" />
               </template>
 
-              <PageListWrapper class="max-h-47">
+              <PageListWrapper class="max-h-55">
                 <PageListItem v-for="t in list1" :key="t.id" :item="t">
                   <template #icon>
                     <IconFluent:alert-on-20-filled class="w-8 h-8 mr-2 text-red-500" />
@@ -187,7 +187,7 @@ const list1 = computed(() =>
 
 const options2 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -224,7 +224,7 @@ const options2 = computed(() => ({
 
 const options3 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'column',
   },
   xAxis: {
@@ -251,7 +251,7 @@ const options3 = computed(() => ({
 
 const options4 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'column',
   },
   xAxis: {
@@ -278,7 +278,7 @@ const options4 = computed(() => ({
 
 const options5 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'column',
   },
   xAxis: {
@@ -305,7 +305,7 @@ const options5 = computed(() => ({
 
 const options6 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'column',
   },
   xAxis: {
@@ -332,7 +332,7 @@ const options6 = computed(() => ({
 
 const options7 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -369,7 +369,7 @@ const options7 = computed(() => ({
 
 const options8 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -406,7 +406,7 @@ const options8 = computed(() => ({
 
 const options9 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -447,7 +447,7 @@ const options9 = computed(() => ({
 
 const options10 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -484,7 +484,7 @@ const options10 = computed(() => ({
 
 const options11 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -521,7 +521,7 @@ const options11 = computed(() => ({
 
 const options12 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {
@@ -558,7 +558,7 @@ const options12 = computed(() => ({
 
 const options13 = computed(() => ({
   chart: {
-    height: 190,
+    height: 220,
     type: 'bar',
   },
   xAxis: {

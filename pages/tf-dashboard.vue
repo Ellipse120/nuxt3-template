@@ -89,15 +89,15 @@
                   scrollable
                   scrollHeight="150px"
                 >
-                  <Column field="序号" header="序号" />
-                  <Column field="隐患编号" header="隐患编号" width="20rem" />
-                  <Column field="隐患描述导致结果" header="隐患描述导致结果" headerStyle="width: 28em" />
-                  <Column field="类别" header="类别" />
-                  <Column field="形成时间" header="形成时间" />
-                  <Column field="发现时间" header="发现时间" />
-                  <Column field="责任单位" header="责任单位" />
-                  <Column field="负责人" header="负责人" />
-                  <Column field="完成时间" header="完成时间" />
+                  <Column field="序号" header="序号" class="!p-0" />
+                  <Column field="隐患编号" header="隐患编号" width="20rem" class="!p-0" />
+                  <Column field="隐患描述导致结果" header="隐患描述导致结果" headerStyle="width: 28em" class="!p-0" />
+                  <Column field="类别" header="类别" class="!p-0" />
+                  <Column field="形成时间" header="形成时间" class="!p-0" />
+                  <Column field="发现时间" header="发现时间" class="!p-0" />
+                  <Column field="责任单位" header="责任单位" class="!p-0" />
+                  <Column field="负责人" header="负责人" class="!p-0" />
+                  <Column field="完成时间" header="完成时间" class="!p-0" />
                 </DataTable>
               </PageSectionLayout>
             </div>
@@ -113,7 +113,7 @@
 
                   <div class="bg-ls-blue-800 inline-grid grid-cols-3 grid-rows-3 gap-2 p-2">
                     <div class="col-span-3 flex">
-                      <PageSectionIconInfo label="年计划接待人次" :value="option3?.data?.find(t => t.type === 1)?.amount">
+                      <PageSectionIconInfo label="年计划接待人次" :value="option3?.data?.find((t) => t.type === 1)?.amount">
                         <template #icon>
                           <IconFluent:people-team-16-filled />
                         </template>
@@ -126,17 +126,21 @@
                       </PageSectionIconInfo>
                     </div>
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="月接待人次" :value="option3?.data?.find(t => t.type === 5)?.amount" />
+                    <PageSectionIconInfo
+                      class="border border-blue-800 rounded h-12"
+                      label="月接待人次"
+                      :value="option3?.data?.find((t) => t.type === 5)?.amount"
+                    />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="已叫班次数" value="680" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="已叫班次数" value="680" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="临客次数" value="2400" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="临客次数" value="2400" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="日接待人次" value="30" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="日接待人次" value="30" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="未叫班次数" value="2785" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="未叫班次数" value="2785" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-18" label="临客人数" value="5800" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="临客人数" value="5800" />
                   </div>
                 </PageSectionLayout>
 
@@ -160,21 +164,29 @@
                       </template>
                     </PageSectionIconInfo>
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年计划接待人次" :value="option3?.data?.find(t => t.type === 2)?.amount" />
+                    <PageSectionIconInfo
+                      class="border border-blue-800 rounded h-12"
+                      label="年计划接待人次"
+                      :value="option3?.data?.find((t) => t.type === 2)?.amount"
+                    />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="月接待人次" :value="option3?.data?.find(t => t.type === 6)?.amount" />
+                    <PageSectionIconInfo
+                      class="border border-blue-800 rounded h-12"
+                      label="月接待人次"
+                      :value="option3?.data?.find((t) => t.type === 6)?.amount"
+                    />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="年累计接待人次" value="30" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="年累计接待人次" value="30" />
 
-                    <PageSectionIconInfo class="border border-blue-800 rounded h-20" label="日接待人次" value="2785" />
+                    <PageSectionIconInfo class="border border-blue-800 rounded h-12" label="日接待人次" value="2785" />
                   </div>
                 </PageSectionLayout>
               </div>
 
               <div class="w-4/7 ml-2">
-                <div class="flex items-center justify-around bg-blue-600 p-2 h-30">
+                <div class="flex items-center justify-around bg-blue-600 p-2 h-20">
                   <div>
-                    <img class="w-20 h-20 filter drop-shadow-2xl" :src="logo" />
+                    <img class="w-16 h-16 filter drop-shadow-2xl" :src="logo" />
                   </div>
                   <div class="flex flex-col items-center justify-center">
                     <div class="font-extrabold text-xl">上海房建公寓段</div>
@@ -211,7 +223,7 @@
                     <PageSectionLabel title="督办事项" />
                   </NuxtLink>
 
-                  <PageListWrapper class="max-h-64">
+                  <PageListWrapper class="max-h-41">
                     <PageListItem v-for="t in list1" :key="t.id" :item="t" />
                   </PageListWrapper>
                 </PageSectionLayout>
@@ -219,7 +231,7 @@
             </div>
           </div>
 
-          <div class="grid grid-cols-5 grid-rows-2 gap-2">
+          <div class="grid grid-cols-5 grid-rows-[140px, 150px] gap-2">
             <PageSectionLayout>
               <template #header>
                 <NuxtLink to="fangjianjishu">
@@ -228,10 +240,10 @@
               </template>
               <chart :options="options6" />
               <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
-                <Column field="两库" header="两库" />
-                <Column field="新增" header="新增" />
-                <Column field="处置" header="处置" />
-                <Column field="剩余累计" header="剩余累计" />
+                <Column field="两库" header="两库" class="!p-0" />
+                <Column field="新增" header="新增" class="!p-0" />
+                <Column field="处置" header="处置" class="!p-0" />
+                <Column field="剩余累计" header="剩余累计" class="!p-0" />
               </DataTable>
             </PageSectionLayout>
 
@@ -249,7 +261,7 @@
                 <PageSectionLabel title="施工管理信息" />
               </template>
 
-              <div class="my-4 flex flex-wrap justify-between">
+              <div class="mt-2 flex flex-wrap justify-between">
                 <NuxtLink to="http://10.128.20.156:8080/tcx_ui/views/login.html" target="_blank">
                   <span
                     class="bg-ls-blue-600 hover:(bg-blue-600 text-white) transition-all duration-200 rounded-2xl text-xs font-bold lg:px-1"
@@ -270,61 +282,75 @@
                 </NuxtLink>
               </div>
 
-              <div class="flex flex-col items-center justify-between">
-                <PageSectionLayout class="my-2 p-0 flex items-center justify-between">
-                  <div class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">当日计划</div>
+              <PageSectionLayout class="my-2 p-0 flex items-center justify-around">
+                <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">当日计划</div>
 
-                  <DataTable :value="table3" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
-                    <Column field="当日施工" header="当日施工" />
-                    <Column field="当日维修" header="当日维修" />
-                    <Column field="高速铁路" header="高速铁路" />
-                    <Column field="普速铁路" header="普速铁路" />
-                    <Column field="邻近营业线施工" header="邻近营业线施工" />
-                  </DataTable>
-                </PageSectionLayout>
+                <DataTable :value="table3" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                  <Column field="当日施工" header="当日施工" class="!p-0" />
+                  <Column field="当日维修" header="当日维修" class="!p-0" />
+                  <Column field="高速铁路" header="高速铁路" class="!p-0" />
+                  <Column field="普速铁路" header="普速铁路" class="!p-0" />
+                  <Column field="邻近营业线施工" header="邻近营业线施工" class="!p-0" />
+                </DataTable>
+              </PageSectionLayout>
 
-                <PageSectionLayout class="p-0 mt-2 flex items-center justify-between">
-                  <div class="lg:(w-12 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">本月施工</div>
+              <PageSectionLayout class="p-0 flex items-center justify-around">
+                <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">本月施工</div>
 
-                  <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
-                    <Column field="本月施工" header="当日施工" />
-                    <Column field="本月维修" header="当日维修" />
-                    <Column field="高速铁路" header="高速铁路" />
-                    <Column field="普速铁路" header="普速铁路" />
-                    <Column field="邻近营业线施工" header="邻近营业线施工" />
-                  </DataTable>
-                </PageSectionLayout>
-              </div>
+                <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                  <Column field="本月施工" header="当日施工" class="!p-0" />
+                  <Column field="本月维修" header="当日维修" class="!p-0" />
+                  <Column field="高速铁路" header="高速铁路" class="!p-0" />
+                  <Column field="普速铁路" header="普速铁路" class="!p-0" />
+                  <Column field="邻近营业线施工" header="邻近营业线施工" class="!p-0" />
+                </DataTable>
+              </PageSectionLayout>
             </PageSectionLayout>
 
-            <div class="flex flex-col items-center justify-between">
-              <PageSectionLayout class="w-full">
+            <div>
+              <PageSectionLayout class="mb-1">
                 <template #header>
                   <NuxtLink to="danshensushe">
                     <PageSectionLabel title="食堂管理" />
                   </NuxtLink>
                 </template>
 
-                <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" :value="option3?.data?.find(t => t.type === 3)?.amount" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日收入" value="680" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" value="30" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日就餐人次" value="2785" />
+                <div class="flex items-center justify-between bg-ls-blue-800 h-12 p-1">
+                  <PageSectionIconInfo
+                    class="w-1/4 border border-blue-800 rounded"
+                    label="年计划收入"
+                    :value="option3?.data?.find((t) => t.type === 3)?.amount"
+                  />
+                  <PageSectionIconInfo class="w-1/4 mx-1 border border-blue-800 rounded" label="日收入" value="680" />
+                  <PageSectionIconInfo class="w-1/4 border border-blue-800 rounded" label="累计收入" value="30" />
+                  <PageSectionIconInfo class="w-1/4 ml-1 border border-blue-800 rounded" label="日就餐人次" value="2785" />
                 </div>
               </PageSectionLayout>
 
-              <PageSectionLayout class="w-full">
+              <PageSectionLayout>
                 <template #header>
                   <NuxtLink to="xiewuyunenghao">
                     <PageSectionLabel title="卸污管理" :loading="pending1" />
                   </NuxtLink>
                 </template>
 
-                <div class="flex items-center justify-between bg-ls-blue-800 p-2 h-20">
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="年计划收入" :value="option3?.data?.find(t => t.type === 4)?.amount" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日既有卸污列次" :value="option1?.data?.gdBoxCount" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="累计收入" :value="option1?.data?.totalIncome" />
-                  <PageSectionIconInfo class="border border-blue-800 rounded p-1" label="日高动卸污箱数" :value="option1?.data?.jyBoxCount" />
+                <div class="flex items-center justify-between bg-ls-blue-800 h-12 p-1">
+                  <PageSectionIconInfo
+                    class="border border-blue-800 rounded"
+                    label="年计划收入"
+                    :value="option3?.data?.find((t) => t.type === 4)?.amount"
+                  />
+                  <PageSectionIconInfo
+                    class="border border-blue-800 rounded"
+                    label="日既有卸污列次"
+                    :value="option1?.data?.gdBoxCount"
+                  />
+                  <PageSectionIconInfo class="border border-blue-800 rounded" label="累计收入" :value="option1?.data?.totalIncome" />
+                  <PageSectionIconInfo
+                    class="border border-blue-800 rounded"
+                    label="日高动卸污箱数"
+                    :value="option1?.data?.jyBoxCount"
+                  />
                 </div>
               </PageSectionLayout>
             </div>
@@ -336,7 +362,7 @@
                 </NuxtLink>
               </template>
 
-              <PageListWrapper class="max-h-64">
+              <PageListWrapper class="max-h-38">
                 <PageListItem v-for="t in list2" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -364,7 +390,7 @@
                 <PageSectionLabel title="当日天窗详情" />
               </template>
 
-              <div class="overflow-y-auto lg:max-h-64 py-2 bg-ls-blue-800">
+              <div class="overflow-y-auto lg:max-h-35 py-2 bg-ls-blue-800">
                 <div
                   v-for="i in 9"
                   :key="i"
@@ -397,7 +423,7 @@
                 </NuxtLink>
               </template>
 
-              <PageListWrapper class="max-h-64">
+              <PageListWrapper class="max-h-35">
                 <PageListItem v-for="t in list3" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -409,7 +435,7 @@
                 </NuxtLink>
               </template>
 
-              <PageListWrapper class="min-h-64 max-h-64">
+              <PageListWrapper class="min-h-35 max-h-35">
                 <PageListItem v-for="t in list4" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -421,7 +447,6 @@
 </template>
 
 <script lang="ts" setup>
-// @ts-nocheck
 import logo from '../assets/images/shanghai-railway.jpg'
 
 definePageMeta({
@@ -575,7 +600,12 @@ const table5 = computed(() => [
 
 const options1 = computed(() => ({
   chart: {
-    height: 180,
+    height: 114,
+  },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
   },
   tooltip: {
     headerFormat: '{series.name}<br>',
@@ -608,13 +638,13 @@ const options1 = computed(() => ({
 
 const options2 = computed(() => ({
   chart: {
-    height: 400,
+    height: 269,
   },
 }))
 
 const options3 = computed(() => ({
   chart: {
-    height: 180,
+    height: 114,
     type: 'column',
   },
   xAxis: {
@@ -645,7 +675,12 @@ const options3 = computed(() => ({
 
 const options4 = computed(() => ({
   chart: {
-    height: 180,
+    height: 114,
+  },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
   },
   tooltip: {
     headerFormat: '{series.name}<br>',
@@ -680,12 +715,17 @@ const options4 = computed(() => ({
 
 const options5 = computed(() => ({
   chart: {
-    height: 180,
+    height: 114,
     type: 'column',
   },
   xAxis: {
     type: 'category',
     categories: ['2021年中', '2021年底', '2022年中'],
+  },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
   },
   plotOptions: {
     column: {
@@ -714,12 +754,17 @@ const options5 = computed(() => ({
 
 const options6 = computed(() => ({
   chart: {
-    height: 150,
+    height: 100,
     type: 'column',
   },
   xAxis: {
     type: 'category',
     categories: ['新增', '已处置', '剩余累计'],
+  },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
   },
   plotOptions: {
     column: {
@@ -727,13 +772,6 @@ const options6 = computed(() => ({
       borderWidth: 0,
     },
   },
-  // legend: {
-  //   align: 'right',
-  //   verticalAlign: 'top',
-  //   x: -10,
-  //   y: 0,
-  //   floating: true
-  // },
   series: [
     {
       name: '安全隐患库',
@@ -748,7 +786,7 @@ const options6 = computed(() => ({
 
 const options7 = computed(() => ({
   chart: {
-    height: 250,
+    height: 153,
     type: 'column',
   },
   xAxis: {
@@ -775,7 +813,7 @@ const options7 = computed(() => ({
 
 const options8 = computed(() => ({
   chart: {
-    height: 250,
+    height: 140,
   },
   xAxis: {
     categories: ['5点位', '20点位', '40点位', '60点位', '80点位'],
@@ -811,7 +849,7 @@ const options8 = computed(() => ({
 
 const options9 = computed(() => ({
   chart: {
-    height: 250,
+    height: 140,
     type: 'column',
   },
   xAxis: {
