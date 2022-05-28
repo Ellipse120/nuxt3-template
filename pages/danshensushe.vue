@@ -76,7 +76,7 @@
             <chart :options="options1" />
           </PageSectionLayout>
 
-          <div class="w-2/4 mx-2 grid grid-cols-2 grid-rows-3 gap-2">
+          <div class="w-2/4 px-2 grid grid-cols-2 grid-rows-[250px,300px,255px] gap-2">
             <PageSectionLayout class="col-span-2">
               <template #header>
                 <PageSectionLabel title="各单身宿舍入住率及床位数" />
@@ -124,7 +124,7 @@
                 <PageSectionLabel title="最近床位动态" />
               </template>
 
-              <PageListWrapper class="min-h-60 max-h-60">
+              <PageListWrapper class="min-h-50">
                 <PageListItem v-for="t in list1" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -134,7 +134,7 @@
                 <PageSectionLabel title="现场预警" />
               </template>
 
-              <PageListWrapper class="min-h-60 max-h-60">
+              <PageListWrapper class="min-h-50">
                 <PageListItem v-for="t in list2" :key="t.id" :item="t" />
               </PageListWrapper>
             </PageSectionLayout>
@@ -193,7 +193,7 @@ $setSiteTitle()
 
 const options1 = computed(() => ({
   chart: {
-    height: '790',
+    height: 770,
     type: 'bar',
   },
   xAxis: {
@@ -228,7 +228,7 @@ const options1 = computed(() => ({
         enabled: true,
         format: '{point.y:.2f}%',
       },
-      data: [75.5, 85, 78, 75, 73, 65, 75.5, 85, 78, 75, 73, 65, 75.5, 85, 78, 75],
+      data: [75.5, 85, 78, 75, 73, 65, 75.5, 85, 78, 75, 73, 65, 75.5, 85, 78, 75, 88, 92],
     },
     {
       name: '床位数',
@@ -241,7 +241,7 @@ const options1 = computed(() => ({
 
 const options2 = computed(() => ({
   chart: {
-    height: 244,
+    height: 200,
     type: 'column',
   },
   xAxis: {
@@ -268,7 +268,7 @@ const options2 = computed(() => ({
 
 const options3 = computed(() => ({
   chart: {
-    height: 240,
+    height: 250,
     type: 'column',
   },
   xAxis: {
@@ -309,7 +309,7 @@ const options3 = computed(() => ({
 
 const options4 = computed(() => ({
   chart: {
-    height: 170,
+    height: 150,
     type: 'bar',
   },
   xAxis: {
@@ -350,7 +350,7 @@ const options4 = computed(() => ({
 
 const options5 = computed(() => ({
   chart: {
-    height: 170,
+    height: 150,
     type: 'bar',
   },
   xAxis: {
@@ -391,7 +391,7 @@ const options5 = computed(() => ({
 
 const options6 = computed(() => ({
   chart: {
-    height: 170,
+    height: 150,
     type: 'bar',
   },
   xAxis: {
@@ -432,7 +432,7 @@ const options6 = computed(() => ({
 
 const options7 = computed(() => ({
   chart: {
-    height: 170,
+    height: 147,
     type: 'bar',
   },
   xAxis: {
