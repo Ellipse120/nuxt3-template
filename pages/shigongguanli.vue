@@ -162,10 +162,11 @@ const saveProduct = async () => {
     method: 'post',
     body: product.value
   })
-  toast.add({ severity: 'success', summary: '成功', detail: '保存成功', life: 3000 })
 
   productDialog.value = false
   product.value = {} as TProduct
+  toast.add({ severity: 'success', summary: '成功', detail: '保存成功', life: 3000 })
+  refresh()
 }
 
 const editProduct = (prod) => {
@@ -180,10 +181,6 @@ const confirmDeleteProduct = (prod) => {
 
 const deleteProduct = async () => {
   await $api(`work-daily-record/${product.value.id}`, {
-    method: 'delete',
-  })
-  console.log(product.value.id)
-  $api(`work-daily-record/${product.value.id}`, {
     method: 'delete',
   })
   deleteProductDialog.value = false

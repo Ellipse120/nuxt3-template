@@ -5,7 +5,7 @@ interface ApiResponse {
 }
 
 const baseURL = 'http://localhost:3001/tufang/'
-const isDebug = true || localStorage.getItem('debug') === 'debug'
+const isDebug = localStorage.getItem('debug') === 'debug'
 
 const api = (url, options?) => {
   return useFetch<ApiResponse>(() => url, {
@@ -17,6 +17,7 @@ const api = (url, options?) => {
       headers: {
         Authorization: `Bearer ${useRuntimeConfig().apiSecret || 'token'}`,
       },
+      initialCache: false,
       // @ts-ignore
       onRequestError({ request, error }) {
         // eslint-disable-next-line no-console
