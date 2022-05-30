@@ -143,7 +143,7 @@ a.router-link-exact-active {
 
 html.dark {
   a.router-link-exact-active {
-    color: theme('colors.white');
+    color: theme('colors.ls-blue.600');
   }
 }
 </style>

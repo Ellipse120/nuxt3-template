@@ -101,6 +101,7 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(ConfirmationService)
   nuxtApp.vueApp.component('BlockUI', BlockUI)
   nuxtApp.vueApp.component('Button', Button)
+  nuxtApp.vueApp.component('Calendar', Calendar)
   nuxtApp.vueApp.component('Column', Column)
   nuxtApp.vueApp.component('ColumnGroup', ColumnGroup)
   nuxtApp.vueApp.component('DataTable', DataTable)
