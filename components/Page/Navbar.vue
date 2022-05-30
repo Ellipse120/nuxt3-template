@@ -8,14 +8,14 @@
         >
           <ul class="flex items-center space-x-8">
             <li v-for="(item, i) in menus" :key="i">
-              <Anchor
+              <CustomAnchor
                 v-if="item.type === 'link'"
                 :to="item.route ? item.route : undefined"
                 :href="item.href ? item.href : undefined"
                 class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"
-                >{{ item.text }}</Anchor
+                >{{ item.text }}</CustomAnchor
               >
-              <Button
+              <CustomButton
                 v-else-if="item.type === 'button'"
                 :text="item.text"
                 size="xs"
@@ -31,13 +31,13 @@
         >
           <LanguageSwitcher />
           <ThemeToggle />
-          <Anchor
+          <CustomAnchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
             href="https://gitee.com/shentie-fe/tufang-large-screen.git"
             title="Gitee"
           >
             <IconSimpleIcons:gitee />
-          </Anchor>
+          </CustomAnchor>
         </div>
       </div>
     </template>
@@ -56,12 +56,12 @@
                     item.type === 'link',
                 }"
               >
-                <Anchor
+                <CustomAnchor
                   v-if="item.type === 'link'"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                   class="flex-1 hover:no-underline capitalize"
-                  >{{ item.text }}</Anchor
+                  >{{ item.text }}</CustomAnchor
                 >
                 <Button
                   v-else-if="item.type === 'button'"
@@ -87,15 +87,15 @@
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
-        <Button
+        <CustomButton
           type="secondary"
           title="Gitee"
           href="https://gitee.com/shentie-fe/tufang-large-screen.git"
         >
           <IconSimpleIcons:gitee />
           <span class="ml-1">Gitee</span>
-        </Button>
-        <Button
+        </CustomButton>
+        <CustomButton
           text="Close"
           type="secondary"
           @click.prevent="toggleOptions(false)"
@@ -107,6 +107,7 @@
 
 <script lang="ts" setup>
 import { IApp } from '~/utils/app'
+import CustomButton from "~/components/CustomButton.vue";
 
 export interface IMenuItem {
   type: 'link' | 'button'
@@ -126,6 +127,11 @@ const menus = computed((): IMenuItem[] => [
     type: 'button',
     text: t('pages.dashboard.nav'),
     route: { name: 'dashboard' },
+  },
+  {
+    type: 'button',
+    text: t('pages.shigongguanli.nav'),
+    route: { name: 'shigongguanli' },
   },
 ])
 </script>

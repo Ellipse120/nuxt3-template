@@ -168,9 +168,6 @@ definePageMeta({
 const { $setSiteTitle } = useNuxtApp()
 $setSiteTitle()
 
-const { isSmallerScreen } = useMediaQuerySmallScreen()
-const height = computed(() => (isSmallerScreen.value ? 220 : 215))
-
 const xData = ['上海行车公寓', '上南行车公寓', '虹桥行车公寓', '虹桥动车公寓', '南翔动车公寓', '苏州行车公寓']
 
 const list1 = computed(() =>

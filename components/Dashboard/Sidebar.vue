@@ -10,7 +10,7 @@
     <div class="flex-1 overflow-y-auto pl-4 lg:pl-0 pr-4 py-4">
       <ul>
         <li v-for="i in 29" :key="i">
-          <Anchor
+          <CustomAnchor
             :to="{ name: 'dashboard' }"
             class="group flex items-center mb-4 hover:no-underline"
           >
@@ -33,7 +33,7 @@
             >
               {{ $t('pages.dashboard.index.nav') }}
             </span>
-          </Anchor>
+          </CustomAnchor>
         </li>
       </ul>
     </div>

@@ -23,13 +23,13 @@
         </span>
       </h1>
       <div class="flex space-x-4 justify-center mt-10">
-        <Button
+        <CustomButton
           size="lg"
           text="Nuxt 3"
           class="font-extrabold"
           href="https://v3.nuxtjs.org"
         />
-        <Button
+        <CustomButton
           size="lg"
           text="Gitee"
           type="secondary"

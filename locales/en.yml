@@ -29,6 +29,9 @@ pages:
     index:
       nav: home
       title: home
+  shigongguanli:
+    nav: shigongguanli
+    title: shigongguanli
   tufang:
     dashboard: dashboard
     danshensushe: danshensushe

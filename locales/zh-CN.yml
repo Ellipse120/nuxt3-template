@@ -29,6 +29,9 @@ pages:
     index:
       nav: 主页
       title: 主页
+  shigongguanli:
+    nav: 施工管理
+    title: 施工管理
   tufang:
     dashboard: 首页
     danshensushe: 单身宿舍

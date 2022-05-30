@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     '~/assets/sass/app.scss',
     '~/assets/sass/theme.css',
     // 'primevue/resources/themes/lara-dark-indigo/theme.css',
-    'primevue/resources/primevue.css',
+    'primevue/resources/primevue.min.css',
     'primeicons/primeicons.css',
   ],
 

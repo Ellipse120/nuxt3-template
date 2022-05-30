@@ -13,13 +13,13 @@
         >
           <LanguageSwitcher />
           <ThemeToggle />
-          <Anchor
+          <CustomAnchor
             class="hover:no-underline hover:text-slate-900 hover:dark:text-white text-lg flex self-center items-center"
             href="https://gitee.com/shentie-fe/tufang-large-screen.git"
             title="Gitee"
           >
             <IconSimpleIcons:gitee />
-          </Anchor>
+          </CustomAnchor>
         </div>
       </div>
     </template>

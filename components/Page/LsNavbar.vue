@@ -48,13 +48,13 @@
     <!--        >-->
     <!--          <ul class="flex items-center space-x-8">-->
     <!--            <li v-for="(item, i) in menus" :key="i">-->
-    <!--              <Anchor-->
+    <!--              <CustomAnchor-->
     <!--                v-if="item.type === 'link'"-->
     <!--                :to="item.route ? item.route : undefined"-->
     <!--                :href="item.href ? item.href : undefined"-->
     <!--                class="hover:no-underline hover:text-slate-900 hover:dark:text-white capitalize"-->
     <!--                >{{ item.text }}-->
-    <!--              </Anchor>-->
+    <!--              </CustomAnchor>-->
     <!--              <Button-->
     <!--                v-else-if="item.type === 'button'"-->
     <!--                :text="item.text"-->
@@ -86,13 +86,13 @@
                     item.type === 'link',
                 }"
               >
-                <Anchor
+                <CustomAnchor
                   v-if="item.type === 'link'"
                   :to="item.route ? item.route : undefined"
                   :href="item.href ? item.href : undefined"
                   class="flex-1 hover:no-underline capitalize"
                   >{{ item.text }}
-                </Anchor>
+                </CustomAnchor>
                 <Button
                   v-else-if="item.type === 'button'"
                   :text="item.text"

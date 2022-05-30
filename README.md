@@ -32,8 +32,8 @@ With a lot of useful features. and integrated with Windi CSS.
 
 ## Built-in Components
 - [x] Footer
-- [x] Button
-- [x] Anchor (link)
+- [x] CustomButton
+- [x] CustomAnchor (link)
 - [x] Navbar
   - [x] Navbar Builder
   - [x] Drawer (on mobile)
@@ -50,7 +50,7 @@ With a lot of useful features. and integrated with Windi CSS.
       - [x] Section Title
 - [x] Dashboard Layout
     - [x] Sidebar
-- [ ] Modal
+- [x] Chart
 - [ ] Alert
 
 ## Quick Start
