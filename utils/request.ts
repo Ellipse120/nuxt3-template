@@ -4,18 +4,17 @@ interface ApiResponse {
   data: any
 }
 
-const baseURL = 'http://localhost:3001/tufang/'
 const isDebug = localStorage.getItem('debug') === 'debug'
 
 const api = (url, options?) => {
   return useFetch<ApiResponse>(() => url, {
     ...{
-      baseURL,
+      baseURL: useRuntimeConfig().app.serverUrl,
       // onRequest({ request, options }) {
       //   console.log('[fetch request]', request, options)
       // },
       headers: {
-        Authorization: `Bearer ${useRuntimeConfig().apiSecret || 'token'}`,
+        Authorization: `Bearer ${useRuntimeConfig().app.apiSecret || 'token'}`,
       },
       initialCache: false,
       // @ts-ignore

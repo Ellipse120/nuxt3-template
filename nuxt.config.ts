@@ -13,6 +13,13 @@ declare module '@nuxt/schema' {
 export default defineNuxtConfig({
   ssr: false,
 
+  runtimeConfig: {
+    app: {
+      apiSecret: 'xxx',
+      serverUrl: 'http://localhost:3001/tufang/',
+    },
+  },
+
   // meta
   meta: {
     title: '土地房产综合管理平台',

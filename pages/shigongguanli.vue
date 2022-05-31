@@ -10,7 +10,15 @@
               <template #start>
                 <Button label="添加" icon="pi pi-plus" class="p-button-success" @click="openNew" />
 
-                <Calendar v-model="dateRange" class="!mx-2" date-format="yy-mm-dd" placeholder="请选择日期" selectOtherMonths selectionMode="range" :manualInput="false" />
+                <Calendar
+                  v-model="dateRange"
+                  class="!mx-2"
+                  date-format="yy-mm-dd"
+                  placeholder="请选择日期"
+                  selectOtherMonths
+                  selectionMode="range"
+                  :manualInput="false"
+                />
 
                 <Button label="查询" icon="pi pi-search" @click="refresh" />
               </template>
@@ -19,10 +27,13 @@
                 <FileUpload
                   mode="basic"
                   accept="image/*"
-                  :maxFileSize="1000000"
+                  :maxFileSize="10000000"
                   label="导入"
                   chooseLabel="导入"
                   class="!mr-2 inline-block"
+                  :auto="true"
+                  :customUpload="true"
+                  @uploader="myUploader"
                 />
                 <Button label="导出" icon="pi pi-download" class="p-button-help" @click="exportCSV($event)" />
               </template>
@@ -35,13 +46,12 @@
               v-model:selection="selectedProducts"
               :paginator="true"
               :rows="10"
-              paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
+              paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
               :rowsPerPageOptions="[5, 10, 25]"
-              currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products"
               responsiveLayout="scroll"
             >
               <template #header>
-                <div class="table-header flex flex-column md:flex-row md:justiify-content-between">
+                <div class="table-header flex flex-column md:flex-row md:justify-content-between">
                   <h5 class="mb-2 md:m-0 p-as-md-center">每日施工信息列表</h5>
                 </div>
               </template>
@@ -101,7 +111,6 @@
               <Button label="确定" icon="pi pi-check" class="p-button-text" @click="deleteProduct" />
             </template>
           </Dialog>
-
         </div>
       </PageSection>
     </PageBody>
@@ -137,7 +146,7 @@ const hideDialog = () => {
 }
 
 type TProduct = {
-  id?: number,
+  id?: number
   // 施工数量
   workCount: number
   // 维修数量
@@ -152,15 +161,23 @@ type TProduct = {
   operateTime: string
 }
 
-const { data: products, pending: pending1, refresh } = await $api(
-  `work-daily-record?startDate=${useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value}&endDate=${useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value}`, {
-  watch: [dateRange],
-})
+const {
+  data: products,
+  pending: pending1,
+  refresh,
+} = await $api(
+  `work-daily-record?startDate=${useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value}&endDate=${
+    useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value
+  }`,
+  {
+    watch: [dateRange],
+  }
+)
 
 const saveProduct = async () => {
   await $api(`work-daily-record/insert`, {
     method: 'post',
-    body: product.value
+    body: product.value,
   })
 
   productDialog.value = false
@@ -187,6 +204,23 @@ const deleteProduct = async () => {
   product.value = {} as TProduct
   toast.add({ severity: 'success', summary: '成功', detail: '删除成功', life: 3000 })
   refresh()
+}
+
+const myUploader = async (e) => {
+  const formData = new FormData()
+  formData.append('file', e.files[0])
+  await $fetch(`${useRuntimeConfig().app.serverUrl}/voca/import`, {
+    method: 'post',
+    body: formData,
+  })
+    .then(() => {
+      toast.add({ severity: 'success', summary: '成功', detail: '导入成功', life: 3000 })
+      refresh()
+    })
+    .catch((err) => {
+      toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
+      console.log(err)
+    })
 }
 
 const exportCSV = () => {
