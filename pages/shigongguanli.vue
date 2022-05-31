@@ -161,14 +161,19 @@ type TProduct = {
   operateTime: string
 }
 
+const queryString = computed(() => {
+  const startDate = dateRange.value?.[0] ? useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value : ''
+  const endDate = dateRange.value?.[1] ? useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value : ''
+
+  return `?startDate=${startDate}&endDate=${endDate}`
+})
+
 const {
   data: products,
   pending: pending1,
   refresh,
 } = await $api(
-  `work-daily-record?startDate=${useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value}&endDate=${
-    useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value
-  }`,
+  () => `work-daily-record/${queryString.value}`,
   {
     watch: [dateRange],
   }

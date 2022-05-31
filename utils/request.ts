@@ -7,7 +7,7 @@ interface ApiResponse {
 const isDebug = localStorage.getItem('debug') === 'debug'
 
 const api = (url, options?) => {
-  return useFetch<ApiResponse>(() => url, {
+  return useFetch<ApiResponse>(url, {
     ...{
       baseURL: useRuntimeConfig().app.serverUrl,
       // onRequest({ request, options }) {
