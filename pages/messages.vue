@@ -10,7 +10,7 @@
               <template #start>
                 <Button label="添加" icon="pi pi-plus" class="p-button-success" @click="openNew" />
 
-                <div v-for="(value, key) of eventType" :key="key" class="ml-2">
+                <div v-for="(value, key) of eventType" :key="key" class="mx-2">
                   <RadioButton :id="key" name="category" :value="key" v-model="eventTypeQuery" />
                   <label class="ml-2" :for="key">{{value}}</label>
                 </div>
@@ -36,11 +36,10 @@
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
-                  <h5 class="mb-2 md:m-0 p-as-md-center">每日施工信息列表</h5>
+                  <h5 class="mb-2 md:m-0 p-as-md-center">事件通知列表</h5>
                 </div>
               </template>
 
-              <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
               <Column field="title" header="事件标题" />
               <Column field="context" header="事件内容" />
               <Column field="type" header="事件类型">
@@ -88,7 +87,7 @@
 
           <Dialog v-model:visible="deleteProductDialog" :style="{ width: '450px' }" header="提示" :modal="true">
             <div class="confirmation-content">
-              <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
+              <i class="pi pi-exclamation-triangle mr-3" />
               <span v-if="product">确认删除吗?</span>
             </div>
 
@@ -116,7 +115,7 @@ $setSiteTitle()
 
 const toast = useToast()
 const dt = ref()
-const eventTypeQuery = ref(null)
+const eventTypeQuery = ref('')
 const productDialog = ref(false)
 const deleteProductDialog = ref(false)
 const product = ref<TProduct>()

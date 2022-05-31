@@ -56,7 +56,6 @@
                 </div>
               </template>
 
-              <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
               <Column field="workCount" header="施工数量" />
               <Column field="repairCount" header="维修数量" />
               <Column field="railwayCount" header="高速铁路数量" />
@@ -103,7 +102,7 @@
 
           <Dialog v-model:visible="deleteProductDialog" :style="{ width: '450px' }" header="提示" :modal="true">
             <div class="confirmation-content">
-              <i class="pi pi-exclamation-triangle mr-3" style="font-size: 2rem" />
+              <i class="pi pi-exclamation-triangle mr-3" />
               <span v-if="product">确认删除吗?</span>
             </div>
 
