@@ -21,7 +21,7 @@
         <div
           class="header-m w-1/3 mx-1 text-4xl tracking-wider font-bold font-pangmenzhengdao text-gray-200 py-2"
         >
-          <NuxtLink tag="a" :to="{ name: 'tf-dashboard' }">
+          <NuxtLink tag="a" :to="{ name: 'tf-dashboard' }" class="!text-white">
             {{ app.name }}
           </NuxtLink>
         </div>
