@@ -457,9 +457,9 @@ definePageMeta({
 const { $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
 
-const { data: option1, pending: pending1 } = $api('xiewu-daily-record/index')
-const { data: option2, pending: pending2 } = $api('goal-config')
-const { data: option3, pending: pending3 } = $api('year-income-config/type')
+const { data: option1, pending: pending1, error: error1 } = await $api('xiewu-daily-record/index')
+const { data: option2, pending: pending2 } = await $api('goal-config')
+const { data: option3, pending: pending3 } = await $api('year-income-config/type')
 
 const list1 = computed(() =>
   Array.from({ length: 9 }, (_, index) => {
