@@ -62,6 +62,7 @@
               <Column field="railwayCount" header="高速铁路数量" />
               <Column field="normalRailwayCount" header="普通铁路数量" />
               <Column field="nearlineCount" header="邻近营业线施工数" />
+              <Column field="createTime" header="创建时间" />
 
               <Column :exportable="false" style="min-width: 8rem">
                 <template #body="slotProps">
