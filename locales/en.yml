@@ -32,6 +32,9 @@ pages:
   shigongguanli:
     nav: shigongguanli
     title: shigongguanli
+  messages:
+    nav: messages
+    title: messages
   tufang:
     dashboard: dashboard
     danshensushe: danshensushe

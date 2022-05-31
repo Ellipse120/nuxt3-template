@@ -10,31 +10,15 @@
               <template #start>
                 <Button label="添加" icon="pi pi-plus" class="p-button-success" @click="openNew" />
 
-                <Calendar
-                  v-model="dateRange"
-                  class="!mx-2"
-                  date-format="yy-mm-dd"
-                  placeholder="请选择日期"
-                  selectOtherMonths
-                  selectionMode="range"
-                  :manualInput="false"
-                />
+                <div v-for="(value, key) of eventType" :key="key" class="ml-2">
+                  <RadioButton :id="key" name="category" :value="key" v-model="eventTypeQuery" />
+                  <label class="ml-2" :for="key">{{value}}</label>
+                </div>
 
                 <Button label="查询" icon="pi pi-search" @click="refresh" />
               </template>
 
               <template #end>
-                <FileUpload
-                  mode="basic"
-                  accept="image/*"
-                  :maxFileSize="10000000"
-                  label="导入"
-                  chooseLabel="导入"
-                  class="!mr-2 inline-block"
-                  :auto="true"
-                  :customUpload="true"
-                  @uploader="myUploader"
-                />
                 <Button label="导出" icon="pi pi-download" class="p-button-help" @click="exportCSV($event)" />
               </template>
             </Toolbar>
@@ -52,17 +36,19 @@
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
-                  <h5 class="mb-2 md:m-0 p-as-md-center">督办事项、预警信息、消息通知列表</h5>
+                  <h5 class="mb-2 md:m-0 p-as-md-center">每日施工信息列表</h5>
                 </div>
               </template>
 
               <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
-              <Column field="workCount" header="施工数量" />
-              <Column field="repairCount" header="维修数量" />
-              <Column field="railwayCount" header="高速铁路数量" />
-              <Column field="normalRailwayCount" header="普通铁路数量" />
-              <Column field="nearlineCount" header="邻近营业线施工数" />
-              <Column field="createTime" header="创建时间" />
+              <Column field="title" header="事件标题" />
+              <Column field="context" header="事件内容" />
+              <Column field="type" header="事件类型">
+                <template #body="slotProps">
+                  <span>{{eventType[slotProps.data.type]}}</span>
+                </template>
+              </Column>
+              <Column field="eventTime" header="日期" />
 
               <Column :exportable="false" style="min-width: 8rem">
                 <template #body="slotProps">
@@ -75,24 +61,23 @@
 
           <Dialog v-model:visible="productDialog" :style="{ width: '450px' }" header="维护" :modal="true" class="p-fluid">
             <div class="field">
-              <label for="workCount">施工数量</label>
-              <InputNumber id="workCount" v-model="product.workCount" autofocus />
+              <label for="title">事件标题</label>
+              <InputText id="title" type="text" v-model="product.title" />
             </div>
             <div class="field">
-              <label for="repairCount">维修数量</label>
-              <InputNumber id="repairCount" v-model="product.repairCount" />
+              <label for="context">事件内容</label>
+              <Textarea id="context" v-model="product.context" :autoResize="true" rows="5" cols="30" />
+            </div>
+            <div class="field flex">
+              <label for="type">事件类型</label>
+              <div v-for="(value, key) of eventType" :key="key" class="ml-2">
+                <RadioButton :id="key" name="category" :value="key" v-model="product.type" />
+                <label class="ml-2" :for="key">{{value}}</label>
+              </div>
             </div>
             <div class="field">
-              <label for="railwayCount">高速铁路数量</label>
-              <InputNumber id="railwayCount" v-model="product.railwayCount" />
-            </div>
-            <div class="field">
-              <label for="normalRailwayCount">普通铁路数量</label>
-              <InputNumber id="normalRailwayCount" v-model="product.normalRailwayCount" />
-            </div>
-            <div class="field">
-              <label for="nearlineCount">邻近营业线施工数量</label>
-              <InputNumber id="nearlineCount" v-model="product.nearlineCount" />
+              <label for="eventTime">日期</label>
+              <Calendar id="eventTime" v-model="product.eventTime" date-format="yy-mm-dd" autocomplete="off" />
             </div>
 
             <template #footer>
@@ -131,7 +116,7 @@ $setSiteTitle()
 
 const toast = useToast()
 const dt = ref()
-const dateRange = ref(null)
+const eventTypeQuery = ref(null)
 const productDialog = ref(false)
 const deleteProductDialog = ref(false)
 const product = ref<TProduct>()
@@ -146,27 +131,26 @@ const hideDialog = () => {
   productDialog.value = false
 }
 
+const eventType = ref({
+  '1': '预警信息',
+  '2': '督办事项',
+  '3': '消息通知',
+})
+
 type TProduct = {
   id?: number
-  // 施工数量
-  workCount: number
-  // 维修数量
-  repairCount: number
-  // 高速铁路数量
-  railwayCount: number
-  // 普通铁路数量
-  normalRailwayCount: number
-  // 邻近营业线施工数
-  nearlineCount: number
-  // 日期格式字符串
-  operateTime: string
+  // 事件内容
+  context: string
+  // 日期
+  eventTime: string
+  // 事件标题
+  title: string
+  // 事件类型 1=预警信息 2=督办事项 3=消息通知
+  type: '1' | '2' | '3'
 }
 
 const queryString = computed(() => {
-  const startDate = dateRange.value?.[0] ? useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value : ''
-  const endDate = dateRange.value?.[1] ? useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value : ''
-
-  return `?startDate=${startDate}&endDate=${endDate}`
+  return `?type=${eventTypeQuery.value}`
 })
 
 const {
@@ -174,19 +158,19 @@ const {
   pending: pending1,
   refresh,
 } = await $api(
-  () => `work-daily-record/${queryString.value}`,
+  () => `event-config/${queryString.value}`,
   {
-    watch: [dateRange],
+    watch: [eventTypeQuery],
   }
 )
 
 const saveProduct = async () => {
   product.value.id ?
-    await $api(`work-daily-record/${product.value.id}`, {
+    await $api(`event-config/${product.value.id}`, {
       method: 'put',
       body: product.value,
     }) :
-    await $api(`work-daily-record/insert`, {
+    await $api(`event-config/set`, {
       method: 'post',
       body: product.value,
     })
@@ -208,30 +192,14 @@ const confirmDeleteProduct = (prod) => {
 }
 
 const deleteProduct = async () => {
-  await $api(`work-daily-record/${product.value.id}`, {
+  await $api(`event-config/${product.value.id}`, {
     method: 'delete',
   })
+
   deleteProductDialog.value = false
   product.value = {} as TProduct
   toast.add({ severity: 'success', summary: '成功', detail: '删除成功', life: 3000 })
   refresh()
-}
-
-const myUploader = async (e) => {
-  const formData = new FormData()
-  formData.append('file', e.files[0])
-  await $fetch(`${useRuntimeConfig().app.serverUrl}/voca/import`, {
-    method: 'post',
-    body: formData,
-  })
-    .then(() => {
-      toast.add({ severity: 'success', summary: '成功', detail: '导入成功', life: 3000 })
-      refresh()
-    })
-    .catch((err) => {
-      toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
-    })
 }
 
 const exportCSV = () => {

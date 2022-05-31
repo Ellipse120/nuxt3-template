@@ -32,6 +32,9 @@ pages:
   shigongguanli:
     nav: 施工管理
     title: 施工管理
+  messages:
+    nav: 通知管理
+    title: 通知管理
   tufang:
     dashboard: 首页
     danshensushe: 单身宿舍

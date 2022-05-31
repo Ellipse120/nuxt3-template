@@ -129,9 +129,14 @@ const menus = computed((): IMenuItem[] => [
     route: { name: 'dashboard' },
   },
   {
-    type: 'button',
+    type: 'link',
     text: t('pages.shigongguanli.nav'),
     route: { name: 'shigongguanli' },
+  },
+  {
+    type: 'link',
+    text: t('pages.messages.nav'),
+    route: { name: 'messages' },
   },
 ])
 </script>
