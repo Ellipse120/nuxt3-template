@@ -1,6 +1,9 @@
-import { useTitle } from '@vueuse/core'
+import { useTitle, useDateFormat } from '@vueuse/core'
 import { ThemeManager } from './theme'
 import { LanguageManager } from './lang'
+import { format, toDate } from 'date-fns'
+import zhLocale from 'date-fns/locale/zh-CN/index'
+import { isRef } from '@vue/reactivity'
 
 export interface IApp {
   name: string
@@ -38,4 +41,19 @@ export function setSiteTitle() {
   const { app } = AppSetup()
   const route = useRoute()
   useTitle(`${route.meta.title} - ${app.name}`)
+}
+
+export function formatDate(time, cFormat = 'yyyy-MM-dd HH:mm:ss', options) {
+  if (!time) {
+    return ''
+  }
+  if (isRef(time)) {
+    time = time.value
+  }
+  return format(toDate(time), cFormat, {
+    ...{
+      locale: zhLocale,
+    },
+    ...options,
+  })
 }

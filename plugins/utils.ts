@@ -1,4 +1,4 @@
-import { setSiteTitle } from '~/utils/app'
+import { setSiteTitle, formatDate } from '~/utils/app'
 import { api } from '~/utils/request'
 
 export default defineNuxtPlugin((/*nuxtApp*/) => {
@@ -6,6 +6,7 @@ export default defineNuxtPlugin((/*nuxtApp*/) => {
     provide: {
       setSiteTitle: setSiteTitle,
       api,
+      formatDate,
     },
   }
 })

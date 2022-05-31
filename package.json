@@ -52,6 +52,7 @@
     ]
   },
   "dependencies": {
+    "date-fns": "^2.28.0",
     "echarts": "^5.3.2",
     "highcharts": "^10.1.0",
     "highcharts-vue": "^1.4.0",
