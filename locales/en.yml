@@ -35,6 +35,9 @@ pages:
   messages:
     nav: messages
     title: messages
+  misc:
+    nav: misc
+    title: misc
   tufang:
     dashboard: dashboard
     danshensushe: danshensushe

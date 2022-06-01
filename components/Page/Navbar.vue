@@ -138,5 +138,10 @@ const menus = computed((): IMenuItem[] => [
     text: t('pages.messages.nav'),
     route: { name: 'messages' },
   },
+  {
+    type: 'link',
+    text: t('pages.misc.nav'),
+    route: { name: 'misc' },
+  },
 ])
 </script>

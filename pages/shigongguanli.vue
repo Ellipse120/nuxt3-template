@@ -24,17 +24,6 @@
               </template>
 
               <template #end>
-                <FileUpload
-                  mode="basic"
-                  accept="image/*"
-                  :maxFileSize="10000000"
-                  label="导入"
-                  chooseLabel="导入"
-                  class="!mr-2 inline-block"
-                  :auto="true"
-                  :customUpload="true"
-                  @uploader="myUploader"
-                />
                 <Button label="导出" icon="pi pi-download" class="p-button-help" @click="exportCSV($event)" />
               </template>
             </Toolbar>
@@ -214,23 +203,6 @@ const deleteProduct = async () => {
   product.value = {} as TProduct
   toast.add({ severity: 'success', summary: '成功', detail: '删除成功', life: 3000 })
   refresh()
-}
-
-const myUploader = async (e) => {
-  const formData = new FormData()
-  formData.append('file', e.files[0])
-  await $fetch(`${useRuntimeConfig().app.serverUrl}/voca/import`, {
-    method: 'post',
-    body: formData,
-  })
-    .then(() => {
-      toast.add({ severity: 'success', summary: '成功', detail: '导入成功', life: 3000 })
-      refresh()
-    })
-    .catch((err) => {
-      toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
-    })
 }
 
 const exportCSV = () => {
