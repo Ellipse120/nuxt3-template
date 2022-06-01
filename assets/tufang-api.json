@@ -1,0 +1,897 @@
+{
+  "uuid": "ff5c83f4-359c-4ffd-9cf4-9a1a3acb427e",
+  "lastMigration": 19,
+  "name": "Tufang",
+  "endpointPrefix": "tufang",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "54b5a7d1-f16e-4cc5-8210-8ac2160ab4ac",
+      "documentation": "职教信息-各车间房建巡检工抽考情况分析",
+      "method": "get",
+      "endpoint": "voca-score-statistics/min-max-lines",
+      "responses": [
+        {
+          "uuid": "7bd1fa0d-1c0e-467f-8e85-90295786c86c",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": [\n    {\n      \"title\": \"上海房建车间\",\n      \"type\": 1,\n      \"scores\": [\n        {\n          \"quarter\": 1,\n          \"score\": 62\n        },\n        {\n          \"quarter\": 2,\n          \"score\": 65\n        },\n        {\n          \"quarter\": 3,\n          \"score\": 60\n        },\n        {\n          \"quarter\": 4,\n          \"score\": 70\n        }\n      ]\n    },\n    {\n      \"title\": \"上海房建车间2\",\n      \"type\": 2,\n      \"scores\": [\n        {\n          \"quarter\": 1,\n          \"score\": 90\n        },\n        {\n          \"quarter\": 2,\n          \"score\": 85\n        },\n        {\n          \"quarter\": 3,\n          \"score\": 83\n        },\n        {\n          \"quarter\": 4,\n          \"score\": 96\n        }\n      ]\n    },\n    {\n      \"title\": \"沪杭房建车间\",\n      \"type\": 1,\n      \"scores\": [\n        {\n          \"quarter\": 1,\n          \"score\": 70\n        },\n        {\n          \"quarter\": 2,\n          \"score\": 68\n        },\n        {\n          \"quarter\": 3,\n          \"score\": 60\n        },\n        {\n          \"quarter\": 4,\n          \"score\": 70\n        }\n      ]\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d0c00536-084c-4bad-9e70-579a959b7d67",
+      "documentation": "职教信息-各车间房建巡检工抽考平均分",
+      "method": "get",
+      "endpoint": "voca-score-statistics/avg-lines",
+      "responses": [
+        {
+          "uuid": "60658e24-0f4c-4ed9-a12a-71653b15daf6",
+          "body": "{\r\n  \"code\": \"200\",\r\n  \"msg\": \"\",\r\n  \"data\": [\r\n    {\r\n      \"title\": \"段平均分\",\r\n      \"scores\": [\r\n        {\r\n          \"quarter\": 1,\r\n          \"score\": 31\r\n        },\r\n        {\r\n          \"quarter\": 2,\r\n          \"score\": 55\r\n        },\r\n        {\r\n          \"quarter\": 3,\r\n          \"score\": 64\r\n        },\r\n        {\r\n          \"quarter\": 4,\r\n          \"score\": 74\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"title\": \"上海房建车间平均分\",\r\n      \"scores\": [\r\n        {\r\n          \"quarter\": 1,\r\n          \"score\": 62\r\n        },\r\n        {\r\n          \"quarter\": 2,\r\n          \"score\": 65\r\n        },\r\n        {\r\n          \"quarter\": 3,\r\n          \"score\": 60\r\n        },\r\n        {\r\n          \"quarter\": 4,\r\n          \"score\": 70\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "981c4f29-9f4d-4730-98dc-ca1cea3e1e95",
+      "documentation": "职教信息-集团公司抽考情况",
+      "method": "get",
+      "endpoint": "voca-score-statistics/group-lines",
+      "responses": [
+        {
+          "uuid": "cf50219b-4fc8-43f7-b2eb-56cfe8a5c484",
+          "body": "{\r\n  \"code\": \"200\",\r\n  \"msg\": \"\",\r\n  \"data\": [\r\n    {\r\n      \"title\": \"最低分\",\r\n      \"type\": 3,\r\n      \"scores\": [\r\n        {\r\n          \"quarter\": 1,\r\n          \"score\": 62\r\n        },\r\n        {\r\n          \"quarter\": 2,\r\n          \"score\": 65\r\n        },\r\n        {\r\n          \"quarter\": 3,\r\n          \"score\": 60\r\n        },\r\n        {\r\n          \"quarter\": 4,\r\n          \"score\": 70\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"title\": \"最高分\",\r\n      \"type\": 1,\r\n      \"scores\": [\r\n        {\r\n          \"quarter\": 1,\r\n          \"score\": 90\r\n        },\r\n        {\r\n          \"quarter\": 2,\r\n          \"score\": 85\r\n        },\r\n        {\r\n          \"quarter\": 3,\r\n          \"score\": 83\r\n        },\r\n        {\r\n          \"quarter\": 4,\r\n          \"score\": 96\r\n        }\r\n      ]\r\n    },\r\n    {\r\n      \"title\": \"平均分\",\r\n      \"type\": 2,\r\n      \"scores\": [\r\n        {\r\n          \"quarter\": 1,\r\n          \"score\": 70\r\n        },\r\n        {\r\n          \"quarter\": 2,\r\n          \"score\": 68\r\n        },\r\n        {\r\n          \"quarter\": 3,\r\n          \"score\": 74\r\n        },\r\n        {\r\n          \"quarter\": 4,\r\n          \"score\": 70\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9eb7a630-f1d6-4a1e-95f8-5b37d7595d64",
+      "documentation": "职教信息-段持证人员情况",
+      "method": "get",
+      "endpoint": "voca-cert-statistics/count",
+      "responses": [
+        {
+          "uuid": "c6093d53-1c4f-488d-bec6-3b0ea50b18e2",
+          "body": "{\r\n  \"code\": \"200\",\r\n  \"msg\": \"\",\r\n  \"data\": [\r\n    {\r\n      \"title\": \"营业施工合格证\",\r\n      \"shouldHold\": 11,\r\n      \"realHold\": 6,\r\n      \"retraining\": 2\r\n    },\r\n    {\r\n      \"title\": \"特种社保作业操作证\",\r\n      \"shouldHold\": 11,\r\n      \"realHold\": 8,\r\n      \"retraining\": 3\r\n    },\r\n    {\r\n      \"title\": \"班组长任职资格证\",\r\n      \"shouldHold\": 20,\r\n      \"realHold\": 19,\r\n      \"retraining\": 1\r\n    }\r\n  ]\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "544fa737-842d-4d42-8d09-81075e9b80ec",
+      "documentation": "职教信息-职工年度培训情况",
+      "method": "get",
+      "endpoint": "voca-training-plan/statistics",
+      "responses": [
+        {
+          "uuid": "3a56064b-53ec-4ec2-af79-93f348f0d7e2",
+          "body": "{\r\n  \"code\": \"200\",\r\n  \"msg\": \"\",\r\n  \"data\": {\r\n    \"yearTotal\": 36,\r\n    \"completed\": 27,\r\n    \"mouthTotal\": 12,\r\n    \"notStarted\": 3,\r\n    \"statistics\": [\r\n      {\r\n        \"title\": \"房建技术科\",\r\n        \"completed\": 5,\r\n        \"notStarted\": 2,\r\n        \"planNotStarted\": 7\r\n      },\r\n      {\r\n        \"title\": \"公寓管理科\",\r\n        \"completed\": 5,\r\n        \"notStarted\": 2,\r\n        \"planNotStarted\": 7\r\n      },\r\n      {\r\n        \"title\": \"安全质量科\",\r\n        \"completed\": 5,\r\n        \"notStarted\": 2,\r\n        \"planNotStarted\": 7\r\n      },\r\n      {\r\n        \"title\": \"其他科室\",\r\n        \"completed\": 5,\r\n        \"notStarted\": 2,\r\n        \"planNotStarted\": 7\r\n      }\r\n    ]\r\n  }\r\n}\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d4670569-d8d4-4d4a-a4ec-ec396141e86b",
+      "documentation": "首页-卸污管理",
+      "method": "get",
+      "endpoint": "xiewu-daily-record/index",
+      "responses": [
+        {
+          "uuid": "18c05207-fc84-4f44-bca0-63757970227e",
+          "body": "{\"code\":\"200\",\"msg\":\"\",\"data\":{\"totalIncome\":100,\"jyBoxCount\":100,\"gdBoxCount\":80}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c8fae599-9f75-4e1b-bc43-91ced067d188",
+      "documentation": "首页-经营目标查询接口",
+      "method": "get",
+      "endpoint": "goal-config",
+      "responses": [
+        {
+          "uuid": "42c4eff6-2d02-4613-8ba6-f61b76fddcc6",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": {\n    \"id\": 123,\n    \"content\": \"本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a868ef84-8b47-4a28-a4ff-90858f4076f6",
+      "documentation": "首页-经营目标查询接口-新增",
+      "method": "post",
+      "endpoint": "goal-config/set",
+      "responses": [
+        {
+          "uuid": "9a131375-5934-4514-8a25-48a3a1e4f0bd",
+          "body": "{\"code\":\"200\",\"msg\":\"\",\"data\":{\n  \"id\": null,\n  \"content\": \"本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。\"\n}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6607dc3c-7c5e-4d5c-b317-3dac8cfec9c5",
+      "documentation": "首页-消息通知(年计划类型： 1-行车公寓年计划接待人次 2-单身宿舍年计划接待人次 3-食堂年计划收入 4-卸污管理年计划收入 5-行车公寓月计划接待人次 6-单身宿舍月计划接待人次)",
+      "method": "get",
+      "endpoint": "year-income-config/type",
+      "responses": [
+        {
+          "uuid": "c3d2cb45-81f8-495f-8f5d-b562f2c8cfe8",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": [\n    {\n      \"type\": 1,\n      \"amount\": 200000\n    },\n    {\n      \"type\": 2,\n      \"amount\": 200000\n    },\n    {\n      \"type\": 3,\n      \"amount\": 200000\n    },\n    {\n      \"type\": 4,\n      \"amount\": 200000\n    },\n    {\n      \"type\": 5,\n      \"amount\": 120000\n    },\n    {\n      \"type\": 6,\n      \"amount\": 220000\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "type",
+              "value": "1,2,3,4,5,6",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e29921ea-b4ed-48c6-b747-80e29e399e20",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "e5504300-5db3-491f-84ac-a19f3d1a4ae7",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "f26e4657-7abc-4612-8c37-ae871fa26223",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "d694ef1d-ed4d-4275-928a-e39d4657461f",
+      "documentation": "首页-消息通知-新增(年计划类型： 1-行车公寓年计划接待人次 2-单身宿舍年计划接待人次 3-食堂年计划收入 4-卸污管理年计划收入 5-行车公寓月计划接待人次 6-单身宿舍月计划接待人次)",
+      "method": "post",
+      "endpoint": "year-income-config/set",
+      "responses": [
+        {
+          "uuid": "99ed79d7-9adc-4071-9c21-a356b931dfbf",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2e820a86-969d-47b4-aba5-37967867365d",
+      "documentation": "每日施工信息列表查询接口",
+      "method": "get",
+      "endpoint": "work-daily-record",
+      "responses": [
+        {
+          "uuid": "9881d297-dc90-427d-8713-8166915d1dd6",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 1,\n    \"list\": [\n      {\n        \"id\": 13,\n        \"workCount\": 111,\n        \"repairCount\": 222,\n        \"railwayCount\": 21,\n        \"normalRailwayCount\": 22,\n        \"operateTime\": \"2022-05-18\",\n        \"remark\": \"\",\n        \"createBy\": \"0\",\n        \"createTime\": \"2022-05-17 14:46:14\",\n        \"updateBy\": \"0\",\n        \"updateTime\": \"2022-05-17 14:46:14\",\n        \"deleted\": false,\n        \"nearlineCount\": 33\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 20,\n      \"totalRecords\": 1,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2fbdb399-6b5d-401c-ba7c-59be0d6afde1",
+      "documentation": "每日施工信息录入接口",
+      "method": "post",
+      "endpoint": "work-daily-record/insert",
+      "responses": [
+        {
+          "uuid": "3a809bf2-123a-4920-b39c-c250cf2c9a97",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "dbebffae-0661-4f02-ba38-93f882bb26ac",
+      "documentation": "每日施工信息修改接口",
+      "method": "put",
+      "endpoint": "work-daily-record/:id",
+      "responses": [
+        {
+          "uuid": "4435e696-0b8f-4846-830d-ecb9e760aae3",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "13aa57c5-547b-45c9-ad9a-25c90589280b",
+      "documentation": "每日施工信息删除接口",
+      "method": "delete",
+      "endpoint": "work-daily-record/:id",
+      "responses": [
+        {
+          "uuid": "01605511-08c6-4ef5-8997-bf14c046bd2e",
+          "body": "{{urlParam 'id'}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "id",
+              "value": "13",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "717b7c18-2026-4b3f-a390-bc885813d0f6",
+      "documentation": "首页-施工信息首页数据查询接口",
+      "method": "get",
+      "endpoint": "work-daily-record/statistics",
+      "responses": [
+        {
+          "uuid": "f72fd2fa-7c94-46b4-bb75-2fb9d268c248",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"monthPlanData\": {\n      \"workCount\": 5664,\n      \"repairCount\": 230,\n      \"railwayCount\": 35,\n      \"normalRailwayCount\": 26,\n      \"nearlineCount\": 35\n    },\n    \"dayPlanData\": {\n      \"id\": 14,\n      \"workCount\": 0,\n      \"repairCount\": 4,\n      \"railwayCount\": 3,\n      \"normalRailwayCount\": 2,\n      \"operateTime\": \"2022-05-24\",\n      \"remark\": \"\",\n      \"createBy\": \"0\",\n      \"createTime\": \"2022-05-24 09:58:26\",\n      \"updateBy\": \"0\",\n      \"updateTime\": \"2022-05-24 09:58:26\",\n      \"deleted\": false,\n      \"nearlineCount\": 1\n    }\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9951021a-adc2-4e99-8dd8-56f86f1f16da",
+      "documentation": "安全天数、下一个百日【房建系统】",
+      "method": "get",
+      "endpoint": "fjsczh/daily-important/safe-day-count",
+      "responses": [
+        {
+          "uuid": "8a14d315-b428-438f-8f7c-bb2f8bef88ed",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": {\n    \"nextHundredDate\": \"2022-06-12\",\n    \"dayCount\": 2000\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c705cd0d-39ab-40b8-88f7-f44ee620d16d",
+      "documentation": "督办事项、预警信息、消息通知-查询接口【1代表查询预警信息 2督办事项 3消息通知】",
+      "method": "get",
+      "endpoint": "event-config",
+      "responses": [
+        {
+          "uuid": "a87b0b38-bd99-4d06-83c4-e277e07ea256",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 1,\n    \"list\": [\n      {\n        \"id\": 5,\n        \"eventTime\": \"2022-05-20 10:53:17\",\n        \"title\": \"计划列表\",\n        \"context\": \"消息通知你们快点，\",\n        \"type\": 2,\n        \"remark\": \"预警信息\"\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 20,\n      \"totalRecords\": 1,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2ac51331-15ec-48eb-829d-2d2e9fbb4867",
+      "documentation": "督办事项、预警信息、消息通知-录入接口",
+      "method": "post",
+      "endpoint": "event-config/set",
+      "responses": [
+        {
+          "uuid": "156df319-2a43-43e7-8e5e-87a64f3db082",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "73ae739e-75de-4232-8393-7c7b635d28c1",
+      "documentation": "督办事项、预警信息、消息通知-修改接口",
+      "method": "put",
+      "endpoint": "event-config/:id",
+      "responses": [
+        {
+          "uuid": "0dd4aa8e-b7a7-4da4-9c8b-7c6114897a5e",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ef284214-44a7-47b4-b805-f81ccbf05076",
+      "documentation": "督办事项、预警信息、消息通知-删除接口",
+      "method": "delete",
+      "endpoint": "event-config/:id",
+      "responses": [
+        {
+          "uuid": "17dfca1b-157b-4748-a141-5b5248a89bd9",
+          "body": "{{urlParam 'id'}}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "4d691c4b-2188-4d8e-9e03-e03ea47c3bb7",
+      "documentation": "首页-督办事项、预警信息、消息通知数据查询接口【type: 1预警信息 2督办事项 3消息通知】",
+      "method": "get",
+      "endpoint": "event-config/queryIndex",
+      "responses": [
+        {
+          "uuid": "2dec6a1c-cb51-4d1f-93dc-918c28a0d855",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 1,\n    \"list\": [\n      {\n        \"id\": 1,\n        \"eventTime\": \"2022-05-09 09:47:03\",\n        \"title\": \"预警信息\",\n        \"context\": \"有个地方告警\",\n        \"type\": 1\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 20,\n      \"totalRecords\": 1,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "292d2855-d442-4008-b271-025e6cd4c12d",
+      "documentation": "职教信息-数据导入",
+      "method": "post",
+      "endpoint": "voca/import",
+      "responses": [
+        {
+          "uuid": "ff3b3eae-0ebd-42aa-a91f-c7296f328ef5",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ade5e43c-d197-405d-84b9-39a07b1efa7a",
+      "documentation": "每日天窗数据-导入",
+      "method": "post",
+      "endpoint": "work/repair/plan/import",
+      "responses": [
+        {
+          "uuid": "62d9a473-f4fa-4ba4-90fb-e9ebd0301281",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7fa1cffc-eda3-4aa0-a298-09228d976bb9",
+      "documentation": "首页-天窗情况查询接口",
+      "method": "get",
+      "endpoint": "work/repair/plan/queryCurrent",
+      "responses": [
+        {
+          "uuid": "2e822ee4-266c-46d5-b5b2-2603737a5b56",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"id\": 1,\n      \"workDate\": \"2022-04-06\",\n      \"line\": \"沪苏通线\",\n      \"station\": \"张家港北\",\n      \"planDate\": \"23:40-02:20\",\n      \"workContent\": \"站台限界测量\",\n      \"importDate\": \"2022-05-24\",\n      \"remark\": \"\"\n    },\n    {\n      \"id\": 2,\n      \"workDate\": \"2022-04-06\",\n      \"line\": \"京沪线\",\n      \"station\": \"无锡普速场\",\n      \"planDate\": \"17:25-20:25\",\n      \"workContent\": \"雨棚伸缩缝拆换\",\n      \"importDate\": \"2022-05-24\",\n      \"remark\": \"\"\n    }\n  ],\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e3002a83-4d4d-4cc6-9e3f-9ee082011cf5",
+      "documentation": "首页-两库问题统计查询接口",
+      "method": "get",
+      "endpoint": "device/problem/statistics",
+      "responses": [
+        {
+          "uuid": "edcef99b-2bad-4939-a697-ad7f0928aa93",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"addAmount\": 0,\n      \"completeAmount\": 5,\n      \"leftAmount\": 23,\n      \"type\": \"0\",\n      \"description\": \"设备问题库\"\n    },\n    {\n      \"addAmount\": 0,\n      \"completeAmount\": 3,\n      \"leftAmount\": 0,\n      \"type\": \"1\",\n      \"description\": \"安全隐患库\"\n    }\n  ],\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "152835f6-e216-42d3-a4bc-57f5e11e896d",
+      "documentation": "安全隐患库导入接口",
+      "method": "post",
+      "endpoint": "security/threat/import",
+      "responses": [
+        {
+          "uuid": "1b997870-4580-428f-8fb9-6df659ad5557",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "15cfa341-2fba-4b33-80f8-7d265e18be62",
+      "documentation": "设备问题库导入接口",
+      "method": "post",
+      "endpoint": "device/problem/import",
+      "responses": [
+        {
+          "uuid": "bca79122-5c22-4a6b-900f-af366c076c02",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "6b02e62f-56ec-4e2e-96ad-6b90428ba861",
+      "documentation": "房建设备总量总体概况【pt: 普铁统计明细； gt：高铁统计明细；type：站房、站台、雨棚、四电用房、其他；area：汇总面积】",
+      "method": "get",
+      "endpoint": "fjsczh/device/type-area-count",
+      "responses": [
+        {
+          "uuid": "ccdbb448-8d65-41f1-9a94-27fac9c9a6b9",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"pt\": [\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ],\n    \"gt\": [\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ]\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "pt: 普铁统计明细； gt：高铁统计明细；type：站房、站台、雨棚、四电用房、其他；area：汇总面积",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ec74be0d-b8be-45af-9337-c9aedf06c7b0",
+      "documentation": "高铁房建设备占比【type：站房、站台、雨棚、四电用房、其他、普铁；amount：汇总数量】",
+      "method": "get",
+      "endpoint": "fjsczh/device/type-amount-count",
+      "responses": [
+        {
+          "uuid": "726d5a29-d0af-4a53-ae5b-877ec31e1b39",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"type\": \"其他\",\n      \"amount\": 185\n    },\n    {\n      \"type\": \"普铁\",\n      \"amount\": 0\n    }\n  ],\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7166750e-8f62-436b-8471-8e34e55f15b5",
+      "documentation": "三级设备变化率【timePoint\tString\t统计的时间点\t2022年中；percent\tDecimal(10,2)\t乘以100以后的百分比\t30.06】",
+      "method": "get",
+      "endpoint": "fjsczh/device/level-percent",
+      "responses": [
+        {
+          "uuid": "97c8c222-fa47-4754-9308-bb9c2e523862",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": [\n    {\n      \"timePoint\": \"2021年中\",\n      \"percent\": 30.4\n    },\n    {\n      \"timePoint\": \"2021年底\",\n      \"percent\": 31.4\n    },\n    {\n      \"timePoint\": \"2022年中\",\n      \"percent\": 20.4\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "level",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "7d6e45f7-2498-4a81-a3c6-b90e7096910c",
+      "documentation": "房建设备-总量情况",
+      "method": "get",
+      "endpoint": "fjsczh/device/category-count",
+      "responses": [
+        {
+          "uuid": "a15813dc-7820-41f4-9bc5-3149d1ba128d",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": [\n    {\n      \"categoryName\": \"一类\",\n      \"amount\": 2000\n    },\n    {\n      \"categoryName\": \"二类\",\n      \"amount\": 2000\n    },\n    {\n      \"categoryName\": \"三类\",\n      \"amount\": 2000\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
