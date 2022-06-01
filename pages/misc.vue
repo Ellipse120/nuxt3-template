@@ -7,6 +7,7 @@
 
           <div class="flex flex-wrap items-center justify-start p-2">
             <FileUpload
+              class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
               :maxFileSize="10000000"
@@ -18,7 +19,7 @@
             />
 
             <FileUpload
-              class="!ml-2"
+              class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
               :maxFileSize="10000000"
@@ -30,7 +31,7 @@
             />
 
             <FileUpload
-              class="!ml-2"
+              class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
               :maxFileSize="10000000"
@@ -42,7 +43,7 @@
             />
 
             <FileUpload
-              class="!ml-2"
+              class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
               :maxFileSize="10000000"
@@ -51,6 +52,30 @@
               :auto="true"
               :customUpload="true"
               @uploader="myUploader4"
+            />
+
+            <FileUpload
+              class="!ml-2 !mb-2"
+              mode="basic"
+              accept="image/*"
+              :maxFileSize="10000000"
+              label="防洪重点类型-导入"
+              chooseLabel="防洪重点类型-导入"
+              :auto="true"
+              :customUpload="true"
+              @uploader="myUploader5"
+            />
+
+            <FileUpload
+              class="!ml-2 !mb-2"
+              mode="basic"
+              accept="image/*"
+              :maxFileSize="10000000"
+              label="新线建设数据-导入"
+              chooseLabel="新线建设数据-导入"
+              :auto="true"
+              :customUpload="true"
+              @uploader="myUploader6"
             />
           </div>
         </div>
@@ -126,6 +151,40 @@ const myUploader4 = async (e) => {
   const formData = new FormData()
   formData.append('file', e.files[0])
   await $fetch(`${useRuntimeConfig().app.serverUrl}/device/problem/import`, {
+    method: 'post',
+    body: formData,
+  })
+    .then(() => {
+      toast.add({ severity: 'success', summary: '成功', detail: '导入成功', life: 3000 })
+    })
+    .catch((err) => {
+      toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
+      console.log(err)
+    })
+}
+
+const myUploader5 = async (e) => {
+  const formData = new FormData()
+  formData.append('file', e.files[0])
+  // FIXME: month param
+  formData.append('month', '2022-06')
+  await $fetch(`${useRuntimeConfig().app.serverUrl}/control/flood/import`, {
+    method: 'post',
+    body: formData,
+  })
+    .then(() => {
+      toast.add({ severity: 'success', summary: '成功', detail: '导入成功', life: 3000 })
+    })
+    .catch((err) => {
+      toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
+      console.log(err)
+    })
+}
+
+const myUploader6 = async (e) => {
+  const formData = new FormData()
+  formData.append('file', e.files[0])
+  await $fetch(`${useRuntimeConfig().app.serverUrl}/new/line/built/import`, {
     method: 'post',
     body: formData,
   })

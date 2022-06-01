@@ -9,7 +9,7 @@
   "routes": [
     {
       "uuid": "54b5a7d1-f16e-4cc5-8210-8ac2160ab4ac",
-      "documentation": "职教信息-各车间房建巡检工抽考情况分析",
+      "documentation": "职教信息-根据施工措施统计",
       "method": "get",
       "endpoint": "voca-score-statistics/min-max-lines",
       "responses": [
@@ -145,7 +145,7 @@
       "responses": [
         {
           "uuid": "18c05207-fc84-4f44-bca0-63757970227e",
-          "body": "{\"code\":\"200\",\"msg\":\"\",\"data\":{\"totalIncome\":100,\"jyBoxCount\":100,\"gdBoxCount\":80}}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": {\n    \"totalIncome\": 100,\n    \"jyBoxCount\": 100,\n    \"gdBoxCount\": 80\n  }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -745,7 +745,7 @@
     },
     {
       "uuid": "6b02e62f-56ec-4e2e-96ad-6b90428ba861",
-      "documentation": "房建设备总量总体概况【pt: 普铁统计明细； gt：高铁统计明细；type：站房、站台、雨棚、四电用房、其他；area：汇总面积】",
+      "documentation": "首页-房建设备总量总体概况【pt: 普铁统计明细； gt：高铁统计明细；type：站房、站台、雨棚、四电用房、其他；area：汇总面积】",
       "method": "get",
       "endpoint": "fjsczh/device/type-area-count",
       "responses": [
@@ -770,7 +770,7 @@
     },
     {
       "uuid": "ec74be0d-b8be-45af-9337-c9aedf06c7b0",
-      "documentation": "高铁房建设备占比【type：站房、站台、雨棚、四电用房、其他、普铁；amount：汇总数量】",
+      "documentation": "首页-高铁房建设备占比【type：站房、站台、雨棚、四电用房、其他、普铁；amount：汇总数量】",
       "method": "get",
       "endpoint": "fjsczh/device/type-amount-count",
       "responses": [
@@ -795,7 +795,7 @@
     },
     {
       "uuid": "7166750e-8f62-436b-8471-8e34e55f15b5",
-      "documentation": "三级设备变化率【timePoint\tString\t统计的时间点\t2022年中；percent\tDecimal(10,2)\t乘以100以后的百分比\t30.06】",
+      "documentation": "首页-一级、三级设备变化率【timePoint\tString\t统计的时间点\t2022年中；percent\tDecimal(10,2)\t乘以100以后的百分比\t30.06】",
       "method": "get",
       "endpoint": "fjsczh/device/level-percent",
       "responses": [
@@ -812,7 +812,7 @@
             {
               "target": "query",
               "modifier": "level",
-              "value": "",
+              "value": "1 或 3",
               "operator": "equals"
             }
           ],
@@ -827,7 +827,7 @@
     },
     {
       "uuid": "7d6e45f7-2498-4a81-a3c6-b90e7096910c",
-      "documentation": "房建设备-总量情况",
+      "documentation": "首页-房建设备-总量情况",
       "method": "get",
       "endpoint": "fjsczh/device/category-count",
       "responses": [
@@ -841,6 +841,345 @@
           "filePath": "",
           "sendFileAsBody": false,
           "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0a13a7d1-55bd-48be-a39e-0f5b615a828a",
+      "documentation": "首页-房建科-根据施工措施统计查询接口【type：施工措施】",
+      "method": "get",
+      "endpoint": "control/flood/countByType",
+      "responses": [
+        {
+          "uuid": "0d0ed771-4a0d-4e07-863a-434c7035606a",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b85ed437-963e-439d-8b1b-69dedb27810d",
+      "documentation": "房建科-根据责任车间统计查询接口【type：责任车间】",
+      "method": "get",
+      "endpoint": "control/flood/countByWorkshop",
+      "responses": [
+        {
+          "uuid": "55c7ce83-3ba2-4d1a-85c3-d63ad9627ef3",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9e67ae13-645a-48d8-8ef9-4e5cdcf06081",
+      "documentation": "房建科-防洪重点类型导入接口",
+      "method": "post",
+      "endpoint": "control/flood/import",
+      "responses": [
+        {
+          "uuid": "96aaa83f-7859-41a1-bc03-694b2a7d5d29",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "9a4c7b09-dc88-4f68-bf0b-67f509479fa1",
+      "documentation": "房建科-新线建设数据导入接口",
+      "method": "post",
+      "endpoint": "new/line/built/import",
+      "responses": [
+        {
+          "uuid": "0ea7b63e-f56b-4f94-ad8b-de5b1316119e",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "21870528-a583-44a2-8b71-fb446e22ab73",
+      "documentation": "房建科-新线建设统计查询接口【amount：设备数量；line\t线；periodProblem：阶段问题】",
+      "method": "get",
+      "endpoint": "new/line/built/statistics",
+      "responses": [
+        {
+          "uuid": "18a6ffe0-82c6-46b3-a601-a2d86dcd8203",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"line\": \"\",\n\t\t\t\"periodProblem\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "0db0908e-4806-4611-bdbf-2c0967cffc02",
+      "documentation": "房建科-新线建设统计,按照阶段问题类型分组【periodProblem：阶段问题； list: [{amount: 设备数量；line：线；periodProblem：阶段问题}]】",
+      "method": "get",
+      "endpoint": "new/line/built/statisticsCopy",
+      "responses": [
+        {
+          "uuid": "f544d4d1-f7e5-4bf5-8344-fea2d4423349",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"list\": [\n\t\t\t\t{\n\t\t\t\t\t\"amount\": 0,\n\t\t\t\t\t\"line\": \"\",\n\t\t\t\t\t\"periodProblem\": \"\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"periodProblem\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "893141b5-b8b2-4a49-8ec4-cf7334e8b3cd",
+      "documentation": "房建科-专项活动设备统计接口【name：专项活动名称；amount：数量；】",
+      "method": "get",
+      "endpoint": "fjsczh/special-device",
+      "responses": [
+        {
+          "uuid": "f5a184d2-f6f6-49b0-a971-18b4d0084598",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"土房部\": [\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 2\n      },\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      }\n    ],\n    \"上海车间\": [\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      },\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 0\n      }\n    ]\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "b4f42cc3-53d2-4cad-a9da-cab78d1cb8b3",
+      "documentation": "房建科-巡检工作量按月统计接口【completeSquare：巡检工作量实际完成量；planSquare：巡检工作量计划完成量；type：月或者部门；】",
+      "method": "get",
+      "endpoint": "fjsczh/task-check",
+      "responses": [
+        {
+          "uuid": "2f0420d1-4bea-46cd-9196-6a909d3b2888",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"completeSquare\": 0,\n\t\t\t\"planSquare\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "e0181552-910a-4060-9890-d55236018b0c",
+      "documentation": "房建科-巡检工作量按部门统计接口【completeSquare：巡检工作量实际完成量；planSquare：巡检工作量计划完成量；type：月或者部门】",
+      "method": "get",
+      "endpoint": "fjsczh/task-check/countByDept",
+      "responses": [
+        {
+          "uuid": "dc591610-6ec4-41a7-9eb1-de9309ed861c",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"completeSquare\": 0,\n\t\t\t\"planSquare\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "12ccb79a-a2fc-4db3-8e42-ab0e6c3d8c65",
+      "documentation": "房建科-股道限界设备按管区分组【info：统计数据列表；height：高度；position：点位；stationId：管区id；stationName：管区名称；trackNo 股道；stationId 管区id；stationName 管区；】",
+      "method": "get",
+      "endpoint": "fjsczh/device-bound",
+      "responses": [
+        {
+          "uuid": "a226d7af-2dc8-4499-9ce2-d65ebc575b89",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"info\": [\n\t\t\t\t{\n\t\t\t\t\t\"height\": 0,\n\t\t\t\t\t\"position\": 0,\n\t\t\t\t\t\"stationId\": \"\",\n\t\t\t\t\t\"stationName\": \"\",\n\t\t\t\t\t\"trackNo\": \"\"\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"stationId\": \"\",\n\t\t\t\"stationName\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "2fd48b37-e3a5-429f-a397-6bf087f6931d",
+      "documentation": "首页-地图点位查询接口【name：点位名称；latitude：经度；longitude：纬度； relId：房建系统部门ID；】",
+      "method": "get",
+      "endpoint": "fjsczh/map-data",
+      "responses": [
+        {
+          "uuid": "56777961-f43a-40db-bd57-a8383f8242ae",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 97,\n    \"list\": [\n      {\n        \"id\": 1,\n        \"name\": \"徐州房建公寓段段机关\",\n        \"latitude\": 117.213358,\n        \"longitude\": 34.265224,\n        \"relId\": \"61230952-5D2A-4608-B900-A2B7FE0915B9\",\n        \"remark\": \"\",\n        \"createBy\": \"0\",\n        \"createTime\": \"2022-05-20 09:12:23\",\n        \"updateBy\": \"0\",\n        \"updateTime\": \"2022-05-20 09:12:23\"\n      },\n      {\n        \"id\": 2,\n        \"name\": \"徐州房建车间\",\n        \"latitude\": 117.222343,\n        \"longitude\": 34.298931,\n        \"relId\": \"EA8EA0FF-F14A-4EB8-BD61-865A8963043B\",\n        \"remark\": \"\",\n        \"createBy\": \"0\",\n        \"createTime\": \"2022-05-20 09:12:23\",\n        \"updateBy\": \"0\",\n        \"updateTime\": \"2022-05-20 09:12:23\"\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 2,\n      \"totalRecords\": 97,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "26eca168-7cdb-4e42-9f57-01d8691a980a",
+      "documentation": "首页-根据部门ID获取管区列表",
+      "method": "get",
+      "endpoint": "fjsczh/station",
+      "responses": [
+        {
+          "uuid": "4e9ba06b-0a56-4a85-abf5-ce8a2d4e1c55",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 14,\n    \"list\": [\n      {\n        \"id\": \"7A41032C-A325-4A94-8B49-06BDBCD60123\",\n        \"stationName\": \"红二区\",\n        \"stationCode\": \"4071\",\n        \"status\": 1,\n        \"province\": null,\n        \"city\": null,\n        \"county\": null,\n        \"stationType\": null,\n        \"assets\": null\n      },\n      {\n        \"id\": \"781093B6-1888-4870-93ED-07BCE2B3508B\",\n        \"stationName\": \"上海西站\",\n        \"stationCode\": \"4027\",\n        \"status\": 1,\n        \"province\": null,\n        \"city\": null,\n        \"county\": null,\n        \"stationType\": null,\n        \"assets\": null\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 2,\n      \"totalRecords\": 14,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "deptId",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "38f4120a-c1e4-45b1-81db-ccd59c34b56b",
+      "documentation": "首页-根据管区ID获取设备台账列表【 {id name deviceCode type  level wallType currentTechnicalGrade} = { ID 名称 编码 类型 一类、二类、三类 高铁、普铁 技术等级}】",
+      "method": "get",
+      "endpoint": "fjsczh/device",
+      "responses": [
+        {
+          "uuid": "a2072c3a-74f6-4264-99d3-001499a8fb8b",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"totalCount\": 175,\n    \"list\": [\n      {\n        \"id\": \"FDC9B2A8-846A-4034-AB66-022496274384\",\n        \"name\": \"室外上水管道\",\n        \"deviceCode\": \"06-123\",\n        \"type\": \"构筑物\",\n        \"level\": \"一\",\n        \"wallType\": null,\n        \"nearbyTrack\": null,\n        \"structure\": \"其他结构\",\n        \"foucusDevice\": null,\n        \"emerencyDevice\": null,\n        \"boundsDevice\": null,\n        \"floor\": null,\n        \"account\": 458,\n        \"unit\": \"m\",\n        \"transRatio\": 0.5,\n        \"transAcreag\": 229,\n        \"acceptTime\": \"1990-03-31T16:00:00.000+00:00\",\n        \"builDate\": \"1988-11-30T16:00:00.000+00:00\",\n        \"stationId\": \"91B2671F-83A5-4CBA-820D-6AAE7CC65F97\",\n        \"departmentInuse\": \"上海站\",\n        \"departmentInuseType\": \"运输站段\",\n        \"address\": \"十.十一站台给水（06-S108）\",\n        \"property\": \"国铁\",\n        \"airIndex\": null,\n        \"dangerProperty\": null,\n        \"dangerType\": null,\n        \"remark\": null,\n        \"lastRepaireTime\": null,\n        \"currentTrouble\": null,\n        \"currentTechnicalGrade\": \"一级\",\n        \"typeId\": \"CA217BE5-4EC6-4A71-B87A-26315F6BF376\",\n        \"typeCode\": \"B\",\n        \"organizationId\": \"31FCE07D-68CD-4E1B-968E-6F8E7FE845CB\",\n        \"subOrganizationId\": \"A565DFE2-587B-45A4-B654-9AF978A75B9B\",\n        \"organizationName\": \"上海房建车间\",\n        \"subOrganizationName\": \"上海房建班组\",\n        \"currentTechnicalGradeValue\": null,\n        \"supervisionUnit\": null,\n        \"designUnit\": null,\n        \"constructUnit\": null,\n        \"copartership\": \"其他\",\n        \"ifpublic\": null,\n        \"usableArea\": null,\n        \"confinedSpaces\": null,\n        \"maintenancePlan\": \"检修\",\n        \"assetNumber\": null,\n        \"status\": 17,\n        \"operator\": null,\n        \"operateTime\": \"2021-03-05T01:46:45.297+00:00\"\n      },\n      {\n        \"id\": \"C02EB98A-07EF-4A09-8FE4-0381E9A82ED3\",\n        \"name\": \"锅炉房\",\n        \"deviceCode\": \"313\",\n        \"type\": \"房屋\",\n        \"level\": \"三\",\n        \"wallType\": null,\n        \"nearbyTrack\": null,\n        \"structure\": \"钢筋混凝土结构-框架\",\n        \"foucusDevice\": null,\n        \"emerencyDevice\": null,\n        \"boundsDevice\": null,\n        \"floor\": 4,\n        \"account\": 1959,\n        \"unit\": \"㎡\",\n        \"transRatio\": 1,\n        \"transAcreag\": 1959,\n        \"acceptTime\": \"1990-07-31T15:00:00.000+00:00\",\n        \"builDate\": \"1989-07-31T15:00:00.000+00:00\",\n        \"stationId\": \"91B2671F-83A5-4CBA-820D-6AAE7CC65F97\",\n        \"departmentInuse\": \"上海站\",\n        \"departmentInuseType\": \"运输站段\",\n        \"address\": \"信号楼(#308)西南侧\",\n        \"property\": \"国铁\",\n        \"airIndex\": null,\n        \"dangerProperty\": null,\n        \"dangerType\": null,\n        \"remark\": null,\n        \"lastRepaireTime\": null,\n        \"currentTrouble\": null,\n        \"currentTechnicalGrade\": \"二级\",\n        \"typeId\": \"0DE956ED-1C52-4CC1-9168-F22AE7594267\",\n        \"typeCode\": \"H\",\n        \"organizationId\": \"31FCE07D-68CD-4E1B-968E-6F8E7FE845CB\",\n        \"subOrganizationId\": \"A565DFE2-587B-45A4-B654-9AF978A75B9B\",\n        \"organizationName\": \"上海房建车间\",\n        \"subOrganizationName\": \"上海房建班组\",\n        \"currentTechnicalGradeValue\": null,\n        \"supervisionUnit\": null,\n        \"designUnit\": null,\n        \"constructUnit\": null,\n        \"copartership\": \"其他\",\n        \"ifpublic\": null,\n        \"usableArea\": null,\n        \"confinedSpaces\": null,\n        \"maintenancePlan\": \"综合维修\",\n        \"assetNumber\": null,\n        \"status\": 17,\n        \"operator\": null,\n        \"operateTime\": \"2021-03-05T01:46:43.880+00:00\"\n      }\n    ],\n    \"pageReq\": {\n      \"pageNo\": 1,\n      \"pageSize\": 2,\n      \"totalRecords\": 175,\n      \"doCount\": true,\n      \"offset\": 0\n    },\n    \"supportedSorts\": null\n  },\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "stationId",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
           "rulesOperator": "OR",
           "disableTemplating": false,
           "fallbackTo404": false
