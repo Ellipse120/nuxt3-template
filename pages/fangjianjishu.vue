@@ -236,8 +236,14 @@ definePageMeta({
   title: '房建科',
 })
 
-const { $setSiteTitle } = useNuxtApp()
+const { $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
+
+const { data: option1, pending: pending1 } = await $api('fjsczh/task-check/countByDept')
+const { data: option12, pending: pending12 } = await $api('fjsczh/special-device')
+const { data: option41, pending: pending41 } = await $api('control/flood/countByType')
+const { data: option42, pending: pending42 } = await $api('control/flood/countByWorkshop')
+const { data: option53, pending: pending53 } = await $api('new/line/built/statistics')
 
 const options1 = computed(() => ({
   chart: {
@@ -246,7 +252,7 @@ const options1 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: ['沪杭车间', '上海车间', '苏锡车间'],
+    categories: option1.value?.data?.map(o => o.type),
   },
   plotOptions: {
     column: {
@@ -257,28 +263,30 @@ const options1 = computed(() => ({
   series: [
     {
       name: '计划',
-      data: [29, 26, 24],
+      data: option1.value?.data?.map(o => o.planSquare),
     },
     {
       name: '完成',
-      data: [21, 25, 23],
+      data: option1.value?.data?.map(o => o.completeSquare),
     },
   ],
 }))
 
 const table1 = computed(() => [
-  {
-    类别: '计划',
-    沪杭车间: 29,
-    上海车间: 26,
-    苏锡车间: 24,
-  },
-  {
-    类别: '完成',
-    沪杭车间: 21,
-    上海车间: 25,
-    苏锡车间: 23,
-  },
+  option1.value?.data?.reduce((acc, cur) => {
+    return {
+      ...acc,
+      '类别': '计划',
+      [cur.type]: cur.planSquare,
+    }
+  }, {}),
+  option1.value?.data?.reduce((acc, cur) => {
+    return {
+      ...acc,
+      '类别': '完成',
+      [cur.type]: cur.completeSquare,
+    }
+  }, {})
 ])
 
 const options2 = computed(() => ({
@@ -396,7 +404,7 @@ const options41 = computed(() => ({
     labels: {
       rotation: 0,
     },
-    categories: ['站房雨棚排水不畅', '低洼四电用房', '渗漏隐患房建设备', '产生沉降房建设备'],
+    categories: option41.value?.data?.map(o => o.type),
   },
   legend: {
     enabled: false,
@@ -409,8 +417,8 @@ const options41 = computed(() => ({
   },
   series: [
     {
-      name: '',
-      data: [28, 19, 24, 21],
+      name: '施工措施',
+      data: option41.value?.data?.map(o => o.amount),
     },
   ],
 }))
@@ -443,11 +451,10 @@ const options42 = computed(() => ({
       name: '防洪重点场所分布',
       type: 'pie',
       borderColor: 'transparent',
-      data: [
-        { name: '沪苏车间', y: 15 },
-        { name: '上海车间', y: 15 },
-        { name: '苏锡车间', y: 70 },
-      ],
+      data: option42.value?.data?.map(o => ({
+        name: o.type,
+        y: o.amount,
+      })),
     },
   ],
 }))
@@ -506,7 +513,7 @@ const options53 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: ['施工介入', '静态验收', '动态验收', '安全评估'],
+    categories: [...new Set(option53.value?.data?.map(o => o.periodProblem))],
   },
   plotOptions: {
     column: {
@@ -517,20 +524,14 @@ const options53 = computed(() => ({
   legend: {
     itemDistance: 5,
   },
-  series: [
-    {
-      name: '沪苏通',
-      data: [25, 35, 12, 5],
-    },
-    {
-      name: '南沿江',
-      data: [19, 36, 10, 4],
-    },
-    {
-      name: '沪苏湖',
-      data: [23, 31, 13, 3],
-    },
-  ],
+  series: [...new Set(option53.value?.data?.map(o => o.line))]?.map(line => {
+    const d = option53.value?.data?.filter(m => m.line === line).map(n => n.amount);
+
+    return {
+      name: line,
+      data: d,
+    }
+  })
 }))
 
 const options6 = computed(() => ({
@@ -836,7 +837,8 @@ const options12 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: ['高铁站台抹灰层', '四电房屋渗漏', '雨棚吊顶排查', '客站消防缺陷隐患'],
+    categories: [...new Set(Object.values(option12.value?.data).flat().map(o => o?.name))],
+    // categories: ['高铁站台抹灰层', '四电房屋渗漏', '雨棚吊顶排查', '客站消防缺陷隐患'],
   },
   plotOptions: {
     column: {
@@ -847,20 +849,26 @@ const options12 = computed(() => ({
   legend: {
     itemDistance: 5,
   },
-  series: [
-    {
-      name: '上海车间',
-      data: [47, 43, 41, 40],
-    },
-    {
-      name: '苏锡车间',
-      data: [35, 41, 44, 45],
-    },
-    {
-      name: '沪杭车间',
-      data: [42, 41, 41, 40],
-    },
-  ],
+  series: Object.keys(option12.value?.data)?.map(key => {
+    return {
+      name: key,
+      data: option12.value?.data?.[key]?.map(m => m.amount)
+    }
+  }),
+  // series: [
+  //   {
+  //     name: '上海车间',
+  //     data: [47, 43, 41, 40],
+  //   },
+  //   {
+  //     name: '苏锡车间',
+  //     data: [35, 41, 44, 45],
+  //   },
+  //   {
+  //     name: '沪杭车间',
+  //     data: [42, 41, 41, 40],
+  //   },
+  // ],
 }))
 
 const options13 = computed(() => ({

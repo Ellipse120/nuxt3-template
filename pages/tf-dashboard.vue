@@ -57,12 +57,12 @@
                   scrollHeight="122px"
                   showGridlines
                 >
-                  <Column field="设备分类" header="设备分类" />
+                  <Column field="type" header="设备分类" />
                   <Column field="站房" header="站房" />
                   <Column field="站台" header="站台" />
                   <Column field="雨棚" header="雨棚" />
                   <Column field="四电用房" header="四电用房" />
-                  <Column field="其它" header="其它" />
+                  <Column field="其他" header="其他" />
                 </DataTable>
               </PageSectionLayout>
             </div>
@@ -195,13 +195,13 @@
                 </div>
 
                 <PageSectionLayout class="flex items-center justify-around my-2 h-20">
-                  <PageSectionIconInfo label="安全天数" value="3769天">
+                  <PageSectionIconInfo label="安全天数" :value="`${option5?.data?.dayCount}`">
                     <template #icon>
                       <IconCib:adguard />
                     </template>
                   </PageSectionIconInfo>
 
-                  <PageSectionIconInfo label="下一个百日" value="2022-06-01">
+                  <PageSectionIconInfo label="下一个百日" :value="`${option5?.data?.nextHundredDate}`">
                     <template #icon>
                       <IconUiw:date />
                     </template>
@@ -220,10 +220,10 @@
 
                 <PageSectionLayout class="mt-2">
                   <NuxtLink to="督办事项管理界面系统平台待开发" target="_blank">
-                    <PageSectionLabel title="督办事项" />
+                    <PageSectionLabel title="督办事项" :loading="pending7" />
                   </NuxtLink>
 
-                  <PageListWrapper class="max-h-41">
+                  <PageListWrapper class="min-h-41 max-h-41">
                     <PageListItem v-for="t in list1" :key="t.id" :item="t" />
                   </PageListWrapper>
                 </PageSectionLayout>
@@ -240,10 +240,10 @@
               </template>
               <chart :options="options6" />
               <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
-                <Column field="两库" header="两库" class="!p-0" />
-                <Column field="新增" header="新增" class="!p-0" />
-                <Column field="处置" header="处置" class="!p-0" />
-                <Column field="剩余累计" header="剩余累计" class="!p-0" />
+                <Column field="description" header="两库" class="!p-0" />
+                <Column field="addAmount" header="新增" class="!p-0" />
+                <Column field="completeAmount" header="处置" class="!p-0" />
+                <Column field="leftAmount" header="剩余累计" class="!p-0" />
               </DataTable>
             </PageSectionLayout>
 
@@ -285,24 +285,24 @@
               <PageSectionLayout class="my-2 p-0 flex items-center justify-around">
                 <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">当日计划</div>
 
-                <DataTable :value="table3" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
-                  <Column field="当日施工" header="当日施工" class="!p-0" />
-                  <Column field="当日维修" header="当日维修" class="!p-0" />
-                  <Column field="高速铁路" header="高速铁路" class="!p-0" />
-                  <Column field="普速铁路" header="普速铁路" class="!p-0" />
-                  <Column field="邻近营业线施工" header="邻近营业线施工" class="!p-0" />
+                <DataTable :value="table3" :loading="pending4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                  <Column field="workCount" header="施工数量" class="!p-0" />
+                  <Column field="repairCount" header="维修数量" class="!p-0" />
+                  <Column field="railwayCount" header="高速铁路" class="!p-0" />
+                  <Column field="normalRailwayCount" header="普速铁路" class="!p-0" />
+                  <Column field="nearlineCount" header="邻近营业线施工" class="!p-0" />
                 </DataTable>
               </PageSectionLayout>
 
               <PageSectionLayout class="p-0 flex items-center justify-around">
                 <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">本月施工</div>
 
-                <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
-                  <Column field="本月施工" header="当日施工" class="!p-0" />
-                  <Column field="本月维修" header="当日维修" class="!p-0" />
-                  <Column field="高速铁路" header="高速铁路" class="!p-0" />
-                  <Column field="普速铁路" header="普速铁路" class="!p-0" />
-                  <Column field="邻近营业线施工" header="邻近营业线施工" class="!p-0" />
+                <DataTable :value="table4" :loading="pending4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                  <Column field="workCount" header="施工数量" class="!p-0" />
+                  <Column field="repairCount" header="维修数量" class="!p-0" />
+                  <Column field="railwayCount" header="高速铁路" class="!p-0" />
+                  <Column field="normalRailwayCount" header="普速铁路" class="!p-0" />
+                  <Column field="nearlineCount" header="邻近营业线施工" class="!p-0" />
                 </DataTable>
               </PageSectionLayout>
             </PageSectionLayout>
@@ -358,7 +358,7 @@
             <PageSectionLayout>
               <template #header>
                 <NuxtLink to="预警通知管理界面系统平台待开发" target="_blank">
-                  <PageSectionLabel title="预警通知" />
+                  <PageSectionLabel title="预警通知" :loading="pending6" />
                 </NuxtLink>
               </template>
 
@@ -387,30 +387,30 @@
 
             <PageSectionLayout>
               <template #header>
-                <PageSectionLabel title="当日天窗详情" />
+                <PageSectionLabel title="当日天窗详情" :loading="pending9" />
               </template>
 
               <div class="overflow-y-auto lg:max-h-35 py-2 bg-ls-blue-800">
                 <div
-                  v-for="i in 9"
+                  v-for="i in list5"
                   :key="i"
                   class="grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-3 p-2 border-b border-dashed text-xs font-bold"
                 >
                   <div>
                     <span class="text-blue-600 font-bold">线别: </span>
-                    <span>沪宁城际线</span>
+                    <span>{{ i.line }}</span>
                   </div>
                   <div>
                     <span class="text-blue-600 font-bold">计划时间: </span>
-                    <span>4/22 00:00-04:00</span>
+                    <span>{{ i.workDate }} {{ i.planDate }}</span>
                   </div>
                   <div>
                     <span class="text-blue-600 font-bold">施工地点: </span>
-                    <span>苏州城际场</span>
+                    <span>{{ i.station }}</span>
                   </div>
                   <div>
                     <span class="text-blue-600 font-bold">作业内容: </span>
-                    <span>站房下部吸音棉整治</span>
+                    <span>{{ i.workContent }}</span>
                   </div>
                 </div>
               </div>
@@ -431,7 +431,7 @@
             <PageSectionLayout>
               <template #header>
                 <NuxtLink to="消息通知管理界面系统平台待开发" target="_blank">
-                  <PageSectionLabel title="消息通知" />
+                  <PageSectionLabel title="消息通知"  :loading="pending8" />
                 </NuxtLink>
               </template>
 
@@ -459,29 +459,31 @@ $setSiteTitle()
 
 const { data: option1, pending: pending1, error: error1 } = await $api('xiewu-daily-record/index')
 const { data: option2, pending: pending2 } = await $api('goal-config')
-const { data: option3, pending: pending3 } = await $api('year-income-config/type')
+const { data: option3 } = await $api('year-income-config/type')
+const { data: option4, pending: pending4 } = await $api('work-daily-record/statistics')
+const { data: option5 } = await $api('fjsczh/daily-important/safe-day-count')
+const { data: option6, pending: pending6 } = await $api('event-config/queryIndex?type=1') // 1 预警信息
+const { data: option7, pending: pending7 } = await $api('event-config/queryIndex?type=2') // 2 督办事项
+const { data: option8, pending: pending8 } = await $api('event-config/queryIndex?type=3') // 3 消息通知
+const { data: option9, pending: pending9 } = await $api('work/repair/plan/queryCurrent')
+const { data: option10 } = await $api('device/problem/statistics')
+const { data: option11 } = await $api('fjsczh/device/category-count')
+const { data: option12 } = await $api('fjsczh/device/type-amount-count')
+const { data: option13 } = await $api('fjsczh/device/level-percent?level=1')
+const { data: option14 } = await $api('fjsczh/device/level-percent?level=3')
+const { data: option15, pending: pending15 } = await $api('fjsczh/device/type-area-count')
 
-const list1 = computed(() =>
-  Array.from({ length: 9 }, (_, index) => {
-    return {
-      id: index + 1,
-      label: '西藏北路宿舍床位不足',
-      time: useDateFormat(new Date(), 'MM-DD HH:mm'),
-    }
-  })
-)
+const list1 = computed(() => option7.value.data.list?.map(o => ({
+  label: o.title,
+  time: o.eventTime,
+  content: o.context
+})))
 
-const list2 = computed(() =>
-  Array.from({ length: 9 }, (_, index) => {
-    return {
-      id: index + 1,
-      label: '宿舍预警',
-      class: 'text-red-500',
-      time: useDateFormat(new Date(), 'MM-DD HH:mm'),
-      content: '西藏北路宿舍床位不足',
-    }
-  })
-)
+const list2 = computed(() => option6.value.data.list?.map(o => ({
+  label: o.title,
+  time: o.eventTime,
+  content: o.context
+})))
 
 const list3 = computed(() =>
   Array.from({ length: 9 }, (_, index) => {
@@ -495,48 +497,48 @@ const list3 = computed(() =>
   })
 )
 
-const list4 = computed(() => [
-  {
-    id: 1,
-    label: '干部履职信息',
-    class: 'text-red-500',
-    time: useDateFormat(new Date(), 'MM-DD HH:mm'),
-    content: '西藏北路宿舍床位不足',
-  },
-  {
-    id: 2,
-    label: '标准化作业信息',
-    class: 'text-red-500',
-    time: useDateFormat(new Date(), 'MM-DD HH:mm'),
-    content: '西藏北路宿舍床位不足',
-  },
-  {
-    id: 3,
-    label: '安全新机制',
-    class: 'text-red-500',
-    time: useDateFormat(new Date(), 'MM-DD HH:mm'),
-    content: '西藏北路宿舍床位不足',
-  },
-])
+const list4 = computed(() => option8.value.data?.list?.map(o => ({
+  label: o.title,
+  time: o.eventTime,
+  content: o.context
+})))
+
+const list5 = computed(() => option9.value.data)
 
 const table1 = computed(() => [
-  {
-    设备分类: '高铁',
-    站房: '43.1',
-    站台: '9.8',
-    雨棚: '45.8',
-    四电用房: '26.6',
-    其它: '15.3',
-  },
-  {
-    设备分类: '普铁',
-    站房: '43.1',
-    站台: '9.8',
-    雨棚: '45.8',
-    四电用房: '26.6',
-    其它: '15.3',
-  },
+  option15.value?.data?.gt?.reduce((acc, cur) => {
+    return {
+      ...acc,
+      type: cur.wallType,
+      [cur.type]: cur.area
+    }
+  }, {}),
+  option15.value?.data?.pt?.reduce((acc, cur) => {
+    return {
+      ...acc,
+      type: cur.wallType,
+      [cur.type]: cur.area
+    }
+  }, {})
 ])
+// const table1 = computed(() => [
+//   {
+//     设备分类: '高铁',
+//     站房: '43.1',
+//     站台: '9.8',
+//     雨棚: '45.8',
+//     四电用房: '26.6',
+//     其它: '15.3',
+//   },
+//   {
+//     设备分类: '普铁',
+//     站房: '43.1',
+//     站台: '9.8',
+//     雨棚: '45.8',
+//     四电用房: '26.6',
+//     其它: '15.3',
+//   },
+// ])
 
 const table2 = computed(() => [
   {
@@ -564,39 +566,19 @@ const table2 = computed(() => [
 ])
 
 const table3 = computed(() => [
-  {
-    当日施工: '2',
-    当日维修: '2',
-    高速铁路: '3',
-    普速铁路: '2',
-    邻近营业线施工: '1',
-  },
+  option4.value.data.dayPlanData
+  // {
+  //   当日施工: '2',
+  //   当日维修: '2',
+  //   高速铁路: '3',
+  //   普速铁路: '2',
+  //   邻近营业线施工: '1',
+  // },
 ])
 
-const table4 = computed(() => [
-  {
-    本月施工: '2',
-    本月维修: '2',
-    高速铁路: '3',
-    普速铁路: '2',
-    邻近营业线施工: '1',
-  },
-])
+const table4 = computed(() => [option4.value.data.monthPlanData])
 
-const table5 = computed(() => [
-  {
-    两库: '安全隐患库',
-    新增: 0,
-    处置: 0,
-    剩余累计: 3,
-  },
-  {
-    两库: '设备问题库',
-    新增: 0,
-    处置: 0,
-    剩余累计: 3,
-  },
-])
+const table5 = computed(() => option10.value?.data)
 
 const options1 = computed(() => ({
   chart: {
@@ -627,11 +609,10 @@ const options1 = computed(() => ({
       type: 'pie',
       borderColor: 'transparent',
       innerSize: '50%',
-      data: [
-        { name: '一类', y: 60 },
-        { name: '二类', y: 30 },
-        { name: '三类', y: 10 },
-      ],
+      data: option11.value?.data?.map(o => ({
+        name: o.categoryName,
+        y: o.amount,
+      })),
     },
   ],
 }))
@@ -649,7 +630,13 @@ const options3 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: ['2021年中', '2021年底', '2022年中'],
+    categories: option13.value?.data?.map(o => o.timePoint),
+  },
+  legend: {
+    align: 'right',
+    verticalAlign: 'middle',
+    layout: 'vertical',
+    itemDistance: 5,
   },
   plotOptions: {
     column: {
@@ -657,20 +644,10 @@ const options3 = computed(() => ({
       borderWidth: 0,
     },
   },
-  series: [
-    {
-      name: '2021年中',
-      data: [25],
-    },
-    {
-      name: '2021年底',
-      data: [27],
-    },
-    {
-      name: '2022年中',
-      data: [21],
-    },
-  ],
+  series: option13.value?.data?.map(o => ({
+    name: o.timePoint,
+    data: [o.percent],
+  })),
 }))
 
 const options4 = computed(() => ({
@@ -702,13 +679,10 @@ const options4 = computed(() => ({
       type: 'pie',
       borderColor: 'transparent',
       innerSize: '50%',
-      data: [
-        { name: '站台', y: 55 },
-        { name: '站房', y: 22 },
-        { name: '四电用房', y: 30 },
-        { name: '普铁', y: 10 },
-        { name: '其他', y: 35 },
-      ],
+      data: option12.value?.data?.map(o => ({
+        name: o.type,
+        y: o.amount,
+      })),
     },
   ],
 }))
@@ -720,12 +694,13 @@ const options5 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: ['2021年中', '2021年底', '2022年中'],
+    categories: option14.value?.data?.map(o => o.timePoint),
   },
   legend: {
     align: 'right',
     verticalAlign: 'middle',
     layout: 'vertical',
+    itemDistance: 5,
   },
   plotOptions: {
     column: {
@@ -733,23 +708,10 @@ const options5 = computed(() => ({
       borderWidth: 0,
     },
   },
-  legend: {
-    itemDistance: 5,
-  },
-  series: [
-    {
-      name: '2021年中',
-      data: [25],
-    },
-    {
-      name: '2021年底',
-      data: [27],
-    },
-    {
-      name: '2022年中',
-      data: [21],
-    },
-  ],
+  series: option14.value?.data?.map(o => ({
+    name: o.timePoint,
+    data: [o.percent],
+  })),
 }))
 
 const options6 = computed(() => ({
@@ -772,16 +734,10 @@ const options6 = computed(() => ({
       borderWidth: 0,
     },
   },
-  series: [
-    {
-      name: '安全隐患库',
-      data: [42, 38, 36],
-    },
-    {
-      name: '设备问题库',
-      data: [31, 38, 39],
-    },
-  ],
+  series: option10.value?.data?.map(o => ({
+    name: o.description,
+    data: [o.addAmount, o.completeAmount, o.leftAmount]
+  })),
 }))
 
 const options7 = computed(() => ({

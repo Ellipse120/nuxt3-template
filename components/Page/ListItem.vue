@@ -10,12 +10,12 @@
         </slot>
 
         <slot name="time">
-          <div class="mt-2">{{ item.time }}</div>
+          <div>{{ item.time }}</div>
         </slot>
       </div>
 
       <slot name="content">
-        <div>{{ item.content }}</div>
+        <div class="mt-2">{{ item.content }}</div>
       </slot>
     </div>
   </div>

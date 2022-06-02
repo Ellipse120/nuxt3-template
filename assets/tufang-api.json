@@ -1,6 +1,6 @@
 {
   "uuid": "ff5c83f4-359c-4ffd-9cf4-9a1a3acb427e",
-  "lastMigration": 19,
+  "lastMigration": 20,
   "name": "Tufang",
   "endpointPrefix": "tufang",
   "latency": 0,
@@ -30,7 +30,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -55,7 +56,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -80,7 +82,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -105,7 +108,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -130,7 +134,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -155,7 +160,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -180,7 +186,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -205,7 +212,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -237,7 +245,8 @@
           ],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         },
         {
           "uuid": "e29921ea-b4ed-48c6-b747-80e29e399e20",
@@ -251,7 +260,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": false
         },
         {
           "uuid": "e5504300-5db3-491f-84ac-a19f3d1a4ae7",
@@ -265,7 +275,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": false
         },
         {
           "uuid": "f26e4657-7abc-4612-8c37-ae871fa26223",
@@ -279,7 +290,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": false
         }
       ],
       "enabled": true,
@@ -304,7 +316,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -329,7 +342,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -354,7 +368,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -379,7 +394,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -411,7 +427,8 @@
           ],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -420,7 +437,7 @@
     },
     {
       "uuid": "717b7c18-2026-4b3f-a390-bc885813d0f6",
-      "documentation": "首页-施工信息首页数据查询接口",
+      "documentation": "首页-施工信息首页数据查询接口【[workCount repairCount railwayCount normalRailwayCount nearlineCount] = [施工数量 维修数量 高速铁路数量 普通铁路数量 邻近营业线施工数]",
       "method": "get",
       "endpoint": "work-daily-record/statistics",
       "responses": [
@@ -436,7 +453,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -461,7 +479,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -486,7 +505,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -511,7 +531,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -536,7 +557,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -561,7 +583,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -586,7 +609,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -611,7 +635,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -636,7 +661,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -661,7 +687,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -686,7 +713,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -711,7 +739,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -736,7 +765,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -751,7 +781,7 @@
       "responses": [
         {
           "uuid": "ccdbb448-8d65-41f1-9a94-27fac9c9a6b9",
-          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"pt\": [\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ],\n    \"gt\": [\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ]\n  },\n  \"success\": true\n}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"pt\": [\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"站台\",\n        \"area\": 71460,\n        \"amount\": 123\n      },\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"站房\",\n        \"area\": 71460,\n        \"amount\": 135\n      },\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"雨棚\",\n        \"area\": 71460,\n        \"amount\": 189\n      },\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"四电用房\",\n        \"area\": 71460,\n        \"amount\": 185\n      },\n      {\n        \"wallType\": \"普铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ],\n    \"gt\": [\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"站台\",\n        \"area\": 71460,\n        \"amount\": 123\n      },\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"站房\",\n        \"area\": 71460,\n        \"amount\": 135\n      },\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"雨棚\",\n        \"area\": 71460,\n        \"amount\": 189\n      },\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"四电用房\",\n        \"area\": 71460,\n        \"amount\": 185\n      },\n      {\n        \"wallType\": \"高铁\",\n        \"type\": \"其他\",\n        \"area\": 71460,\n        \"amount\": 185\n      }\n    ]\n  },\n  \"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "pt: 普铁统计明细； gt：高铁统计明细；type：站房、站台、雨棚、四电用房、其他；area：汇总面积",
@@ -761,7 +791,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -776,7 +807,7 @@
       "responses": [
         {
           "uuid": "726d5a29-d0af-4a53-ae5b-877ec31e1b39",
-          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"type\": \"其他\",\n      \"amount\": 185\n    },\n    {\n      \"type\": \"普铁\",\n      \"amount\": 0\n    }\n  ],\n  \"success\": true\n}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"type\": \"站台\",\n      \"amount\": 285\n    },\n    {\n      \"type\": \"站房\",\n      \"amount\": 185\n    },\n    {\n      \"type\": \"雨棚\",\n      \"amount\": 40\n    },\n    {\n      \"type\": \"四电用房\",\n      \"amount\": 190\n    },\n    {\n      \"type\": \"其他\",\n      \"amount\": 145\n    }\n  ],\n  \"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -786,7 +817,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -801,7 +833,7 @@
       "responses": [
         {
           "uuid": "97c8c222-fa47-4754-9308-bb9c2e523862",
-          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": [\n    {\n      \"timePoint\": \"2021年中\",\n      \"percent\": 30.4\n    },\n    {\n      \"timePoint\": \"2021年底\",\n      \"percent\": 31.4\n    },\n    {\n      \"timePoint\": \"2022年中\",\n      \"percent\": 20.4\n    }\n  ]\n}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": [\n    {\n      \"timePoint\": \"2021年中\",\n      \"percent\": 30.4\n    },\n    {\n      \"timePoint\": \"2021年底\",\n      \"percent\": 31.4\n    },\n    {\n      \"timePoint\": \"2022年中\",\n      \"percent\": 20.4\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -818,7 +850,8 @@
           ],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -843,7 +876,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -852,13 +886,13 @@
     },
     {
       "uuid": "0a13a7d1-55bd-48be-a39e-0f5b615a828a",
-      "documentation": "首页-房建科-根据施工措施统计查询接口【type：施工措施】",
+      "documentation": "房建科-根据施工措施统计查询接口【type：施工措施】",
       "method": "get",
       "endpoint": "control/flood/countByType",
       "responses": [
         {
           "uuid": "0d0ed771-4a0d-4e07-863a-434c7035606a",
-          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t {\n      \"amount\": 25,\n      \"type\": \"站房雨棚排水不畅\"\n    },\n    {\n      \"amount\": 30,\n      \"type\": \"低洼四电用房\"\n    },\n    {\n      \"amount\": 10,\n      \"type\": \"渗漏隐患房建设备\"\n    },\n    {\n      \"amount\": 20,\n      \"type\": \"产生沉降房建设备\"\n    }\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -868,7 +902,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -883,7 +918,7 @@
       "responses": [
         {
           "uuid": "55c7ce83-3ba2-4d1a-85c3-d63ad9627ef3",
-          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "body": "{\n  \"code\": \"\",\n  \"data\": [\n    {\n      \"amount\": 55,\n      \"type\": \"沪苏车间\"\n    },\n    {\n      \"amount\": 60,\n      \"type\": \"上海车间\"\n    },\n    {\n      \"amount\": 50,\n      \"type\": \"苏锡车间\"\n    }\n  ],\n  \"msg\": \"\",\n  \"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -893,7 +928,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -918,7 +954,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -943,7 +980,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -958,7 +996,7 @@
       "responses": [
         {
           "uuid": "18a6ffe0-82c6-46b3-a601-a2d86dcd8203",
-          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"amount\": 0,\n\t\t\t\"line\": \"\",\n\t\t\t\"periodProblem\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "body": "{\n  \"code\": \"\",\n  \"data\": [\n    {\n      \"amount\": 20,\n      \"line\": \"沪苏通\",\n      \"periodProblem\": \"施工介入\"\n    },\n    {\n      \"amount\": 28,\n      \"line\": \"沪苏通\",\n      \"periodProblem\": \"静态验收\"\n    },\n    {\n      \"amount\": 15,\n      \"line\": \"沪苏通\",\n      \"periodProblem\": \"动态验收\"\n    },\n    {\n      \"amount\": 12,\n      \"line\": \"沪苏通\",\n      \"periodProblem\": \"安全评估\"\n    },\n    {\n      \"amount\": 16,\n      \"line\": \"南沿江\",\n      \"periodProblem\": \"施工介入\"\n    },\n    {\n      \"amount\": 33,\n      \"line\": \"南沿江\",\n      \"periodProblem\": \"静态验收\"\n    },\n    {\n      \"amount\": 18,\n      \"line\": \"南沿江\",\n      \"periodProblem\": \"动态验收\"\n    },\n    {\n      \"amount\": 11,\n      \"line\": \"南沿江\",\n      \"periodProblem\": \"安全评估\"\n    },\n    {\n      \"amount\": 31,\n      \"line\": \"沪苏湖\",\n      \"periodProblem\": \"施工介入\"\n    },\n    {\n      \"amount\": 11,\n      \"line\": \"沪苏湖\",\n      \"periodProblem\": \"静态验收\"\n    },\n    {\n      \"amount\": 15,\n      \"line\": \"沪苏湖\",\n      \"periodProblem\": \"动态验收\"\n    },\n    {\n      \"amount\": 19,\n      \"line\": \"沪苏湖\",\n      \"periodProblem\": \"安全评估\"\n    }\n  ],\n  \"msg\": \"\",\n  \"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -968,7 +1006,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -977,7 +1016,7 @@
     },
     {
       "uuid": "0db0908e-4806-4611-bdbf-2c0967cffc02",
-      "documentation": "房建科-新线建设统计,按照阶段问题类型分组【periodProblem：阶段问题； list: [{amount: 设备数量；line：线；periodProblem：阶段问题}]】",
+      "documentation": "房建科-新线建设统计,按照阶段问题类型分组【（未使用）periodProblem：阶段问题； list: [{amount: 设备数量；line：线；periodProblem：阶段问题}]】",
       "method": "get",
       "endpoint": "new/line/built/statisticsCopy",
       "responses": [
@@ -993,7 +1032,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1008,7 +1048,7 @@
       "responses": [
         {
           "uuid": "f5a184d2-f6f6-49b0-a971-18b4d0084598",
-          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"土房部\": [\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 2\n      },\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      }\n    ],\n    \"上海车间\": [\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      },\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 0\n      }\n    ]\n  },\n  \"success\": true\n}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"OK\",\n  \"data\": {\n    \"土房部\": [\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 2\n      },\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      }\n    ],\n    \"上海车间\": [\n      {\n        \"id\": \"1DCED970-7862-4E97-95E2-CA54B4634B74\",\n        \"name\": \"风雨棚伸缩盖板检查专项活动\",\n        \"amount\": 4\n      },\n      {\n        \"id\": \"21D7B887-CD89-4E17-AE31-1C2581328A09\",\n        \"name\": \"开始新的活动了\",\n        \"amount\": 10\n      }\n    ]\n  },\n  \"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -1018,7 +1058,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1043,7 +1084,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1058,7 +1100,7 @@
       "responses": [
         {
           "uuid": "dc591610-6ec4-41a7-9eb1-de9309ed861c",
-          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"completeSquare\": 0,\n\t\t\t\"planSquare\": 0,\n\t\t\t\"type\": \"\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
+          "body": "{\n\t\"code\": \"\",\n\t\"data\": [\n\t\t{\n\t\t\t\"completeSquare\": 30.25,\n\t\t\t\"planSquare\": 35.54,\n\t\t\t\"type\": \"沪杭车间\"\n\t\t},\n\t\t{\n\t\t\t\"completeSquare\": 65.24,\n\t\t\t\"planSquare\": 71.5,\n\t\t\t\"type\": \"上海车间\"\n\t\t},\n\t\t{\n\t\t\t\"completeSquare\": 50.02,\n\t\t\t\"planSquare\": 54.24,\n\t\t\t\"type\": \"苏锡车间\"\n\t\t}\n\t],\n\t\"msg\": \"\",\n\t\"success\": true\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -1068,7 +1110,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1077,7 +1120,7 @@
     },
     {
       "uuid": "12ccb79a-a2fc-4db3-8e42-ab0e6c3d8c65",
-      "documentation": "房建科-股道限界设备按管区分组【info：统计数据列表；height：高度；position：点位；stationId：管区id；stationName：管区名称；trackNo 股道；stationId 管区id；stationName 管区；】",
+      "documentation": "房建科-股道限界设备按管区分组【未使用】【info：统计数据列表；height：高度；position：点位；stationId：管区id；stationName：管区名称；trackNo 股道；stationId 管区id；stationName 管区；】",
       "method": "get",
       "endpoint": "fjsczh/device-bound",
       "responses": [
@@ -1093,7 +1136,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1118,7 +1162,8 @@
           "rules": [],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1150,7 +1195,8 @@
           ],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
@@ -1182,7 +1228,8 @@
           ],
           "rulesOperator": "OR",
           "disableTemplating": false,
-          "fallbackTo404": false
+          "fallbackTo404": false,
+          "default": true
         }
       ],
       "enabled": true,
