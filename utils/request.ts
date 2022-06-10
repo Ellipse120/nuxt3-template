@@ -1,3 +1,5 @@
+import { useToast } from 'vue-toastification'
+
 interface ApiResponse {
   code: string
   msg: string
@@ -5,6 +7,7 @@ interface ApiResponse {
 }
 
 const isDebug = localStorage.getItem('debug') === 'debug'
+const toast = useToast()
 
 const api = (url, options?) => {
   return useFetch<ApiResponse>(url, {
@@ -30,7 +33,9 @@ const api = (url, options?) => {
       // @ts-ignore
       onResponseError({ request, response }) {
         if (response.status !== 200) {
-          throwError(response.statusText || '😱 服务异常')
+          const s = `Req: ${request};Msg: ${response.statusText}` || '😱 服务异常'
+          toast.error(s)
+          // throwError(s)
         }
         // Log error
         // eslint-disable-next-line no-console
