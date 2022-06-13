@@ -53,7 +53,7 @@ export default defineNuxtConfig({
     transpile: ['@headlessui/vue', 'echarts'],
   },
 
-  modules: [],
+  modules: ['nuxt-lodash'],
 
   // build modules
   buildModules: [
