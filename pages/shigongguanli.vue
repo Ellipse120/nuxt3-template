@@ -30,14 +30,17 @@
 
             <DataTable
               ref="dt"
+              lazt
               :value="products?.data?.list"
               :loading="pending1"
               v-model:selection="selectedProducts"
               :paginator="true"
               :rows="10"
+              :total-records="20"
               paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
               :rowsPerPageOptions="[5, 10, 25]"
               responsiveLayout="scroll"
+              @page="onPage($event)"
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
@@ -114,7 +117,7 @@ definePageMeta({
   title: '施工管理',
 })
 
-const { $setSiteTitle, $api } = useNuxtApp()
+const { $setSiteTitle, $api, $formatDate } = useNuxtApp()
 $setSiteTitle()
 
 const toast = useToast()
@@ -149,12 +152,18 @@ type TProduct = {
   // 日期格式字符串
   operateTime: string
 }
-
 const queryString = computed(() => {
   const startDate = dateRange.value?.[0] ? useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value : ''
   const endDate = dateRange.value?.[1] ? useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value : ''
+  const pageNo = pagination.value.pageNo
+  const pageSize = pagination.value.pageSize
 
-  return `?startDate=${startDate}&endDate=${endDate}`
+  return `?startDate=${startDate}&endDate=${endDate}&pageNo=${pageNo}&pageSize=${pageSize}`
+})
+
+const pagination = ref({
+  pageNo: 1,
+  pageSize: 10,
 })
 
 const {
@@ -167,6 +176,14 @@ const {
     watch: [dateRange],
   }
 )
+
+const onPage = (event) => {
+  pagination.value = {
+    pageNo: event.first + 1,
+    pageSize: event.rows,
+  }
+  refresh()
+}
 
 const saveProduct = async () => {
   product.value.id ?
