@@ -10,7 +10,7 @@ const isDebug = localStorage.getItem('debug') === 'debug'
 const toast = useToast()
 
 const api = (url, options?) => {
-  return useFetch<ApiResponse>(url, {
+  return useLazyFetch<ApiResponse>(url, {
     ...{
       baseURL: useRuntimeConfig().app.serverUrl,
       // onRequest({ request, options }) {
