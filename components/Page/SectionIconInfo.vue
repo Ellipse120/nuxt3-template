@@ -1,9 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div
-      v-if="$slots.icon"
-      class="rounded-full icon-bg flex items-center justify-center h-8 w-8 mr-2"
-    >
+    <div v-if="$slots.icon" class="rounded-full icon-bg flex items-center justify-center h-8 w-8 mr-2">
       <slot name="icon" class="block" />
     </div>
 
@@ -35,10 +32,6 @@ defineProps({
 <style scoped>
 .icon-bg {
   opacity: 0.9;
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 0.28)
-  );
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.28));
 }
 </style>

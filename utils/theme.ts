@@ -18,15 +18,10 @@ export function ThemeManager() {
 
   // methods
   // Always Set Dark
-  const getUserSetting = (): IThemeSettingOptions =>
-    'dark' || themeUserSetting.value || 'system'
+  const getUserSetting = (): IThemeSettingOptions => 'dark' || themeUserSetting.value || 'system'
   const getSystemTheme = (): ITheme => {
     try {
-      return window
-        ? window.matchMedia('(prefers-color-scheme: dark)').matches
-          ? 'dark'
-          : 'light'
-        : 'dark'
+      return window ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : 'dark'
     } catch (error) {
       return 'dark'
     }
@@ -39,12 +34,8 @@ export function ThemeManager() {
   }
 
   // state
-  const themeSetting = useState<IThemeSettingOptions>('theme.setting', () =>
-    getUserSetting()
-  )
-  const themeCurrent = useState<ITheme>('theme.current', () =>
-    process.client ? getSystemTheme() : 'light'
-  )
+  const themeSetting = useState<IThemeSettingOptions>('theme.setting', () => getUserSetting())
+  const themeCurrent = useState<ITheme>('theme.current', () => (process.client ? getSystemTheme() : 'light'))
 
   // wathcers
   const onThemeSettingChange = (themeSetting: IThemeSettingOptions) => {
@@ -79,15 +70,11 @@ export function ThemeManager() {
   let intervalCheckTime: NodeJS.Timer
   onBeforeMount(() => init())
   onMounted(() => {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', onThemeSystemChange)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', onThemeSystemChange)
     intervalCheckTime = setInterval(onRealtimeCheck, 1000)
   })
   onBeforeUnmount(() => {
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .removeEventListener('change', onThemeSystemChange)
+    window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', onThemeSystemChange)
     if (intervalCheckTime) clearInterval(intervalCheckTime)
   })
 

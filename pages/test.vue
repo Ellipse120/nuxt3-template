@@ -6,9 +6,7 @@
     <PageBody>
       <PageSection>
         <PageSectionTitle :text="$t('pages.test.counter')" class="capitalize" />
-        <div
-          class="flex flex-col items-center justify-items-center space-y-2 lg:space-y-0 lg:flex-row lg:space-x-2"
-        >
+        <div class="flex flex-col items-center justify-items-center space-y-2 lg:space-y-0 lg:flex-row lg:space-x-2">
           <div>Counter : {{ counter.count }}</div>
           <CustomButton
             class="w-full lg:w-auto capitalize"
@@ -41,18 +39,13 @@
         </div>
       </PageSection>
       <PageSection>
-        <PageSectionTitle
-          :text="$t('pages.test.identity')"
-          class="capitalize"
-        />
+        <PageSectionTitle :text="$t('pages.test.identity')" class="capitalize" />
         <div>
           <span class="capitalize">{{ $t('pages.test.full_name') }} : </span>
           <span>{{ identity.fullName }}</span>
         </div>
         <div class="">
-          <div
-            class="flex flex-col items-center space-y-2 lg:space-y-0 lg:flex-row lg:space-x-2"
-          >
+          <div class="flex flex-col items-center space-y-2 lg:space-y-0 lg:flex-row lg:space-x-2">
             <FormTextInput v-model="identity.firstName" size="sm" />
             <FormTextInput v-model="identity.lastName" size="sm" />
             <CustomButton

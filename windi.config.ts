@@ -48,16 +48,7 @@ export default defineConfig({
       './utils/**/*.{js,ts}',
       './app.vue',
     ],
-    exclude: [
-      'node_modules',
-      'dist',
-      '.git',
-      '.github',
-      '.nuxt',
-      'coverage',
-      '**/__snapshots__',
-      '*.test.js',
-    ],
+    exclude: ['node_modules', 'dist', '.git', '.github', '.nuxt', 'coverage', '**/__snapshots__', '*.test.js'],
   },
   theme: {
     extend: {

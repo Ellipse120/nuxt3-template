@@ -36,13 +36,10 @@ export function LanguageManager() {
   }
 
   // Set zh-CN locale
-  const getUserLocale = (): string =>
-    'zh-CN' || localeUserSetting.value || getSystemLocale()
+  const getUserLocale = (): string => 'zh-CN' || localeUserSetting.value || getSystemLocale()
 
   // state
-  const localeSetting = useState<string>('locale.setting', () =>
-    getUserLocale()
-  )
+  const localeSetting = useState<string>('locale.setting', () => getUserLocale())
 
   // watchers
   watch(localeSetting, (localeSetting) => {

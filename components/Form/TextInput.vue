@@ -1,11 +1,5 @@
 <template>
-  <input
-    v-model="modelValue"
-    type="text"
-    :class="`${defaultStyle} ${selectedSize}`"
-    :placeholder="placeholder"
-    @input="onInput"
-  />
+  <input v-model="modelValue" type="text" :class="`${defaultStyle} ${selectedSize}`" :placeholder="placeholder" @input="onInput" />
 </template>
 
 <script lang="ts" setup>

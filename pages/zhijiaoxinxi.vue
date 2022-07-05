@@ -31,9 +31,7 @@
             <chart :options="options4" :loading="pending4" />
           </PageSectionLayout>
 
-          <PageSectionLayout
-            class="flex flex-col h-full col-start-3 row-span-full"
-          >
+          <PageSectionLayout class="flex flex-col h-full col-start-3 row-span-full">
             <template #header>
               <PageSectionLabel title="职工年度培训情况" />
             </template>
@@ -41,29 +39,21 @@
               <chart :options="options5" :loading="pending5" />
 
               <div class="flex items-center justify-around">
-                <div
-                  class="flex flex-col items-center justify-center w-20 md:w-24"
-                >
-                  <div class="text-ls-blue-300 text-xl">
-                    {{ completed }}/{{ yearTotal }}
-                  </div>
+                <div class="flex flex-col items-center justify-center w-20 md:w-24">
+                  <div class="text-ls-blue-300 text-xl">{{ completed }}/{{ yearTotal }}</div>
                   <div class="text-xs">已完成/年总计</div>
                 </div>
 
                 <div class="inline-grid grid-cols-2 grid-rows-2 gap-y-8">
                   <div class="flex items-center justify-center">
-                    <IconFaSolid:chalkboardTeacher
-                      class="block rounded-md text-4xl p-2 bg-blue-400"
-                    />
+                    <IconFaSolid:chalkboardTeacher class="block rounded-md text-4xl p-2 bg-blue-400" />
                   </div>
                   <div class="flex flex-col items-center justify-center w-20">
                     <div class="text-ls-blue-300 text-xl">{{ mouthTotal }}</div>
                     <div class="text-xs">本月开班</div>
                   </div>
                   <div class="flex items-center justify-center">
-                    <IconFaSolid:chalkboardTeacher
-                      class="block rounded-md text-4xl p-2 bg-green-400"
-                    />
+                    <IconFaSolid:chalkboardTeacher class="block rounded-md text-4xl p-2 bg-green-400" />
                   </div>
                   <div class="flex flex-col items-center justify-center w-20">
                     <div class="text-ls-blue-300 text-xl">{{ notStarted }}</div>

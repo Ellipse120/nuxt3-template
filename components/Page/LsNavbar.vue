@@ -3,24 +3,17 @@
     <template #custom>
       <div class="flex justify-between text-center">
         <div class="header-l w-1/3 px-4 flex items-center justify-between">
-          <IconMdi:arrow-left-drop-circle-outline
-            class="block text-2xl cursor-pointer"
-            @click="prev"
-          />
+          <IconMdi:arrow-left-drop-circle-outline class="block text-2xl cursor-pointer" @click="prev" />
           <div class="flex items-center pr-12">
             <div class="flex items-center px-4 font-bold">
-              <IconPh:sun-dim-bold
-                class="block mr-4 text-2xl text-yellow-500"
-              />
+              <IconPh:sun-dim-bold class="block mr-4 text-2xl text-yellow-500" />
               <div class="font-pangmenzhengdao">晴天</div>
             </div>
             <div class="px-4 font-pangmenzhengdao">26 ℃</div>
           </div>
         </div>
 
-        <div
-          class="header-m w-1/3 mx-1 text-4xl tracking-wider font-bold font-pangmenzhengdao text-gray-200 py-2"
-        >
+        <div class="header-m w-1/3 mx-1 text-4xl tracking-wider font-bold font-pangmenzhengdao text-gray-200 py-2">
           <NuxtLink tag="a" :to="{ name: 'tf-dashboard' }" class="!text-white">
             {{ app.name }}
           </NuxtLink>
@@ -32,10 +25,7 @@
             <div class="px-2 font-pangmenzhengdao w-18">{{ formattedHms }}</div>
             <div class="px-2 font-pangmenzhengdao w-18">{{ formattedDay }}</div>
           </div>
-          <IconMdi:arrow-right-drop-circle-outline
-            class="block text-2xl cursor-pointer"
-            @click="next"
-          />
+          <IconMdi:arrow-right-drop-circle-outline class="block text-2xl cursor-pointer" @click="next" />
         </div>
       </div>
     </template>
@@ -82,8 +72,7 @@
                 :key="idx"
                 class="flex w-full"
                 :class="{
-                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':
-                    item.type === 'link',
+                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]': item.type === 'link',
                 }"
               >
                 <CustomAnchor
@@ -117,19 +106,11 @@
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
-        <Button
-          type="secondary"
-          title="Gitee"
-          href="https://gitee.com/shentie-fe/tufang-large-screen.git"
-        >
+        <Button type="secondary" title="Gitee" href="https://gitee.com/shentie-fe/tufang-large-screen.git">
           <IconSimpleIcons:gitee />
           <span class="ml-1">Gitee</span>
         </Button>
-        <Button
-          text="Close"
-          type="secondary"
-          @click.prevent="toggleOptions(false)"
-        />
+        <Button text="Close" type="secondary" @click.prevent="toggleOptions(false)" />
       </ActionSheet>
     </template>
   </BuilderNavbar>
@@ -243,8 +224,7 @@ const next = async () => {
     #101d51,
     #112055
   );
-  text-shadow: 0 0 2px var(--color1), 0 0 6px var(--color2),
-    0 0 40px var(--color3), 0 0 80px var(--color4);
+  text-shadow: 0 0 2px var(--color1), 0 0 6px var(--color2), 0 0 40px var(--color3), 0 0 80px var(--color4);
   background-image: url('../../assets/images/appName.png');
   background-repeat: round;
   background-size: cover;

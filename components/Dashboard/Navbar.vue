@@ -8,9 +8,7 @@
           </span>
           <IconUil:angle-down />
         </div>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
+        <div class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]">
           <LanguageSwitcher />
           <ThemeToggle />
           <CustomAnchor
@@ -40,19 +38,11 @@
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
-        <Button
-          type="secondary"
-          title="Gitee"
-          href="https://gitee.com/shentie-fe/tufang-large-screen.git"
-        >
+        <Button type="secondary" title="Gitee" href="https://gitee.com/shentie-fe/tufang-large-screen.git">
           <IconSimpleIcons:gitee />
           <span class="ml-1">Gitee</span>
         </Button>
-        <Button
-          text="Close"
-          type="secondary"
-          @click.prevent="toggleOptions(false)"
-        />
+        <Button text="Close" type="secondary" @click.prevent="toggleOptions(false)" />
       </ActionSheet>
     </template>
     <template #drawer>

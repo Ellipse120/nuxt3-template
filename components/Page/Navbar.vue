@@ -2,10 +2,7 @@
   <BuilderNavbar>
     <template #menu>
       <div class="relative hidden lg:flex items-center ml-auto">
-        <nav
-          class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300"
-          role="navigation"
-        >
+        <nav class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300" role="navigation">
           <ul class="flex items-center space-x-8">
             <li v-for="(item, i) in menus" :key="i">
               <CustomAnchor
@@ -26,9 +23,7 @@
             </li>
           </ul>
         </nav>
-        <div
-          class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]"
-        >
+        <div class="flex space-x-4 border-l ml-6 pl-6 border-gray-900/10 dark:border-gray-50/[0.2]">
           <LanguageSwitcher />
           <ThemeToggle />
           <CustomAnchor
@@ -52,8 +47,7 @@
                 :key="i"
                 class="flex w-full"
                 :class="{
-                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]':
-                    item.type === 'link',
+                  'pb-2 mb-2 border-b border-gray-900/10 dark:border-gray-50/[0.2]': item.type === 'link',
                 }"
               >
                 <CustomAnchor
@@ -87,19 +81,11 @@
             <LanguageSwitcher type="select-box" />
           </div>
         </ActionSheetBody>
-        <CustomButton
-          type="secondary"
-          title="Gitee"
-          href="https://gitee.com/shentie-fe/tufang-large-screen.git"
-        >
+        <CustomButton type="secondary" title="Gitee" href="https://gitee.com/shentie-fe/tufang-large-screen.git">
           <IconSimpleIcons:gitee />
           <span class="ml-1">Gitee</span>
         </CustomButton>
-        <CustomButton
-          text="Close"
-          type="secondary"
-          @click.prevent="toggleOptions(false)"
-        />
+        <CustomButton text="Close" type="secondary" @click.prevent="toggleOptions(false)" />
       </ActionSheet>
     </template>
   </BuilderNavbar>
@@ -107,7 +93,7 @@
 
 <script lang="ts" setup>
 import { IApp } from '~/utils/app'
-import CustomButton from "~/components/CustomButton.vue";
+import CustomButton from '~/components/CustomButton.vue'
 
 export interface IMenuItem {
   type: 'link' | 'button'
