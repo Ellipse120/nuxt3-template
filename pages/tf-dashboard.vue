@@ -563,16 +563,7 @@ const table2 = computed(() => [
   },
 ])
 
-const table3 = computed(() => [
-  option4.value.data.dayPlanData,
-  // {
-  //   当日施工: '2',
-  //   当日维修: '2',
-  //   高速铁路: '3',
-  //   普速铁路: '2',
-  //   邻近营业线施工: '1',
-  // },
-])
+const table3 = computed(() => [option4.value.data.dayPlanData])
 
 const table4 = computed(() => [option4.value.data.monthPlanData])
 

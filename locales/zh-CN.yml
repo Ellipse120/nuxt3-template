@@ -6,7 +6,7 @@ components:
     change_theme: 更改主题
 pages:
   index:
-    title: 土地房产综合管理平台
+    title: Nuxt3 Demo Project
   blank:
     nav: 空页面
     title: 空页面

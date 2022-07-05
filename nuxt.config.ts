@@ -22,13 +22,13 @@ export default defineNuxtConfig({
 
   // meta
   meta: {
-    title: '土地房产综合管理平台',
+    title: 'Nuxt3 Demo Project',
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: '土地房产综合管理平台',
+        content: 'Nuxt3 Demo Project',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

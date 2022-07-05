@@ -1,7 +1,7 @@
 {
   "name": "tufang-large-screen",
   "version": "0.1.0",
-  "description": "土地房产综合管理平台",
+  "description": "Nuxt3 Demo Project",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/shentie-fe/tufang-large-screen.git"

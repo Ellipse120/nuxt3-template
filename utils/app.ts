@@ -16,7 +16,7 @@ export interface IApp {
 export function AppSetup() {
   // declare app information
   const app: IApp = {
-    name: '土地房产综合管理平台',
+    name: 'Demo Project',
     author: {
       name: 'Lusai',
       link: 'https://github.com/ellipse120',
