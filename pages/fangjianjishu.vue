@@ -10,7 +10,7 @@
               </template>
 
               <chart :options="options1" />
-              <DataTable :value="table1" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
+              <DataTable :value="table1" class="p-datatable-sm" table-class="text-xs" auto-layout striped-rows show-gridlines>
                 <Column field="类别" header="类别" />
                 <Column field="沪杭车间" header="沪杭车间" />
                 <Column field="上海车间" header="上海车间" />
@@ -32,7 +32,7 @@
               </template>
 
               <chart :options="options11" />
-              <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
+              <DataTable :value="table5" class="p-datatable-sm" table-class="text-xs" auto-layout striped-rows show-gridlines>
                 <Column field="类别" header="类别" />
                 <Column field="沪杭车间" header="沪杭车间" />
                 <Column field="上海车间" header="上海车间" />
@@ -67,7 +67,7 @@
             </PageSectionLayout>
           </div>
 
-          <div class="flex-1" style="flex: 13%;">
+          <div class="flex-1" style="flex: 13%">
             <div>
               <PageSectionLayout>
                 <template #header>
@@ -83,7 +83,14 @@
                 </template>
 
                 <chart :options="options32" />
-                <DataTable :value="table2" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
+                <DataTable
+                  :value="table2"
+                  class="p-datatable-sm"
+                  table-class="text-xs"
+                  responsive-layout="scroll"
+                  striped-rows
+                  show-gridlines
+                >
                   <Column field="车间" header="车间" />
                   <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
                   <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
@@ -101,7 +108,14 @@
               </template>
 
               <chart :options="options8" />
-              <DataTable :value="table4" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
+              <DataTable
+                :value="table4"
+                class="p-datatable-sm"
+                table-class="text-xs"
+                responsive-layout="scroll"
+                striped-rows
+                show-gridlines
+              >
                 <Column field="车间" header="车间" />
                 <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
                 <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
@@ -118,7 +132,14 @@
               </template>
 
               <chart :options="options13" />
-              <DataTable :value="table6" class="p-datatable-sm" tableClass="text-xs" responsiveLayout="scroll" stripedRows showGridlines>
+              <DataTable
+                :value="table6"
+                class="p-datatable-sm"
+                table-class="text-xs"
+                responsive-layout="scroll"
+                striped-rows
+                show-gridlines
+              >
                 <Column field="车间" header="车间" />
                 <Column field="检修（未销号）" header="检修（未销号）" class="!p-0" />
                 <Column field="检修（销号）" header="检修（销号）" class="!p-0" />
@@ -173,7 +194,7 @@
               </template>
 
               <chart :options="options14" />
-              <DataTable :value="table7" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
+              <DataTable :value="table7" class="p-datatable-sm" table-class="text-xs" auto-layout striped-rows show-gridlines>
                 <Column field="类别" header="类别" />
                 <Column field="1月份" header="1月份" />
                 <Column field="2月份" header="2月份" />
@@ -190,7 +211,7 @@
                 </template>
 
                 <chart :options="options51" />
-                <DataTable :value="table3" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
+                <DataTable :value="table3" class="p-datatable-sm" table-class="text-xs" auto-layout striped-rows show-gridlines>
                   <Column field="类别" header="类别" />
                   <Column field="沪杭车间" header="沪杭车间" />
                   <Column field="上海车间" header="上海车间" />
@@ -239,11 +260,11 @@ definePageMeta({
 const { $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
 
-const { data: option1, pending: pending1 } = await $api('fjsczh/task-check/countByDept')
-const { data: option12, pending: pending12 } = await $api('fjsczh/special-device')
-const { data: option41, pending: pending41 } = await $api('control/flood/countByType')
-const { data: option42, pending: pending42 } = await $api('control/flood/countByWorkshop')
-const { data: option53, pending: pending53 } = await $api('new/line/built/statistics')
+const { data: option1 } = $api('fjsczh/task-check/countByDept')
+const { data: option12 } = $api('fjsczh/special-device')
+const { data: option41 } = $api('control/flood/countByType')
+const { data: option42 } = $api('control/flood/countByWorkshop')
+const { data: option53 } = $api('new/line/built/statistics')
 
 const options1 = computed(() => ({
   chart: {
@@ -252,7 +273,7 @@ const options1 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: option1.value?.data?.map(o => o.type),
+    categories: option1.value?.data?.map((o) => o.type),
   },
   plotOptions: {
     column: {
@@ -263,11 +284,11 @@ const options1 = computed(() => ({
   series: [
     {
       name: '计划',
-      data: option1.value?.data?.map(o => o.planSquare),
+      data: option1.value?.data?.map((o) => o.planSquare),
     },
     {
       name: '完成',
-      data: option1.value?.data?.map(o => o.completeSquare),
+      data: option1.value?.data?.map((o) => o.completeSquare),
     },
   ],
 }))
@@ -276,17 +297,17 @@ const table1 = computed(() => [
   option1.value?.data?.reduce((acc, cur) => {
     return {
       ...acc,
-      '类别': '计划',
+      类别: '计划',
       [cur.type]: cur.planSquare,
     }
   }, {}),
   option1.value?.data?.reduce((acc, cur) => {
     return {
       ...acc,
-      '类别': '完成',
+      类别: '完成',
       [cur.type]: cur.completeSquare,
     }
-  }, {})
+  }, {}),
 ])
 
 const options2 = computed(() => ({
@@ -404,7 +425,7 @@ const options41 = computed(() => ({
     labels: {
       rotation: 0,
     },
-    categories: option41.value?.data?.map(o => o.type),
+    categories: option41.value?.data?.map((o) => o.type),
   },
   legend: {
     enabled: false,
@@ -418,7 +439,7 @@ const options41 = computed(() => ({
   series: [
     {
       name: '施工措施',
-      data: option41.value?.data?.map(o => o.amount),
+      data: option41.value?.data?.map((o) => o.amount),
     },
   ],
 }))
@@ -451,7 +472,7 @@ const options42 = computed(() => ({
       name: '防洪重点场所分布',
       type: 'pie',
       borderColor: 'transparent',
-      data: option42.value?.data?.map(o => ({
+      data: option42.value?.data?.map((o) => ({
         name: o.type,
         y: o.amount,
       })),
@@ -513,7 +534,7 @@ const options53 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: [...new Set(option53.value?.data?.map(o => o.periodProblem))],
+    categories: [...new Set(option53.value?.data?.map((o) => o.periodProblem))],
   },
   plotOptions: {
     column: {
@@ -524,14 +545,14 @@ const options53 = computed(() => ({
   legend: {
     itemDistance: 5,
   },
-  series: [...new Set(option53.value?.data?.map(o => o.line))]?.map(line => {
-    const d = option53.value?.data?.filter(m => m.line === line).map(n => n.amount);
+  series: [...new Set(option53.value?.data?.map((o) => o.line))]?.map((line) => {
+    const d = option53.value?.data?.filter((m) => m.line === line).map((n) => n.amount)
 
     return {
       name: line,
       data: d,
     }
-  })
+  }),
 }))
 
 const options6 = computed(() => ({
@@ -743,7 +764,7 @@ const options10 = computed(() => ({
     categories: ['上海房建车间', '沪杭房建车间', '苏锡房建车间', '大修车间', '给水车间'],
   },
   tooltip: {
-    shared: true
+    shared: true,
   },
   plotOptions: {
     column: {
@@ -817,16 +838,16 @@ const options11 = computed(() => ({
 
 const table5 = computed(() => [
   {
-    '类别': '计划',
-    '沪杭车间': 29,
-    '上海车间': 26,
-    '苏锡车间': 24,
+    类别: '计划',
+    沪杭车间: 29,
+    上海车间: 26,
+    苏锡车间: 24,
   },
   {
-    '类别': '完成',
-    '沪杭车间': 21,
-    '上海车间': 25,
-    '苏锡车间': 23,
+    类别: '完成',
+    沪杭车间: 21,
+    上海车间: 25,
+    苏锡车间: 23,
   },
 ])
 
@@ -837,7 +858,13 @@ const options12 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: [...new Set(Object.values(option12.value?.data).flat().map(o => o?.name))],
+    categories: [
+      ...new Set(
+        Object.values(option12.value?.data)
+          .flat()
+          .map((o) => o?.name)
+      ),
+    ],
     // categories: ['高铁站台抹灰层', '四电房屋渗漏', '雨棚吊顶排查', '客站消防缺陷隐患'],
   },
   plotOptions: {
@@ -849,10 +876,10 @@ const options12 = computed(() => ({
   legend: {
     itemDistance: 5,
   },
-  series: Object.keys(option12.value?.data)?.map(key => {
+  series: Object.keys(option12.value?.data)?.map((key) => {
     return {
       name: key,
-      data: option12.value?.data?.[key]?.map(m => m.amount)
+      data: option12.value?.data?.[key]?.map((m) => m.amount),
     }
   }),
   // series: [
@@ -903,7 +930,7 @@ const options13 = computed(() => ({
 
 const table6 = computed(() => [
   {
-    '车间': '苏锡车间',
+    车间: '苏锡车间',
     '检修（未销号）': 75,
     '检修（销号）': 30,
     '综合（未销号）': 15,
@@ -942,13 +969,13 @@ const options14 = computed(() => ({
 
 const table7 = computed(() => [
   {
-    '类别': '2022',
+    类别: '2022',
     '1月份': 29,
     '2月份': 26,
     '3月份': 24,
   },
   {
-    '类别': '2021',
+    类别: '2021',
     '1月份': 21,
     '2月份': 25,
     '3月份': 23,
@@ -969,7 +996,7 @@ const options15 = computed(() => ({
     categories: ['上海房建车间', '沪杭房建车间', '苏锡房建车间', '大修车间', '给水车间'],
   },
   tooltip: {
-    shared: true
+    shared: true,
   },
   plotOptions: {
     column: {

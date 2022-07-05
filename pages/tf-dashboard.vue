@@ -51,11 +51,11 @@
                 <DataTable
                   :value="table1"
                   class="p-datatable-sm"
-                  tableClass="text-xs"
-                  autoLayout
-                  stripedRows
-                  scrollHeight="122px"
-                  showGridlines
+                  table-class="text-xs"
+                  auto-layout
+                  striped-rows
+                  scroll-height="122px"
+                  show-gridlines
                 >
                   <Column field="type" header="设备分类" />
                   <Column field="站房" header="站房" />
@@ -81,17 +81,17 @@
 
                 <DataTable
                   class="p-datatable-sm"
-                  tableClass="text-xs"
+                  table-class="text-xs"
                   :value="table2"
-                  autoLayout
-                  stripedRows
-                  showGridlines
+                  auto-layout
+                  striped-rows
+                  show-gridlines
                   scrollable
-                  scrollHeight="150px"
+                  scroll-height="150px"
                 >
                   <Column field="序号" header="序号" class="!p-0" />
                   <Column field="隐患编号" header="隐患编号" width="20rem" class="!p-0" />
-                  <Column field="隐患描述导致结果" header="隐患描述导致结果" headerStyle="width: 28em" class="!p-0" />
+                  <Column field="隐患描述导致结果" header="隐患描述导致结果" header-style="width: 28em" class="!p-0" />
                   <Column field="类别" header="类别" class="!p-0" />
                   <Column field="形成时间" header="形成时间" class="!p-0" />
                   <Column field="发现时间" header="发现时间" class="!p-0" />
@@ -212,7 +212,7 @@
                   <div class="flex items-center h-20">
                     <div class="<lg:w-30 w-22 text-yellow-500 font-pangmenzhengdao">经营指标</div>
                     <ProgressSpinner v-if="pending2" class="!h-8 !w-8" />
-                    <div class="ml-2 text-xs" v-if="!pending2">
+                    <div v-if="!pending2" class="ml-2 text-xs">
                       {{ option2?.data?.content }}
                     </div>
                   </div>
@@ -239,7 +239,7 @@
                 </NuxtLink>
               </template>
               <chart :options="options6" />
-              <DataTable :value="table5" class="p-datatable-sm" tableClass="text-xs" autoLayout stripedRows showGridlines>
+              <DataTable :value="table5" class="p-datatable-sm" table-class="text-xs" auto-layout striped-rows show-gridlines>
                 <Column field="description" header="两库" class="!p-0" />
                 <Column field="addAmount" header="新增" class="!p-0" />
                 <Column field="completeAmount" header="处置" class="!p-0" />
@@ -285,7 +285,7 @@
               <PageSectionLayout class="my-2 p-0 flex items-center justify-around">
                 <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">当日计划</div>
 
-                <DataTable :value="table3" :loading="pending4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                <DataTable :value="table3" :loading="pending4" class="p-datatable-sm" table-class="text-xs" striped-rows show-gridlines>
                   <Column field="workCount" header="施工数量" class="!p-0" />
                   <Column field="repairCount" header="维修数量" class="!p-0" />
                   <Column field="railwayCount" header="高速铁路" class="!p-0" />
@@ -297,7 +297,7 @@
               <PageSectionLayout class="p-0 flex items-center justify-around">
                 <div class="lg:(w-10 text-base) w-22 text-xs text-yellow-500 text-center font-pangmenzhengdao">本月施工</div>
 
-                <DataTable :value="table4" :loading="pending4" class="p-datatable-sm" tableClass="text-xs" stripedRows showGridlines>
+                <DataTable :value="table4" :loading="pending4" class="p-datatable-sm" table-class="text-xs" striped-rows show-gridlines>
                   <Column field="workCount" header="施工数量" class="!p-0" />
                   <Column field="repairCount" header="维修数量" class="!p-0" />
                   <Column field="railwayCount" header="高速铁路" class="!p-0" />
@@ -340,17 +340,9 @@
                     label="年计划收入"
                     :value="option3?.data?.find((t) => t.type === 4)?.amount"
                   />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded"
-                    label="日既有卸污列次"
-                    :value="option1?.data?.gdBoxCount"
-                  />
+                  <PageSectionIconInfo class="border border-blue-800 rounded" label="日既有卸污列次" :value="option1?.data?.gdBoxCount" />
                   <PageSectionIconInfo class="border border-blue-800 rounded" label="累计收入" :value="option1?.data?.totalIncome" />
-                  <PageSectionIconInfo
-                    class="border border-blue-800 rounded"
-                    label="日高动卸污箱数"
-                    :value="option1?.data?.jyBoxCount"
-                  />
+                  <PageSectionIconInfo class="border border-blue-800 rounded" label="日高动卸污箱数" :value="option1?.data?.jyBoxCount" />
                 </div>
               </PageSectionLayout>
             </div>
@@ -431,7 +423,7 @@
             <PageSectionLayout>
               <template #header>
                 <NuxtLink to="消息通知管理界面系统平台待开发" target="_blank">
-                  <PageSectionLabel title="消息通知"  :loading="pending8" />
+                  <PageSectionLabel title="消息通知" :loading="pending8" />
                 </NuxtLink>
               </template>
 
@@ -457,33 +449,37 @@ definePageMeta({
 const { $setSiteTitle, $api } = useNuxtApp()
 $setSiteTitle()
 
-const { data: option1, pending: pending1, error: error1 } = await $api('xiewu-daily-record/index')
-const { data: option2, pending: pending2 } = await $api('goal-config')
-const { data: option3 } = await $api('year-income-config/type')
-const { data: option4, pending: pending4 } = await $api('work-daily-record/statistics')
-const { data: option5 } = await $api('fjsczh/daily-important/safe-day-count')
-const { data: option6, pending: pending6 } = await $api('event-config/queryIndex?type=1') // 1 预警信息
-const { data: option7, pending: pending7 } = await $api('event-config/queryIndex?type=2') // 2 督办事项
-const { data: option8, pending: pending8 } = await $api('event-config/queryIndex?type=3') // 3 消息通知
-const { data: option9, pending: pending9 } = await $api('work/repair/plan/queryCurrent')
-const { data: option10 } = await $api('device/problem/statistics')
-const { data: option11 } = await $api('fjsczh/device/category-count')
-const { data: option12 } = await $api('fjsczh/device/type-amount-count')
-const { data: option13 } = await $api('fjsczh/device/level-percent?level=1')
-const { data: option14 } = await $api('fjsczh/device/level-percent?level=3')
-const { data: option15, pending: pending15 } = await $api('fjsczh/device/type-area-count')
+const { data: option1, pending: pending1 } = $api('xiewu-daily-record/index')
+const { data: option2, pending: pending2 } = $api('goal-config')
+const { data: option3 } = $api('year-income-config/type')
+const { data: option4, pending: pending4 } = $api('work-daily-record/statistics')
+const { data: option5 } = $api('fjsczh/daily-important/safe-day-count')
+const { data: option6, pending: pending6 } = $api('event-config/queryIndex?type=1') // 1 预警信息
+const { data: option7, pending: pending7 } = $api('event-config/queryIndex?type=2') // 2 督办事项
+const { data: option8, pending: pending8 } = $api('event-config/queryIndex?type=3') // 3 消息通知
+const { data: option9, pending: pending9 } = $api('work/repair/plan/queryCurrent')
+const { data: option10 } = $api('device/problem/statistics')
+const { data: option11 } = $api('fjsczh/device/category-count')
+const { data: option12 } = $api('fjsczh/device/type-amount-count')
+const { data: option13 } = $api('fjsczh/device/level-percent?level=1')
+const { data: option14 } = $api('fjsczh/device/level-percent?level=3')
+const { data: option15 } = $api('fjsczh/device/type-area-count')
 
-const list1 = computed(() => option7.value.data.list?.map(o => ({
-  label: o.title,
-  time: o.eventTime,
-  content: o.context
-})))
+const list1 = computed(() =>
+  option7.value.data.list?.map((o) => ({
+    label: o.title,
+    time: o.eventTime,
+    content: o.context,
+  }))
+)
 
-const list2 = computed(() => option6.value.data.list?.map(o => ({
-  label: o.title,
-  time: o.eventTime,
-  content: o.context
-})))
+const list2 = computed(() =>
+  option6.value.data.list?.map((o) => ({
+    label: o.title,
+    time: o.eventTime,
+    content: o.context,
+  }))
+)
 
 const list3 = computed(() =>
   Array.from({ length: 9 }, (_, index) => {
@@ -497,11 +493,13 @@ const list3 = computed(() =>
   })
 )
 
-const list4 = computed(() => option8.value.data?.list?.map(o => ({
-  label: o.title,
-  time: o.eventTime,
-  content: o.context
-})))
+const list4 = computed(() =>
+  option8.value.data?.list?.map((o) => ({
+    label: o.title,
+    time: o.eventTime,
+    content: o.context,
+  }))
+)
 
 const list5 = computed(() => option9.value.data)
 
@@ -510,16 +508,16 @@ const table1 = computed(() => [
     return {
       ...acc,
       type: cur.wallType,
-      [cur.type]: cur.area
+      [cur.type]: cur.area,
     }
   }, {}),
   option15.value?.data?.pt?.reduce((acc, cur) => {
     return {
       ...acc,
       type: cur.wallType,
-      [cur.type]: cur.area
+      [cur.type]: cur.area,
     }
-  }, {})
+  }, {}),
 ])
 // const table1 = computed(() => [
 //   {
@@ -566,7 +564,7 @@ const table2 = computed(() => [
 ])
 
 const table3 = computed(() => [
-  option4.value.data.dayPlanData
+  option4.value.data.dayPlanData,
   // {
   //   当日施工: '2',
   //   当日维修: '2',
@@ -609,7 +607,7 @@ const options1 = computed(() => ({
       type: 'pie',
       borderColor: 'transparent',
       innerSize: '50%',
-      data: option11.value?.data?.map(o => ({
+      data: option11.value?.data?.map((o) => ({
         name: o.categoryName,
         y: o.amount,
       })),
@@ -630,7 +628,7 @@ const options3 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: option13.value?.data?.map(o => o.timePoint),
+    categories: option13.value?.data?.map((o) => o.timePoint),
   },
   legend: {
     align: 'right',
@@ -644,7 +642,7 @@ const options3 = computed(() => ({
       borderWidth: 0,
     },
   },
-  series: option13.value?.data?.map(o => ({
+  series: option13.value?.data?.map((o) => ({
     name: o.timePoint,
     data: [o.percent],
   })),
@@ -679,7 +677,7 @@ const options4 = computed(() => ({
       type: 'pie',
       borderColor: 'transparent',
       innerSize: '50%',
-      data: option12.value?.data?.map(o => ({
+      data: option12.value?.data?.map((o) => ({
         name: o.type,
         y: o.amount,
       })),
@@ -694,7 +692,7 @@ const options5 = computed(() => ({
   },
   xAxis: {
     type: 'category',
-    categories: option14.value?.data?.map(o => o.timePoint),
+    categories: option14.value?.data?.map((o) => o.timePoint),
   },
   legend: {
     align: 'right',
@@ -708,7 +706,7 @@ const options5 = computed(() => ({
       borderWidth: 0,
     },
   },
-  series: option14.value?.data?.map(o => ({
+  series: option14.value?.data?.map((o) => ({
     name: o.timePoint,
     data: [o.percent],
   })),
@@ -734,9 +732,9 @@ const options6 = computed(() => ({
       borderWidth: 0,
     },
   },
-  series: option10.value?.data?.map(o => ({
+  series: option10.value?.data?.map((o) => ({
     name: o.description,
-    data: [o.addAmount, o.completeAmount, o.leftAmount]
+    data: [o.addAmount, o.completeAmount, o.leftAmount],
   })),
 }))
 

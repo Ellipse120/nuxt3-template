@@ -1,9 +1,9 @@
-import { useTitle, useDateFormat } from '@vueuse/core'
-import { ThemeManager } from './theme'
-import { LanguageManager } from './lang'
+import { useTitle } from '@vueuse/core'
 import { format, toDate } from 'date-fns'
 import zhLocale from 'date-fns/locale/zh-CN/index'
 import { isRef } from '@vue/reactivity'
+import { LanguageManager } from './lang'
+import { ThemeManager } from './theme'
 
 export interface IApp {
   name: string

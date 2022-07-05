@@ -15,9 +15,9 @@
                   class="!mx-2"
                   date-format="yy-mm-dd"
                   placeholder="请选择日期"
-                  selectOtherMonths
-                  selectionMode="range"
-                  :manualInput="false"
+                  select-other-months
+                  selection-mode="range"
+                  :manual-input="false"
                 />
 
                 <Button label="查询" icon="pi pi-search" @click="refresh" />
@@ -30,14 +30,14 @@
 
             <DataTable
               ref="dt"
+              v-model:selection="selectedProducts"
               :value="products?.data?.list"
               :loading="pending1"
-              v-model:selection="selectedProducts"
               :paginator="true"
               :rows="10"
-              paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
-              :rowsPerPageOptions="[5, 10, 25]"
-              responsiveLayout="scroll"
+              paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+              :rows-per-page-options="[5, 10, 25]"
+              responsive-layout="scroll"
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
@@ -122,11 +122,11 @@ const dt = ref()
 const dateRange = ref(null)
 const productDialog = ref(false)
 const deleteProductDialog = ref(false)
-const product = ref<TProduct>()
+const product = ref()
 const selectedProducts = ref()
 
 const openNew = () => {
-  product.value = {} as TProduct
+  product.value = {}
   productDialog.value = true
 }
 
@@ -161,23 +161,20 @@ const {
   data: products,
   pending: pending1,
   refresh,
-} = await $api(
-  () => `work-daily-record/${queryString.value}`,
-  {
-    watch: [dateRange],
-  }
-)
+} = await $api(() => `work-daily-record/${queryString.value}`, {
+  watch: [dateRange],
+})
 
 const saveProduct = async () => {
-  product.value.id ?
-    await $api(`work-daily-record/${product.value.id}`, {
-      method: 'put',
-      body: product.value,
-    }) :
-    await $api(`work-daily-record/insert`, {
-      method: 'post',
-      body: product.value,
-    })
+  product.value.id
+    ? await $api(`work-daily-record/${product.value.id}`, {
+        method: 'put',
+        body: product.value,
+      })
+    : await $api(`work-daily-record/insert`, {
+        method: 'post',
+        body: product.value,
+      })
 
   productDialog.value = false
   product.value = {} as TProduct

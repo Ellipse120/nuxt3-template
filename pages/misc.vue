@@ -10,11 +10,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="职教信息-导入"
-              chooseLabel="职教信息-导入"
+              choose-label="职教信息-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader1"
             />
 
@@ -22,11 +22,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="每天天窗数据-导入"
-              chooseLabel="每天天窗数据-导入"
+              choose-label="每天天窗数据-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader2"
             />
 
@@ -34,11 +34,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="安全隐患库-导入"
-              chooseLabel="安全隐患库-导入"
+              choose-label="安全隐患库-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader3"
             />
 
@@ -46,11 +46,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="设备问题库-导入"
-              chooseLabel="设备问题库-导入"
+              choose-label="设备问题库-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader4"
             />
 
@@ -58,11 +58,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="防洪重点类型-导入"
-              chooseLabel="防洪重点类型-导入"
+              choose-label="防洪重点类型-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader5"
             />
 
@@ -70,11 +70,11 @@
               class="!ml-2 !mb-2"
               mode="basic"
               accept="image/*"
-              :maxFileSize="10000000"
+              :max-file-size="10000000"
               label="新线建设数据-导入"
-              chooseLabel="新线建设数据-导入"
+              choose-label="新线建设数据-导入"
               :auto="true"
-              :customUpload="true"
+              :custom-upload="true"
               @uploader="myUploader6"
             />
           </div>
@@ -92,12 +92,10 @@ definePageMeta({
   title: '其它',
 })
 
-const { $setSiteTitle, $api } = useNuxtApp()
+const { $setSiteTitle } = useNuxtApp()
 $setSiteTitle()
 
 const toast = useToast()
-const dt = ref()
-const eventTypeQuery = ref('')
 
 const myUploader1 = async (e) => {
   const formData = new FormData()
@@ -111,7 +109,6 @@ const myUploader1 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 
@@ -127,7 +124,6 @@ const myUploader2 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 
@@ -143,7 +139,6 @@ const myUploader3 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 
@@ -159,7 +154,6 @@ const myUploader4 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 
@@ -177,7 +171,6 @@ const myUploader5 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 
@@ -193,7 +186,6 @@ const myUploader6 = async (e) => {
     })
     .catch((err) => {
       toast.add({ severity: 'error', summary: '失败', detail: err?.message || '导入失败', life: 3000 })
-      console.log(err)
     })
 }
 </script>

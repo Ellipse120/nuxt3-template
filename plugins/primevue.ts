@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { defineNuxtPlugin } from '#app'
 // @ts-ignore
 import PrimeVue from 'primevue/config'

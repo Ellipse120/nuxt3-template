@@ -11,8 +11,8 @@
                 <Button label="添加" icon="pi pi-plus" class="p-button-success" @click="openNew" />
 
                 <div v-for="(value, key) of eventType" :key="key" class="mx-2">
-                  <RadioButton :id="key" name="category" :value="key" v-model="eventTypeQuery" />
-                  <label class="ml-2" :for="key">{{value}}</label>
+                  <RadioButton :id="key" v-model="eventTypeQuery" name="category" :value="key" />
+                  <label class="ml-2" :for="key">{{ value }}</label>
                 </div>
 
                 <Button label="查询" icon="pi pi-search" @click="refresh" />
@@ -25,14 +25,14 @@
 
             <DataTable
               ref="dt"
+              v-model:selection="selectedProducts"
               :value="products?.data?.list"
               :loading="pending1"
-              v-model:selection="selectedProducts"
               :paginator="true"
               :rows="10"
-              paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
-              :rowsPerPageOptions="[5, 10, 25]"
-              responsiveLayout="scroll"
+              paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+              :rows-per-page-options="[5, 10, 25]"
+              responsive-layout="scroll"
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
@@ -44,7 +44,7 @@
               <Column field="context" header="事件内容" />
               <Column field="type" header="事件类型">
                 <template #body="slotProps">
-                  <span>{{eventType[slotProps.data.type]}}</span>
+                  <span>{{ eventType[slotProps.data.type] }}</span>
                 </template>
               </Column>
               <Column field="eventTime" header="日期" />
@@ -61,17 +61,17 @@
           <Dialog v-model:visible="productDialog" :style="{ width: '450px' }" header="维护" :modal="true" class="p-fluid">
             <div class="field">
               <label for="title">事件标题</label>
-              <InputText id="title" type="text" v-model="product.title" />
+              <InputText id="title" v-model="product.title" type="text" />
             </div>
             <div class="field">
               <label for="context">事件内容</label>
-              <Textarea id="context" v-model="product.context" :autoResize="true" rows="5" cols="30" />
+              <Textarea id="context" v-model="product.context" :auto-resize="true" rows="5" cols="30" />
             </div>
             <div class="field flex">
               <label for="type">事件类型</label>
               <div v-for="(value, key) of eventType" :key="key" class="ml-2">
-                <RadioButton :id="key" name="category" :value="key" v-model="product.type" />
-                <label class="ml-2" :for="key">{{value}}</label>
+                <RadioButton :id="key" v-model="product.type" name="category" :value="key" />
+                <label class="ml-2" :for="key">{{ value }}</label>
               </div>
             </div>
             <div class="field">
@@ -118,11 +118,11 @@ const dt = ref()
 const eventTypeQuery = ref('')
 const productDialog = ref(false)
 const deleteProductDialog = ref(false)
-const product = ref<TProduct>()
+const product = ref()
 const selectedProducts = ref()
 
 const openNew = () => {
-  product.value = {} as TProduct
+  product.value = {}
   productDialog.value = true
 }
 
@@ -156,23 +156,20 @@ const {
   data: products,
   pending: pending1,
   refresh,
-} = await $api(
-  () => `event-config/${queryString.value}`,
-  {
-    watch: [eventTypeQuery],
-  }
-)
+} = await $api(() => `event-config/${queryString.value}`, {
+  watch: [eventTypeQuery],
+})
 
 const saveProduct = async () => {
-  product.value.id ?
-    await $api(`event-config/${product.value.id}`, {
-      method: 'put',
-      body: product.value,
-    }) :
-    await $api(`event-config/set`, {
-      method: 'post',
-      body: product.value,
-    })
+  product.value.id
+    ? await $api(`event-config/${product.value.id}`, {
+        method: 'put',
+        body: product.value,
+      })
+    : await $api(`event-config/set`, {
+        method: 'post',
+        body: product.value,
+      })
 
   productDialog.value = false
   product.value = {} as TProduct
