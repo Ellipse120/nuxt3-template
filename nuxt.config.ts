@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     // 'primevue/resources/themes/lara-dark-indigo/theme.css',
     'primevue/resources/primevue.min.css',
     'primeicons/primeicons.css',
+    'vue-toastification/dist/index.css',
     '~/assets/sass/vendor.scss',
     '~/assets/sass/app.scss',
   ],
@@ -52,7 +53,7 @@ export default defineNuxtConfig({
     transpile: ['@headlessui/vue', 'echarts'],
   },
 
-  modules: [],
+  modules: ['nuxt-lodash'],
 
   // build modules
   buildModules: [

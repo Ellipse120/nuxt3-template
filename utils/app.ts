@@ -43,7 +43,7 @@ export function setSiteTitle() {
   useTitle(`${route.meta.title} - ${app.name}`)
 }
 
-export function formatDate(time, cFormat = 'yyyy-MM-dd HH:mm:ss', options) {
+export function formatDate(time, cFormat = 'yyyy-MM-dd HH:mm:ss', options?) {
   if (!time) {
     return ''
   }

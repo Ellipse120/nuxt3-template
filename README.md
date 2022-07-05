@@ -11,6 +11,7 @@ With a lot of useful features. and integrated with Windi CSS.
 - [x] 🛹 [State & Store Management (Pinia)](https://pinia.vuejs.org/)
 - [x] 🚩 [Localization (i18n) by @intlify](https://github.com/intlify/nuxt3)
 - [x] 📦 [Vue Composition Collection (Vueuse)](https://vueuse.org/)
+- [x] 📦 [Nuxt Lodash (Lodash)](https://github.com/cipami/nuxt-lodash)
 - [x] 🌙 Switch Theme (light, dark, system, realtime)
 - [x] 🇮🇩 Language Switcher
 - [x] 🪝 Built-in Component & Layout

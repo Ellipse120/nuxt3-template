@@ -31,6 +31,7 @@
             <DataTable
               ref="dt"
               v-model:selection="selectedProducts"
+              lazt
               :value="products?.data?.list"
               :loading="pending1"
               :paginator="true"
@@ -38,6 +39,8 @@
               paginator-template="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
               :rows-per-page-options="[5, 10, 25]"
               responsive-layout="scroll"
+              :total-records="20"
+              @page="onPage($event)"
             >
               <template #header>
                 <div class="table-header flex flex-column md:flex-row md:justify-content-between">
@@ -149,12 +152,18 @@ type TProduct = {
   // 日期格式字符串
   operateTime: string
 }
-
 const queryString = computed(() => {
   const startDate = dateRange.value?.[0] ? useDateFormat(dateRange.value?.[0], 'YYYY-MM-DD').value : ''
   const endDate = dateRange.value?.[1] ? useDateFormat(dateRange.value?.[1], 'YYYY-MM-DD').value : ''
+  const pageNo = pagination.value.pageNo
+  const pageSize = pagination.value.pageSize
 
-  return `?startDate=${startDate}&endDate=${endDate}`
+  return `?startDate=${startDate}&endDate=${endDate}&pageNo=${pageNo}&pageSize=${pageSize}`
+})
+
+const pagination = ref({
+  pageNo: 1,
+  pageSize: 10,
 })
 
 const {
@@ -164,6 +173,14 @@ const {
 } = await $api(() => `work-daily-record/${queryString.value}`, {
   watch: [dateRange],
 })
+
+const onPage = (event) => {
+  pagination.value = {
+    pageNo: event.first + 1,
+    pageSize: event.rows,
+  }
+  refresh()
+}
 
 const saveProduct = async () => {
   product.value.id
