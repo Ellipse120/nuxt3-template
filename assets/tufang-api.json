@@ -202,7 +202,7 @@
       "responses": [
         {
           "uuid": "9a131375-5934-4514-8a25-48a3a1e4f0bd",
-          "body": "{\"code\":\"200\",\"msg\":\"\",\"data\":{\n  \"id\": null,\n  \"content\": \"本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。\"\n}}",
+          "body": "{\n  \"code\": \"200\",\n  \"msg\": \"\",\n  \"data\": {\n    \"id\": null,\n    \"content\": \"本月计划完成巡检，综合维修100万元，大修专项整治11万元，公寓接待率97%，卸污高铁3000箱，普铁30000列。\"\n  }\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -1230,6 +1230,75 @@
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "8bfcb8cc-0072-431f-8619-f444a8399e5f",
+      "documentation": "登陆接口",
+      "method": "post",
+      "endpoint": "login",
+      "responses": [
+        {
+          "uuid": "4a231089-bb72-4a55-ae8c-d1109bd4f48d",
+          "body": "{\n  \"code\": \"\",\n  \"data\": {\n    \"valid\": true\n  },\n  \"msg\": \"\",\n  \"success\": true\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "admin",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "1231",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "d6c8efec-e822-49b0-9837-a811e307833b",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "9d8843f9-8dbc-422f-9218-fa7ebd00da62",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         }
       ],
       "enabled": true,
